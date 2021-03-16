@@ -1,0 +1,219 @@
+<!DOCTYPE HTML>
+<!--
+	Spatial by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html>
+	<head>
+		<title>User Registration Page</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body>
+
+		<!-- Header -->
+			<header id="header">
+				<!-- <h1><strong><a href="index.html">Spatial</a></strong> by Templated</h1> -->
+				<img src="images/retailmenotlogo.jpeg" />
+				<nav id="nav">
+					<ul>
+						<li><a href="index.html">Home</a></li>
+						<li><a href="generic.html">Generic</a></li>
+						<li><a href="elements.html">Elements</a></li>
+					</ul>
+				</nav>
+			</header>
+
+			<a href="#menu" class="navPanelToggle"><span class="fa fa-bars"></span></a>
+
+		<!-- Main -->
+			<section id="main" class="wrapper">
+				<div class="container">
+					<header class="major special">
+						<h2>Registration</h2>
+						<p>Self-Service User Registration</p>
+					</header>
+
+					<!-- Form -->
+					<section>
+						<h2>Registration Information</h2>
+						<form method="post" action="#">
+							<div id="reg" class="row uniform 50%">
+								<!-- <div class="6u 12u$(xsmall)">
+									<input type="text" name="name" id="fname" value="Frist Name" />
+								</div>
+								<div class="6u$ 12u$(xsmall)">
+									<input type="text" name="name" id="lname" value="Last Name" />
+								</div> -->
+								<div class="4u">
+									<input type="email" name="email" id="email" value="email" />
+								</div>
+								<!-- <div class="4u 12u$(xsmall)"> 
+									<lable for="birthday">Birthday</lable>
+									<input type="date" name="birthday" id="birthday" value="birthday" />
+								</div> -->
+								<!-- <div class="12u$">
+									<div class="select-wrapper">
+										<select name="relationship" id="relationship">
+											<option value="">- Relation to Account Owner -</option>
+											<option value="1">Spouse</option>
+											<option value="1">Child</option>
+											<option value="1">Guest</option>
+											<option value="1">Other</option>
+										</select>
+									</div>
+								</div> -->
+								<!-- <div class="6u 12u$(xsmall)">
+									<input type="text"  
+										   id="address" 
+										   value="address">
+								</div>
+								<div class="6u 12u$(xsmall)">
+									<input type="text" 
+										   id="city" 
+										   value="city">
+								</div>	
+								<div class="6u 12u$(xsmall)">		   
+									<input type="text" 
+										   id="state" 
+										   value="state">
+								</div>
+								<div class="6u 12u$(xsmall)">
+									<input type="text" 
+										   id="zip" 
+										   value="zip">
+								</div> -->
+								<div class="row uniform 50%">
+									<h3> Set Password</h3>
+									<div class="6u 12u$(xsmall)">
+										<input type="password" name="user_pass" id="user_pass" value=""  onkeyup="checkPass();" />
+									</div>
+									<div class="6u$ 12u$(xsmall)">
+										<input type="password" name="user_pass_conf" id="user_pass_conf" value=""  onkeyup="checkPass();"/>
+									</div>
+									<span id="confirm-message2" class="confirm-message"></span>
+									
+								</div>
+
+								<ul class="actions">
+									<li><a href="#" class="button" onclick="registerUser();" style="background-color: #933ec0;">Create Account</a></li> 
+								</ul>
+							</div>
+							<div id ="otpDiv" view="hide" class="row uniform 50%">
+								<h3> An Email was sent with a verification code. Please Verify your email</h3>
+								<div class="6u 12u$(xsmall)">
+									<input type="text" name="user_pass" id="user_otp" value="OTP" />
+								</div>
+								<span id="confirm-message2" class="confirm-message"></span>
+								<ul class="actions">
+									<li><a href="#" class="button" onclick="validateUser();" style="background-color: #933ec0;">Validate</a></li> 
+								</ul>
+								
+							</div>
+							<section>
+								<div class="mfn-login" style="display: none;">
+									<input type="text" class="form-control" name="ppURL" id="ppURL" readonly />
+								</div>
+								<div id = "ppDiv" class = "container">
+									<h4 id = "prompt"> </h4>
+									<div class="6u 12u$(xsmall)">
+										<label id =fnamelabel style="display:inline-block;"></label>
+										<input type="text" name="name" id="fname" value="" />
+									</div>
+									<div class="6u$ 12u$(xsmall)">
+										<label id =lnamelabel style="display:inline-block;"></label>
+										<input type="text" name="name" id="lname" value="" />
+									</div>
+									<ul class="actions">
+										<li><a href="#" class="button" onclick="setPPValues();" style="background-color: #933ec0;">Continue</a></li> 
+									</ul>
+								</div>
+					
+							</section> 
+						</form>
+					</section>
+
+					<!-- Buttons -->
+					<section>
+						
+					</section>
+				</br>
+				</div>
+			</section>
+
+		<!-- Footer -->
+			<footer id="footer">
+				<div class="container">
+					<ul class="icons">
+						<li><a href="#" class="icon fa-facebook"></a></li>
+						<li><a href="#" class="icon fa-twitter"></a></li>
+						<li><a href="#" class="icon fa-instagram"></a></li>
+					</ul>
+					<ul class="copyright">
+						<li>&copy; Untitled</li>
+						<li>Design: <a href="http://templated.co">TEMPLATED</a></li>
+						<li>Images: <a href="http://unsplash.com">Unsplash</a></li>
+					</ul>
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+			<script src="assets/js/p1helper.js"></script>
+			<script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+			<script src="assets/js/p1Registration.js"></script>
+			
+
+			<script>
+				// some housekeeping variables
+				
+								$('#changePassword').on('input', function (e) {
+								let thisPassword = $('#changePassword').val();
+				
+								if (regexLower.test(thisPassword)) {
+								$('#lowercase').removeClass('text-primary');
+								} else {
+									$('#lowercase').addClass('text-primary');
+								}
+								if (regexUpper.test(thisPassword)) {
+									$('#uppercase').removeClass('text-primary');
+								} else {
+									$('#uppercase').addClass('text-primary');
+								}
+				
+								if (regexNumeric.test(thisPassword)) {
+									$('#numeric').removeClass('text-primary');
+								} else {
+									$('#numeric').addClass('text-primary');
+								}
+				
+								if (regexSpecial.test(thisPassword)) {
+									$('#special').removeClass('text-primary');
+								} else {
+									$('#special').addClass('text-primary');
+								}
+				
+								if (regexLength.test(thisPassword)) {
+									$('#length').removeClass('text-primary');
+								} else {
+									$('#length').addClass('text-primary');
+								}
+							});
+							// begin process
+							$(document).ready(function () {
+								console.log("Page ready function");
+								console.log("hide otp div");
+								$('#otpDiv').hide();
+								$('#ppDiv').hide();
+
+				
+							})
+					</script>
+
+	</body>
+</html>

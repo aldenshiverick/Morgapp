@@ -1,0 +1,191 @@
+<!DOCTYPE HTML>
+<!--
+	Spatial by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html>
+	<head>
+		<title>Administrator Page</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body>
+
+		<!-- Header -->
+			<header id="header">
+				<!-- <h1><strong><a href="index.html">Spatial</a></strong> by Templated</h1> -->
+				<img src="images/retailmenotlogo.jpeg" />
+				<nav id="nav">
+					<ul>
+						<li><a href="index.html">Home</a></li>
+						<li><a href="generic.html">Generic</a></li>
+						<li><a href="elements.html">Elements</a></li>
+					</ul>
+				</nav>
+			</header>
+
+			<a href="#menu" class="navPanelToggle"><span class="fa fa-bars"></span></a>
+
+		<!-- Main -->
+			<section id="main" class="wrapper">
+				<div class="container">
+					<header class="major special">
+						<h2>User Admin</h2>
+						<p>User Profile Management</p>
+					</header>
+
+
+                    <!-- Search User-->
+                    <form method="post" action="#">
+                        <div class="row uniform 50%">
+                            <!-- <div class="6u 12u$(xsmall)">
+								<input type="text" name="PassID" id="PassID" value="" placeholder="PassID" />
+							</br>
+                                <span class="button special" onclick="adminGetUser('passID')">Retrieve User</span>
+                            </div> -->
+
+                            <div class="6u 12u$(xsmall)">
+								<input type="text" name="email" id="email" value="" placeholder="Email" />
+							</br>
+                                <span class="button special" onclick="adminGetUser('email')" style="background-color: #933ec0;">Retrieve User</span>
+                            </div>
+                        </div>
+					</form>
+					
+                    <!-- Form -->
+					<section>
+
+						<h2>Profile Information</h2>
+						<h3 id=usernameFill> </h3>
+						<form method="post" action="#">
+							<div class="row uniform 50%">
+								<div class="6u 12u$(xsmall)">
+									<h4>First Name: </h4>
+									<input type="text" name="name" id="fnameFill" value="" />
+								</div>
+								<div class="6u 12u$(xsmall)">
+									<h4>Last Name: </h4>
+									<input type="text" name="name" id="lnameFill" value="" />
+								</div>
+								<div class="6u 12u$(xsmall)">
+									<h4>Email: </h4>
+									<input type="email" name="email" id="emailFill" value="" />
+								</div>
+								<div class="6u 12u$(xsmall)"> 
+									<h4>Birthday: </h4>
+									<input type="date" name="birthday" id="birthday" value="" />
+								</div>
+								<!-- <div class="12u">
+									<div class="select-wrapper">
+										<select name="category" id="category">
+											<option value="">- Gender -</option>
+											<option value="1">Male</option>
+											<option value="1">Female</option>
+											<option value="1">Other</option>
+										</select>
+									</div>
+								</div> -->
+								<!-- <div class="12u">
+									<div class="select-wrapper">
+										<select name="category" id="category">
+											<option value="">- Relation to Account Owner -</option>
+											<option value="1">Spouse</option>
+											<option value="1">Child</option>
+											<option value="1">Guest</option>
+											<option value="1">Other</option>
+										</select>
+									</div>
+								</div> -->
+								<div class="6u 12u$(xsmall)">
+									<h4>Street: </h4>
+									<input type="text"  
+										   id="address" 
+										   value="">
+								</div>
+								<div class="6u 12u$(xsmall)">
+									<h4>City: </h4>
+									<input type="text" 
+										   id="city" 
+										   value="">
+								</div>	
+								<div class="6u 12u$(xsmall)">
+									<h4>State: </h4>		   
+									<input type="text" 
+										   id="state" 
+										   value="">
+								</div>
+								<div class="6u 12u$(xsmall)">
+									<h4>Zip: </h4>
+									<input type="text" 
+										   id="zip" 
+										   value="">
+								</div>
+							</div>
+						</form>
+					</section>
+
+					<!-- Buttons -->
+					<section>
+						<ul class="actions">
+							<li><a href="#" class="button" onclick="updateUserValues();" style="background-color: #933ec0;">Save</a></li> 
+							<li><a href="#" class="button alt" onclick="getUserValues();">Cancel</a></li>
+						</ul>
+						<div class="mfn-login" style="display: none;">
+							<input type="text" class="form-control" name="userID" id="userID" readonly />
+						</div>
+						<div class="mfn-login" style="display: none;">
+							<input type="text" class="form-control" name="username" id="username" readonly />
+						</div>
+					</section>
+				</div>
+			</section>
+
+		<!-- Footer -->
+			<footer id="footer">
+				<div class="container">
+					<ul class="icons">
+						<li><a href="#" class="icon fa-facebook"></a></li>
+						<li><a href="#" class="icon fa-twitter"></a></li>
+						<li><a href="#" class="icon fa-instagram"></a></li>
+					</ul>
+					<ul class="copyright">
+						<li>&copy; Untitled</li>
+						<li>Design: <a href="http://templated.co">TEMPLATED</a></li>
+						<li>Images: <a href="http://unsplash.com">Unsplash</a></li>
+					</ul>
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+            <script src="assets/js/main.js"></script>
+            
+            <script src="assets/js/p1helper.js"></script>
+			<script src="assets/js/p1admin.js"></script>
+			<script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+
+			<script>
+				$(document).ready(function () {
+					console.log("Page ready function");
+		
+					if (Cookies.get('accessToken')) {
+						console.log('Agent has a session');
+						getWorkerAccessToken();
+
+		
+		
+					} else {
+		
+						location.href=  baseUrl +'/adminlogon.html';
+		
+						}
+		
+				})
+		  </script>
+
+	</body>
+</html>

@@ -1,0 +1,223 @@
+<!DOCTYPE HTML>
+<!--
+	Spatial by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html>
+	<head>
+		<title>User Profile Page</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body onload="getUserValues();">
+	<!-- <body> -->
+
+		<!-- Header -->
+			<header id="header">
+				<!-- <h1><strong><a href="index.html">Spatial</a></strong> by Templated</h1> -->
+				<img src="images/retailmenotlogo.jpeg" />
+				<nav id="nav">
+					<ul>
+						<li><a href="index.html">Home</a></li>
+						<li><a href="generic.html">Generic</a></li>
+						<li><a href="elements.html">Elements</a></li>
+					</ul>
+				</nav>
+			</header>
+
+			<a href="#menu" class="navPanelToggle"><span class="fa fa-bars"></span></a>
+
+		<!-- Main -->
+			<section id="main" class="wrapper">
+				<div class="container">
+					<header class="major special">
+						<h2>Profile</h2>
+						<p>Self-Service User Profile Management</p>
+					</header>
+
+					<!-- Form -->
+					<section>
+						<h4> My Rewards</h4>
+						<div id="mfacheck" class="row uniform 50%">
+							<div class="6u 12u$(xsmall)">
+								<h4 type=readonly id="rewards"></h4>
+							</div>
+							<ul class="actions">
+								<li><a href="#" class="button special" onclick="approveRewards();">Cashout</a></li> 
+							</ul>
+						</div>
+					</section>
+
+
+					<section>
+						<h2>Profile Information</h2>
+						<h3 type=readonly id="Hello"></h3>
+						<h5 type=readonly> All Fields Required</h4>
+						<form method="post" action="#">
+							<div id ="profile" class="row uniform 50%">
+								<div class="6u 12u$(xsmall)">
+									<input type="text" name="name" id="fname" value="First Name" />
+								</div>
+								<div class="6u$ 12u$(xsmall)">
+									<input type="text" name="name" id="lname" value="Last Name" />
+								</div>
+								<div class="4u">
+									<input type="email" name="email" id="email" value="email" />
+								</div>
+								<div class="4u 12u$(xsmall)"> 
+									<lable for="birthday">Birthday</lable>
+									<input type="date" name="birthday" id="birthday" value="birthday" />
+								</div>
+								<!-- <div class="4u 12u$(xsmall)">
+									<div class="select-wrapper">
+										<select name="gender" id="gender">
+											<option value="">- Gender -</option>
+											<option value="1">Male</option>
+											<option value="1">Female</option>
+											<option value="1">Other</option>
+										</select>
+									</div>
+								</div> -->
+								<!-- <div class="12u$">
+									<div class="select-wrapper">
+										<select name="relationship" id="relationship">
+											<option value="">- Relation to Account Owner -</option>
+											<option value="1">Spouse</option>
+											<option value="1">Child</option>
+											<option value="1">Guest</option>
+											<option value="1">Other</option>
+										</select>
+									</div>
+								</div> -->
+								<div class="6u 12u$(xsmall)">
+									<input type="text"  
+										   id="address" 
+										   value="address">
+								</div>
+								<div class="6u 12u$(xsmall)">
+									<input type="text" 
+										   id="city" 
+										   value="city">
+								</div>	
+								<div class="6u 12u$(xsmall)">		   
+									<input type="text" 
+										   id="state" 
+										   value="state">
+								</div>
+								<div class="6u 12u$(xsmall)">
+									<input type="text" 
+										   id="zip" 
+										   value="zip">
+								</div>
+							</div>
+						</form>
+					</section>
+
+					<!-- Buttons -->
+					<section>
+						<div id="buttons">
+							<ul class="actions">
+								<li><a href="#" class="button" onclick="updateUserValues();" style="background-color: #933ec0;">Save</a></li> 
+								<li><a href="#" class="button alt" onclick="getUserValues();">Cancel</a></li>
+							</ul>
+						</div>
+					</section>
+
+					<section>
+						<h4> Enable Email MFA</h4>
+						<div id="mfacheck" class="row uniform 50%">
+							<div class="6u 12u$(small)">
+								<input type="checkbox" id="enableMFA" name="enableMFA">
+								<label for="enableMFA">Enable MFA</label>
+							</div>
+							<ul class="actions">
+								<li><a href="#" class="button special" onclick="updateMFA();">Add MFA</a></li> 
+							</ul>
+						</div>
+					</section>
+					<section>
+						<div id="passwordChange" class="row uniform 50%">
+							<div class="6u 12u$(xsmall)">
+								<label>Current Password</label> 
+								<input type="password" name="currentPass" id="currentPass" value="" />
+							</div>
+							<div class="6u$ 12u$(xsmall)">
+								<label>New Password</label>
+								<input type="password" name="newPass" id="newPass" value="" />
+							</div>
+						</div>
+					</section>
+				</br>
+					<section>
+						<div id="changePassbutton">
+							<ul class="actions">
+								<li><a href="#" class="button special" onclick="updatePassword();">Save New Password</a></li> 
+							</ul>
+						</div>
+					</section>
+
+					<section>
+						<div id ="otpDiv" class="row uniform 50%">
+							<h2> Verify MFA EMail account</h2>
+							<h3> An Email was sent with a verification code</h3>
+							<div class="6u 12u$(xsmall)">
+								<input type="text" name="user_otp" id="user_otp" value="OTP" />
+							</div>
+							<span id="confirm-message2" class="confirm-message"></span>
+							<ul class="actions">
+								<li><a href="#" class="button" onclick="OTPVerify();">Validate</a></li> 
+							</ul>
+
+							<div class="mfn-login" style="display: none;">
+								<input type="text" class="form-control" name="checkOTP" id="checkOTP" readonly />
+							</div>
+							
+						</div>
+					</section>
+				</div>
+			</section>
+
+		<!-- Footer -->
+			<footer id="footer">
+				<div class="container">
+					<ul class="icons">
+						<li><a href="#" class="icon fa-facebook"></a></li>
+						<li><a href="#" class="icon fa-twitter"></a></li>
+						<li><a href="#" class="icon fa-instagram"></a></li>
+					</ul>
+					<ul class="copyright">
+						<li>&copy; Untitled</li>
+						<li>Design: <a href="http://templated.co">TEMPLATED</a></li>
+						<li>Images: <a href="http://unsplash.com">Unsplash</a></li>
+					</ul>
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+			<script src="assets/js/p1.js"></script>
+			<script src="assets/js/p1Profile.js"></script>
+			<script src="assets/js/p1helper.js"></script>
+			<script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+			<script>
+				$(document).ready(function () {
+					console.log("Page ready function");
+					console.log("hide otp div");
+					$('#otpDiv').hide();
+				})
+			</script>
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/forge/0.8.2/forge.all.min.js"></script>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js"></script>
+			<script type="text/javascript" src="path-to/bower_components/crypto-js/crypto-js.js"></script>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js"></script>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+
+	</body>
+</html>

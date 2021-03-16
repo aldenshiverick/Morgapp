@@ -1,0 +1,305 @@
+<!DOCTYPE HTML>
+<!--
+	Spatial by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html>
+	<head>
+		<title>Admin Login</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="landing">
+
+		<!-- Header -->
+			<header id="header" class="alt">
+				<!-- <h1><strong><a href="index.html">Spatial</a></strong> by Templated</h1> -->
+				<img src="images/RetailMeNot_Logo_full.png" />
+				<nav id="nav">
+					<ul>
+						<li><a href="index.html">Home</a></li>
+						<li><a href="generic.html">Generic</a></li>
+						<li><a href="elements.html">Elements</a></li>
+					</ul>
+				</nav>
+			</header>
+
+			<a href="#menu" class="navPanelToggle"><span class="fa fa-bars"></span></a>
+
+		<!-- Banner -->
+			<section id="banner">
+				<!-- <h2>Spatial</h2>
+				<p>Lorem ipsum dolor sit amet nullam consequat <br /> interdum vivamus donce sed libero.</p> -->
+				<ul class="actions">
+				<div id=loginDiv>
+					<form name="loginform" id="loginform" action="#" method="post">
+              <p class="login-username">
+				<div class="6u 12u$(xsmall)">
+					<label for="user_login" style="color:white">Username</label>
+					<input type="text" name="log" id="user_login" class="input" value="" size="20" style="background-color: #fff;" style="text-align: center;" />
+				</div>
+			</p>
+              <p class="login-password">
+				<div class="6u 12u$(xsmall)">
+                	<label for="user_pass" style="color:white">Password</label>
+                	<input type="password" name="pwd" id="user_pass" class="input" value="" size="20" style="background-color: #fff;" style="text-align: center;" />
+				</div>
+			</p>
+						<br/>
+				<div class="mfn-login" style="display: none;">
+					<input type="text" class="form-control" name="validatePasswordUrl" id="validatePasswordUrl" readonly />
+				</div>
+				<div class="mfn-login" style="display: none;">
+					<input type="text" class="form-control" name="forgotPasswordURL" id="forgotPasswordURL" readonly />
+				</div>
+
+	          	<p class="login-submit">
+	              <a class="button button_theme" onclick="validatePassword();" style="background-color: #933ec0;">LogIn</a>
+	              <input type="hidden" name="redirect_to" value="#" />
+								<a class="button button_theme" onclick="resetPassword();" style="background-color: #933ec0;">Touble logging in?</a>
+						</p>
+					</form>
+				</div>
+				</ul>
+			
+				<div id ="otpDiv" view="hide" class="row uniform 50%">
+					<h2> Enter your OTP </h2>
+					<div class="6u 12u$(xsmall)">
+						<input type="text" name="otp_login" id="otp_login" value="OTP" style="background:white;" />
+					</div>
+					<div class="mfn-login" style="display: none;">
+						<input type="text" class="form-control" name="validateOtpUrl" id="validateOtpUrl" readonly />
+					</div>
+					<span id="confirm-message2" class="confirm-message"></span>
+					<ul class="actions">
+						<li><a href="#" class="button" onclick="validateOTP();" style="background-color: #933ec0;">Validate</a></li> 
+					</ul>
+					
+				</div>
+			</section>
+
+			
+
+			<!-- One -->
+				<section id="one" class="wrapper style1">
+					<div class="container 75%">
+						<div class="row 200%">
+							<div class="6u 12u$(medium)">
+								<header class="major">
+									<h2>Maecenas luctus lectus</h2>
+									<p>Perspiciatis doloremque recusandae dolor</p>
+								</header>
+							</div>
+							<div class="6u$ 12u$(medium)">
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non ea mollitia corporis id, distinctio sunt veritatis officiis dolore reprehenderit deleniti voluptatibus harum magna, doloremque alias quisquam minus, eaque. Feugiat quod, nesciunt! Iste quos ipsam, iusto sit esse.</p>
+								<p>Dolorum aspernatur maxime libero ratione quidem distinctio, placeat fugiat laborum voluptatum enim neque soluta vel sunt id ex veritatis. Labore rerum, odit sapiente, alias mollitia magnam exercitationem modi amet earum quia atque ipsum voluptas asperiores quas laboriosam.</p>
+							</div>
+						</div>
+					</div>
+				</section>
+
+			<!-- Two -->
+				<section id="two" class="wrapper style2 special">
+					<div class="container">
+						<header class="major">
+							<h2>Fusce ultrices fringilla</h2>
+							<p>Maecenas vitae tellus feugiat eleifend</p>
+						</header>
+						<div class="row 150%">
+							<div class="6u 12u$(xsmall)">
+								<div class="image fit captioned">
+									<img src="images/pic02.jpg" alt="" />
+									<h3>Lorem ipsum dolor sit amet.</h3>
+								</div>
+							</div>
+							<div class="6u$ 12u$(xsmall)">
+								<div class="image fit captioned">
+									<img src="images/pic03.jpg" alt="" />
+									<h3>Illum, maiores tempora cupid?</h3>
+								</div>
+							</div>
+						</div>
+						<ul class="actions">
+							<li><a href="#" class="button special big">Nulla luctus</a></li>
+							<li><a href="#" class="button big">Sed vulputate</a></li>
+						</ul>
+					</div>
+				</section>
+
+			<!-- Three -->
+				<section id="three" class="wrapper style1">
+					<div class="container">
+						<header class="major special">
+							<h2>Mauris vulputate dolor</h2>
+							<p>Feugiat sed lorem ipsum magna</p>
+						</header>
+						<div class="feature-grid">
+							<div class="feature">
+								<div class="image rounded"><img src="images/pic04.jpg" alt="" /></div>
+								<div class="content">
+									<header>
+										<h4>Lorem ipsum</h4>
+										<p>Lorem ipsum dolor sit</p>
+									</header>
+									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore esse tenetur accusantium porro omnis, unde mollitia totam sit nesciunt consectetur.</p>
+								</div>
+							</div>
+							<div class="feature">
+								<div class="image rounded"><img src="images/pic05.jpg" alt="" /></div>
+								<div class="content">
+									<header>
+										<h4>Recusandae nemo</h4>
+										<p>Ratione maiores a, commodi</p>
+									</header>
+									<p>Animi mollitia optio culpa expedita. Dolorem alias minima culpa repellat. Dolores, fuga maiores ut obcaecati blanditiis, at aperiam doloremque.</p>
+								</div>
+							</div>
+							<div class="feature">
+								<div class="image rounded"><img src="images/pic06.jpg" alt="" /></div>
+								<div class="content">
+									<header>
+										<h4>Laudantium fugit</h4>
+										<p>Possimus ex reprehenderit eaque</p>
+									</header>
+									<p>Maiores iusto inventore fugit architecto est iste expedita commodi sed, quasi feugiat nam neque mollitia vitae omnis, ea natus facere.</p>
+								</div>
+							</div>
+							<div class="feature">
+								<div class="image rounded"><img src="images/pic07.jpg" alt="" /></div>
+								<div class="content">
+									<header>
+										<h4>Porro aliquam</h4>
+										<p>Quaerat, excepturi eveniet laboriosam</p>
+									</header>
+									<p>Vitae earum unde, autem labore voluptas ex, iste dolorum inventore natus consequatur iure similique obcaecati aut corporis hic in! Porro sed.</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+
+			<!-- Four -->
+				<section id="four" class="wrapper style3 special">
+					<div class="container">
+						<header class="major">
+							<h2>Aenean elementum ligula</h2>
+							<p>Feugiat sed lorem ipsum magna</p>
+						</header>
+						<ul class="actions">
+							<li><a href="#" class="button special big">Get in touch</a></li>
+						</ul>
+					</div>
+				</section>
+
+		<!-- Footer -->
+			<footer id="footer">
+				<div class="container">
+					<ul class="icons">
+						<li><a href="#" class="icon fa-facebook"></a></li>
+						<li><a href="#" class="icon fa-twitter"></a></li>
+						<li><a href="#" class="icon fa-instagram"></a></li>
+					</ul>
+					<ul class="copyright">
+						<li>&copy; Untitled</li>
+						<li>Design: <a href="http://templated.co">TEMPLATED</a></li>
+						<li>Images: <a href="http://unsplash.com">Unsplash</a></li>
+					</ul>
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="assets/js/p1helper.js"></script>
+			<script src="assets/js/p1adminLogon.js"></script>
+			
+			
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+			<script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+			<script src="assets/js/jquery-2.1.4.min.js"> </script>
+
+			
+
+
+			<script>
+				// some housekeeping variables
+				
+								$('#changePassword').on('input', function (e) {
+								let thisPassword = $('#changePassword').val();
+				
+								if (regexLower.test(thisPassword)) {
+								$('#lowercase').removeClass('text-primary');
+								} else {
+									$('#lowercase').addClass('text-primary');
+								}
+								if (regexUpper.test(thisPassword)) {
+									$('#uppercase').removeClass('text-primary');
+								} else {
+									$('#uppercase').addClass('text-primary');
+								}
+				
+								if (regexNumeric.test(thisPassword)) {
+									$('#numeric').removeClass('text-primary');
+								} else {
+									$('#numeric').addClass('text-primary');
+								}
+				
+								if (regexSpecial.test(thisPassword)) {
+									$('#special').removeClass('text-primary');
+								} else {
+									$('#special').addClass('text-primary');
+								}
+				
+								if (regexLength.test(thisPassword)) {
+									$('#length').removeClass('text-primary');
+								} else {
+									$('#length').addClass('text-primary');
+								}
+							});
+							// begin process
+							$(document).ready(function () {
+								console.log("Page ready function");
+				
+							if (Cookies.get('accessToken') && Cookies.get('idToken')) {
+							// yes, user already has a session
+							console.log('id_token (' + Cookies.get('idToken') + ')');
+							console.log('accessToken (' + Cookies.get('accessToken') + ')');
+							window.location.replace(baseUrl+'/index.html');
+				
+				
+						  } else {
+				
+							  // missing accessToken or idToken for this individual
+				
+							  console.log('No existing user session or token found');
+							  // was the user just sent here from p14c?
+							  getUrlParameter();
+							  console.log("flowid value: "+flowId);
+							  if (flowId) {
+				
+								// url has a flowId - so they just arrived from p14c
+				
+								console.log('flowId found in url: ' + flowId);
+								console.log('User already bootstrapped through p14c');
+								console.log('Performing p14c ajax query to determine next step');
+								getNextStep(flowId);
+				
+							  } else {
+				
+								// url does not have a flowId.  and we don't have a session.  send them authorizationUrl
+								console.log('No flowId found in url');
+								console.log('Redirecting to p14c to bootstrap session');
+								window.location.replace(authorizationUrl);
+				
+							  }
+				
+							}
+						})
+					</script>
+				
+
+	</body>
+</html>
