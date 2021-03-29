@@ -1,6 +1,6 @@
 //p14C Variables
 const environmentID = '5d354632-b644-4d3e-a32e-af055f215ef8'; // env ID from p1 console
-const baseUrl = 'https://morgdemo.ping-eng.com/sharep1ui/'; //Where this app is hosted
+const baseUrl = 'https://morgdemo.ping-eng.com/sharep1ui'; //Where this app is hosted --> No trailing slash needed
 
 const workerClientID = '7e80217e-4283-4bf1-830f-ea6bc2fdf4ec'; //used to create/manage users
 const workerClientSecret = 'UYPFyy6jOIL8HPKTqDgtmz.uqTNyrhP7MY63kMUgqq_G3~VzIuV.qU2sREl86TiO';
@@ -16,7 +16,7 @@ const scopes = 'openid profile email address phone p1:update:user p1:read:user p
 const responseType = 'token id_token'; // tokens to recieve
 
 const landingUrl = baseUrl + '/index.html'; // url to send the person once authentication is complete
-const logoutUrl = baseUrl + 'logout/'; // whitelisted url to send a person who wants to logout
+const logoutUrl = baseUrl + '/logout/'; // whitelisted url to send a person who wants to logout
 const redirectUri = baseUrl + '/login.html'; // whitelisted url P14C sends the token or code to
 const adminRedirect = baseUrl +'/adminlogon.html'; //redirect uri for admin
 
