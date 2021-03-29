@@ -1,13 +1,10 @@
-const adminClient = 'a7c842a3-cbde-406a-b9b6-b48aecec9ed9';
-const adminRedirect = baseUrl +'/adminlogon.html';
-// build the authorization url in case we need it
 
 const authorizationUrl =
   authUrl +
   '/' +
   environmentID +
   '/as/authorize?client_id=' +
-  adminClient +
+  agentClientID +
   '&response_type=' +
   responseType +
   '&redirect_uri=' +
