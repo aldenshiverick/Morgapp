@@ -1966,7 +1966,8 @@ body {
 			input[type="button"].special:hover,
 			button.special:hover,
 			.button.special:hover {
-				background-color: #f44066;
+				/* background-color: #f44066; */
+				background-color: var(--buttonHover);
 			}
 
 			input[type="submit"].special:active,
@@ -1974,7 +1975,8 @@ body {
 			input[type="button"].special:active,
 			button.special:active,
 			.button.special:active {
-				background-color: #f21040;
+				/* background-color: #f21040; */
+				background-color: var(--buttonHover);
 			}
 
 		@media screen and (max-width: 480px) {
