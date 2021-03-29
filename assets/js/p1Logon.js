@@ -174,7 +174,10 @@ function getNextStep(flowID){
         //$('#registerUserUrl').val(data._links['registration.external'].href);
         $('#validatePasswordContentType').val('application/vnd.pingidentity.usernamePassword.check+json');
         $('#forgotPasswordURL').val(data._links["password.forgot"].href);
-        $('#socialLoginUrl').val(data._embedded.socialProviders[0]._links.authenticate.href);
+        if ($('#socialLoginUrl').val != null){
+          $('#socialLoginUrl').val(data._embedded.socialProviders[0]._links.authenticate.href);
+          $('#googleButton').show();
+        };
         //$('#partnerLoginUrl').val(data._embedded.socialProviders[1]._links.authenticate.href);
         $('#ppDiv').hide('');
         break;
