@@ -6,6 +6,9 @@
 	templated.co @templatedco
 	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
 */
+body {
+	--accentcolor: #1B4D3E;
+}
 
 /* Reset */
 
@@ -1650,7 +1653,8 @@
 
 	a {
 		text-decoration: underline;
-		color: #f32853;
+		/* color: #f32853; */
+		color: var(--accentcolor);
 	}
 
 		a:hover {
@@ -1942,7 +1946,8 @@
 		input[type="button"].special,
 		button.special,
 		.button.special {
-			background-color: #f32853;
+			/* background-color: #f32853; */
+			background-color: var(--accentcolor);
 			color: #ffffff !important;
 		}
 
@@ -2117,8 +2122,10 @@
 		input[type="email"]:focus,
 		select:focus,
 		textarea:focus {
-			border-color: #f32853;
-			box-shadow: 0 0 0 1px #f32853;
+			/* border-color: #f32853;
+			box-shadow: 0 0 0 1px #f32853; */
+			border-color: var(--accentcolor);
+			box-shadow: 0 0 0 1px var(--accentcolor);
 		}
 
 	.select-wrapper {
@@ -2229,8 +2236,10 @@
 
 		input[type="checkbox"]:focus + label:before,
 		input[type="radio"]:focus + label:before {
-			border-color: #f32853;
-			box-shadow: 0 0 0 1px #f32853;
+			/* border-color: #f32853;
+			box-shadow: 0 0 0 1px #f32853; */
+			border-color: var(--accentcolor);
+			box-shadow: 0 0 0 1px var(--accentcolor);
 		}
 
 	input[type="checkbox"] + label:before {
