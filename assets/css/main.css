@@ -11,6 +11,7 @@ body {
 	--mainColor: #ce3838; 
 	--buttonHover: #384e47;
 	--buttonText: #919db3;
+	--alternateButtonText: #31803c;
 }
 
 /* Reset */
@@ -1665,7 +1666,8 @@ body {
 		}
 
 	strong, b {
-		color: #484848;
+		/* color: #484848; */
+		color: var(--alternateButtonText);
 		font-weight: 700;
 	}
 
@@ -1678,7 +1680,8 @@ body {
 	}
 
 	h1, h2, h3, h4, h5, h6 {
-		color: #484848;
+		/* color: #484848; */
+		color: var(--alternateButtonText);
 		font-weight: 700;
 		line-height: 1em;
 		margin: 0 0 1em 0;
@@ -1919,7 +1922,8 @@ body {
 		.button.alt {
 			background-color: transparent;
 			box-shadow: inset 0 0 0 2px rgba(144, 144, 144, 0.25);
-			color: #484848 !important;
+			/* color: #484848 !important; */
+			color: var(--alternateButtonText) !important;
 		}
 
 			input[type="submit"].alt:hover,
@@ -2087,7 +2091,8 @@ body {
 	}
 
 	label {
-		color: #484848;
+		/* color: #484848; */
+		color: var(--alternateButtonText);
 		display: block;
 		font-size: 0.9em;
 		font-weight: 700;
@@ -2691,7 +2696,8 @@ body {
 		}
 
 		table th {
-			color: #484848;
+			/* color: #484848; */
+			color: var(--alternateButtonText);
 			font-size: 0.9em;
 			font-weight: 700;
 			padding: 0 0.75em 0.75em 0.75em;
@@ -2805,7 +2811,8 @@ body {
 		background-color: #fff;
 		border-bottom: solid 1px rgba(144, 144, 144, 0.25);
 		box-shadow: 0px 0.0375em 0.125em 0px rgba(0, 0, 0, 0.05);
-		color: #484848;
+		/* color: #484848; */
+		color: var(--alternateButtonText);
 		cursor: default;
 		font-size: 1.25em;
 		height: 4.5em;
@@ -2864,7 +2871,8 @@ body {
 					}
 
 						#header nav ul li a:hover {
-							color: #484848;
+							/* color: #484848; */
+							color: var(--alternateButtonText);
 						}
 
 					#header nav ul li:first-child {
@@ -3044,7 +3052,8 @@ body {
 			transition: color 0.2s ease-in-out;
 			-webkit-tap-highlight-color: transparent;
 			border: 0;
-			color: #484848;
+			/* color: #484848; */
+			color: var(--alternateButtonText);
 			cursor: pointer;
 			display: block;
 			height: 4em;
@@ -3109,7 +3118,7 @@ body {
 	#banner {
 		padding: 16em 0 13em 0;
 		background-attachment: fixed; 
-		background-image: url("images/overlay.png"), url("../../images/coupons.jpeg");
+		background-image: url("images/overlay.png"), url("../../images/background.jpeg");
 		background-position: center top;
 		background-size: cover;
 		line-height: 1.75;
