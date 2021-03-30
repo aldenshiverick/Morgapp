@@ -3123,7 +3123,7 @@ body {
 	#banner {
 		padding: 16em 0 13em 0;
 		background-attachment: fixed; 
-		background-image: url("images/overlay.png"), url("../../images/background.jpeg");
+		background-image: url("images/overlay.png"), url("../../images/background.jpg");
 		background-position: center top;
 		background-size: cover;
 		line-height: 1.75;
