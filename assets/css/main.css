@@ -6,6 +6,9 @@
 	templated.co @templatedco
 	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
 */
+/*
+	These are the colors that can be easily customized. To view these all at once go to the Elements page on your app. 
+*/
 body {
 	--accentcolor: #d4be75;  /* main button color*/
 	--mainColor: #7e57e0; 
