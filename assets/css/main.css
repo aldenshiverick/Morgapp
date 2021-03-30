@@ -7,11 +7,11 @@
 	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
 */
 body {
-	--accentcolor: #1B4D3E;  /* main button color*/
-	--mainColor: #ce3838; 
-	--buttonHover: #98b9af;
-	--buttonText: #919db3;
-	--alternateButtonText: #31803c;
+	--accentcolor: #d4be75;  /* main button color*/
+	--mainColor: #7e57e0; 
+	--buttonHover: #B9a3f1;
+	--buttonText: #ffffff;
+	--alternateButtonText: #000000;
 }
 
 /* Reset */
