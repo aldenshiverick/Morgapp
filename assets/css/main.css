@@ -10,11 +10,11 @@
 	These are the colors that can be easily customized. To view these all at once go to the Elements page on your app. 
 */
 body {
-	--accentcolor: #d4be75;  /* main button color*/
+	--accentcolor: #d4be75;  /* main button color */
 	--mainColor: #7e57e0; 
-	--buttonHover: #B9a3f1;
+	--buttonHover: #B9a3f1; /* this changes the accent color buttons */
 	--buttonText: #ffffff;
-	--alternateButtonText: #000000;
+	--alternateButtonText: #ffffff; /* I don't think this changes the color we think it does,  */
 }
 
 /* Reset */
