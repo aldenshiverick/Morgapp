@@ -14,7 +14,7 @@ body {
 	--mainColor: #7e57e0; 
 	--buttonHover: #B9a3f1; /* this changes the accent color buttons */
 	--buttonText: #ffffff;
-	--alternateButtonText: #ffffff; /* I don't think this changes the color we think it does,  */
+	--alternateButtonText: #000; 
 }
 
 /* Reset */
@@ -1845,7 +1845,7 @@ body {
 		input[type="button"]:hover,
 		button:hover,
 		.button:hover {
-			background-color: #3e3c45;
+			background-color: var(--buttonHover);
 		}
 
 		input[type="submit"]:active,
@@ -1934,7 +1934,7 @@ body {
 			input[type="button"].alt:hover,
 			button.alt:hover,
 			.button.alt:hover {
-				background-color: rgba(144, 144, 144, 0.075);
+				background-color: var(--buttonHover);
 			}
 
 			input[type="submit"].alt:active,
