@@ -57,7 +57,7 @@ function getUserValues() {
       //   document.getElementById("relationship").value = userJson.relationship;
       // }
       if(userJson.address !=null){
-        console.log("userJson.address not null is true");
+        console.log("userJson.address not null is true")
         if(userJson.address.streetAddress != null){
           document.getElementById("address").value = userJson.address.streetAddress;
         }
@@ -72,6 +72,7 @@ function getUserValues() {
         }
       }
       if(userJson.mfaEnabled == true){
+        console.log("MFA is true");
         document.getElementById("enableMFA").value = true;
       }
     } else {
