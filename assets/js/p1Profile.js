@@ -189,40 +189,40 @@ function updatePassword(){
 //   }
 //}
 
-function enableEmailMFA(){
-  let user = Cookies.get("userAPIid");
-  let url = apiUrl + "/environments/" + environmentID + "/users/" + user + "/devices/";
-  console.log("url is: " + url);
-  let at = "Bearer " + Cookies.get("accessToken");
-  let method = "POST";
+// function enableEmailMFA(){
+//   let user = Cookies.get("userAPIid");
+//   let url = apiUrl + "/environments/" + environmentID + "/users/" + user + "/devices/";
+//   console.log("url is: " + url);
+//   let at = "Bearer " + Cookies.get("accessToken");
+//   let method = "POST";
 
-  let payload = JSON.stringify({
-    type: 'EMAIL',
-    email: $('#email').val()
-  }); 
-  console.log('Payload: ' + payload);
+//   let payload = JSON.stringify({
+//     type: 'EMAIL',
+//     email: $('#email').val()
+//   }); 
+//   console.log('Payload: ' + payload);
 
-  $.ajax({
-    async: "true",
-    url: url,
-    method: method,
-    contentType: 'application/json',
-    data: payload,
-    beforeSend: function(xhr) {
-      xhr.setRequestHeader('Authorization', at);
-    }
-  }).done(function(data) {
-    nextStep(data);
-    console.log(data);
-  })
-  .fail(function(data) {
-    console.log('ajax call failed');
-    console.log(data);
-    $('#warningMessage').text(data.responseJSON.details[0].message);
-    $('#warningDiv').show();
-  });
+//   $.ajax({
+//     async: "true",
+//     url: url,
+//     method: method,
+//     contentType: 'application/json',
+//     data: payload,
+//     beforeSend: function(xhr) {
+//       xhr.setRequestHeader('Authorization', at);
+//     }
+//   }).done(function(data) {
+//     nextStep(data);
+//     console.log(data);
+//   })
+//   .fail(function(data) {
+//     console.log('ajax call failed');
+//     console.log(data);
+//     $('#warningMessage').text(data.responseJSON.details[0].message);
+//     $('#warningDiv').show();
+//   });
 
-}
+// }
  
 function OTPVerify(){
   console.log('OTPVerify called');
@@ -266,7 +266,7 @@ function updateMFA(){
   let at = "Bearer " + Cookies.get("accessToken");
   let url = apiUrl + "/environments/" + environmentID + "/users/" + user +"/mfaEnabled";
   let payload ="";
-  if(userJson.mfaEnabled == true){
+  if(document.getElementById("enableMFA").value == true){
     payload = JSON.stringify({
       "mfaEnabled": true
     });
