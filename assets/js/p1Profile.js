@@ -176,17 +176,17 @@ function updatePassword(){
   }, 1000);
 }
 
-function updateMFA(){
-  console.log("updateMFA called");
-  console.log("checkbox value: " + document.getElementById("enableMFA").value);
-  if (document.getElementById("enableMFA").value == 'on'){
-    console.log('MFA Enabled');
-    enableEmailMFA();
-  }
-  else {
-    console.log('MFA disabled');
-    disableMFA();
-  }
+// function updateMFA(){
+//   console.log("updateMFA called");
+//   console.log("checkbox value: " + document.getElementById("enableMFA").value);
+//   if (document.getElementById("enableMFA").value == 'on'){
+//     console.log('MFA Enabled');
+//     enableEmailMFA();
+//   }
+//   else {
+//     console.log('MFA disabled');
+//     disableMFA();
+//   }
 }
 
 function enableEmailMFA(){
@@ -257,20 +257,25 @@ function OTPVerify(){
 }
 
 
-function disableMFA(){
-
-}
-
-function enableMFA(){
-  console.log("Enable MFA was called");
+function updateMFA(){
+  console.log("update MFA was called");
+  console.log("checkbox value: " + document.getElementById("enableMFA").value);
   let method = "PUT";
   let user = Cookies.get("userAPIid");
   console.log('User APIid: ' + user);
   let at = "Bearer " + Cookies.get("accessToken");
   let url = apiUrl + "/environments/" + environmentID + "/users/" + user +"/mfaEnabled";
-  let payload = JSON.stringify({
-    "mfaEnabled": true
-  });
+  let payload ="";
+  if(userJson.mfaEnabled == true){
+    payload = JSON.stringify({
+      "mfaEnabled": true
+    });
+  } 
+  if(userJson.mfaEnabled == false){
+    payload = JSON.stringify({
+      "mfaEnabled": false
+    });
+  }
   console.log(payload);
   console.log('ajax (' + url + ')');
   console.log('at =' + at);
@@ -294,7 +299,43 @@ function enableMFA(){
       $('#warningMessage').text(data.responseJSON.details[0].message);
       $('#warningDiv').show();
     });
+
 }
+
+// function enableMFA(){
+//   console.log("Enable MFA was called");
+//   let method = "PUT";
+//   let user = Cookies.get("userAPIid");
+//   console.log('User APIid: ' + user);
+//   let at = "Bearer " + Cookies.get("accessToken");
+//   let url = apiUrl + "/environments/" + environmentID + "/users/" + user +"/mfaEnabled";
+//   let payload = JSON.stringify({
+//     "mfaEnabled": true
+//   });
+//   console.log(payload);
+//   console.log('ajax (' + url + ')');
+//   console.log('at =' + at);
+//   console.log("make ajax call");
+//   $.ajax({
+//       async: "true",
+//       url: url,
+//       method: method,
+//       dataType: 'json',
+//       contentType: 'application/json',
+//       data: payload,
+//       beforeSend: function(xhr) {
+//         xhr.setRequestHeader('Authorization', at);
+//       }
+//     }).done(function(data) {
+//       console.log(data);
+//     })
+//     .fail(function(data) {
+//       console.log('ajax call failed');
+//       console.log(data);
+//       $('#warningMessage').text(data.responseJSON.details[0].message);
+//       $('#warningDiv').show();
+//     });
+// }
 
 
 function nextStep(data){
