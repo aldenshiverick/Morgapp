@@ -75,6 +75,10 @@ function getUserValues() {
         console.log("MFA is true");
         document.getElementById("enableMFA").checked = true;
       }
+      else {
+        console.log("MFA is not true");
+        document.getElementById("enableMFA").checked = false;
+      }
     } else {
       document.getElementById("Hello").value = 'Welcome Guest';
     }
@@ -182,12 +186,59 @@ function updateMFA(){
   console.log("checkbox value: " + checked);
   if (checked == true){
     console.log('MFA Enabled');
-    enableEmailMFA();
+    //enableEmailMFA();
+    getMFADevices();
   }
   if(checked == false) {
     console.log('MFA disabled');
     disableMFA();
   }
+}
+
+function getMFADevices(){
+  let user = Cookies.get("userAPIid");
+  let url = apiUrl + "/environments/" + environmentID + "/users/" + user + "/devices/";
+  console.log("url is: " + url);
+  let at = "Bearer " + Cookies.get("accessToken");
+  let method = "GET";
+  $.ajax({
+    async: "true",
+    url: url,
+    method: method,
+    contentType: 'application/json',
+    data: payload,
+    beforeSend: function(xhr) {
+      xhr.setRequestHeader('Authorization', at);
+    }
+  }).done(function(data) {
+    checkEmailExists(data);
+    console.log(data);
+  })
+  .fail(function(data) {
+    console.log('ajax call failed');
+    console.log(data);
+    $('#warningMessage').text(data.responseJSON.details[0].message);
+    $('#warningDiv').show();
+  });
+}
+
+function checkEmailExists(MFAData){
+  let count = MFAData.count;
+  for (let key in object){
+    console.log("key is " + key + ", object is " + object); 
+    if(key == "email"){
+      console.log("email is " + object[key]);
+      if(object[key] == document.getElementById("email").value){
+        enableEmailMFA()
+      }
+      else{
+        enableMFA();
+      }
+  }
+  else {
+    enableMFA();
+  }
+
 }
 
 function enableEmailMFA(){
