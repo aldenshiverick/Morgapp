@@ -56,17 +56,19 @@ function getUserValues() {
       // if(userJson.relationship != null){
       //   document.getElementById("relationship").value = userJson.relationship;
       // }
-      if(userJson.address.streetAddress != null){
-        document.getElementById("address").value = userJson.address.streetAddress;
-      }
-      if(userJson.address.locality != null){
-        document.getElementById("city").value = userJson.address.locality;
-      }
-      if(userJson.address.region != null){
-        document.getElementById("state").value = userJson.address.region;
-      }
-      if(userJson.address.postalCode != null){
-        document.getElementById("zip").value = userJson.address.postalCode;
+      if(userJson.address !=null){
+        if(userJson.address.streetAddress != null){
+          document.getElementById("address").value = userJson.address.streetAddress;
+        }
+        if(userJson.address.locality != null){
+          document.getElementById("city").value = userJson.address.locality;
+        }
+        if(userJson.address.region != null){
+          document.getElementById("state").value = userJson.address.region;
+        }
+        if(userJson.address.postalCode != null){
+          document.getElementById("zip").value = userJson.address.postalCode;
+        }
       }
       if(userJson.mfaEnabled == true){
         document.getElementById("enableMFA").value = true;
