@@ -206,7 +206,6 @@ function getMFADevices(){
     url: url,
     method: method,
     contentType: 'application/json',
-    data: payload,
     beforeSend: function(xhr) {
       xhr.setRequestHeader('Authorization', at);
     }
