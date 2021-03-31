@@ -56,20 +56,24 @@ function getUserValues() {
       // if(userJson.relationship != null){
       //   document.getElementById("relationship").value = userJson.relationship;
       // }
-      if(userJson.address.streetAddress != null){
-        document.getElementById("address").value = userJson.address.streetAddress;
-      }
-      if(userJson.address.locality != null){
-        document.getElementById("city").value = userJson.address.locality;
-      }
-      if(userJson.address.region != null){
-        document.getElementById("state").value = userJson.address.region;
-      }
-      if(userJson.address.postalCode != null){
-        document.getElementById("zip").value = userJson.address.postalCode;
+      if(userJson.address !=null){
+        console.log("userJson.address not null is true")
+        if(userJson.address.streetAddress != null){
+          document.getElementById("address").value = userJson.address.streetAddress;
+        }
+        if(userJson.address.locality != null){
+          document.getElementById("city").value = userJson.address.locality;
+        }
+        if(userJson.address.region != null){
+          document.getElementById("state").value = userJson.address.region;
+        }
+        if(userJson.address.postalCode != null){
+          document.getElementById("zip").value = userJson.address.postalCode;
+        }
       }
       if(userJson.mfaEnabled == true){
-        document.getElementById("enableMFA").value = true;
+        console.log("MFA is true");
+        document.getElementById("enableMFA").checked = true;
       }
     } else {
       document.getElementById("Hello").value = 'Welcome Guest';
@@ -174,12 +178,13 @@ function updatePassword(){
 
 function updateMFA(){
   console.log("updateMFA called");
-  console.log("checkbox value: " + document.getElementById("enableMFA").value);
-  if (document.getElementById("enableMFA").value == 'on'){
+  let checked = document.getElementById("enableMFA").checked;
+  console.log("checkbox value: " + checked);
+  if (checked == true){
     console.log('MFA Enabled');
     enableEmailMFA();
   }
-  else {
+  if(checked == false) {
     console.log('MFA disabled');
     disableMFA();
   }
@@ -254,6 +259,40 @@ function OTPVerify(){
 
 
 function disableMFA(){
+  console.log("update MFA was called");
+  let checked = document.getElementById("enableMFA").checked;
+  console.log("checkbox value: " + checked);
+  let method = "PUT";
+  let user = Cookies.get("userAPIid");
+  console.log('User APIid: ' + user);
+  let at = "Bearer " + Cookies.get("accessToken");
+  let url = apiUrl + "/environments/" + environmentID + "/users/" + user +"/mfaEnabled";
+  let payload = JSON.stringify({
+      "mfaEnabled": false
+    });
+  console.log("payload is: " + payload);
+  console.log('ajax (' + url + ')');
+  console.log('at =' + at);
+  console.log("make ajax call");
+  $.ajax({
+      async: "true",
+      url: url,
+      method: method,
+      dataType: 'json',
+      contentType: 'application/json',
+      data: payload,
+      beforeSend: function(xhr) {
+        xhr.setRequestHeader('Authorization', at);
+      }
+    }).done(function(data) {
+      console.log(data);
+    })
+    .fail(function(data) {
+      console.log('ajax call failed');
+      console.log(data);
+      $('#warningMessage').text(data.responseJSON.details[0].message);
+      $('#warningDiv').show();
+    });
 
 }
 
@@ -319,14 +358,14 @@ function nextStep(data){
         enableMFA();
         break;
         case 'OTP_REQUIRED':
-        console.log('case: ACTIVE')
+        console.log('case: OTP_REQUIRED')
         $('#profile').hide();
         $('#buttons').hide();
         $('#otpDiv').show();
         $('#mfacheck').hide();
         $('#passwordChange').hide();
         $('#changePassbutton').hide();
-        enableMFA();
+        //enableMFA();
         break;
       default:
         $('#otpDiv').hide();

@@ -94,7 +94,7 @@ function adminSetUserValues(userJson) {
   function getWorkerAccessToken() {
     console.log("getWorkerAT called")
     var settings = {
-      "url": "https://auth.pingone.com/"+ environmentID +"/as/token",
+      "url": apiUrl + environmentID +"/as/token",
       "method": "POST",
       "timeout": 0,
       "headers": {
