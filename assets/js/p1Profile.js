@@ -259,7 +259,8 @@ function OTPVerify(){
 
 function updateMFA(){
   console.log("update MFA was called");
-  console.log("checkbox value: " + document.getElementById("enableMFA").checked);
+  let checked = document.getElementById("enableMFA").checked;
+  console.log("checkbox value: " + checked);
   let method = "PUT";
   let user = Cookies.get("userAPIid");
   console.log('User APIid: ' + user);
