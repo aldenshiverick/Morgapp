@@ -73,7 +73,7 @@ function getUserValues() {
       }
       if(userJson.mfaEnabled == true){
         console.log("MFA is true");
-        document.getElementById("enableMFA").value = true;
+        document.getElementById("enableMFA").value = "true";
       }
     } else {
       document.getElementById("Hello").value = 'Welcome Guest';
@@ -271,7 +271,7 @@ function updateMFA(){
       "mfaEnabled": true
     });
   } 
-  if(userJson.mfaEnabled == false){
+  if(document.getElementById("enableMFA").value == false){
     payload = JSON.stringify({
       "mfaEnabled": false
     });
