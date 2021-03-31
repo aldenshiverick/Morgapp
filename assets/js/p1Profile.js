@@ -355,7 +355,7 @@ function nextStep(data){
         $('#mfacheck').show();
         $('#passwordChange').show();
         $('#changePassbutton').show();
-        enableMFA();
+        updateMFA();
         break;
         case 'OTP_REQUIRED':
         console.log('case: ACTIVE')
@@ -365,7 +365,7 @@ function nextStep(data){
         $('#mfacheck').hide();
         $('#passwordChange').hide();
         $('#changePassbutton').hide();
-        enableMFA();
+        updateMFA();
         break;
       default:
         $('#otpDiv').hide();
