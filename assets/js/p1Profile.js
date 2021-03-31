@@ -176,53 +176,54 @@ function updatePassword(){
   }, 1000);
 }
 
-// function updateMFA(){
-//   console.log("updateMFA called");
-//   console.log("checkbox value: " + document.getElementById("enableMFA").value);
-//   if (document.getElementById("enableMFA").value == 'on'){
-//     console.log('MFA Enabled');
-//     enableEmailMFA();
-//   }
-//   else {
-//     console.log('MFA disabled');
-//     disableMFA();
-//   }
-//}
+function updateMFA(){
+  console.log("updateMFA called");
+  let checked = document.getElementById("enableMFA").checked;
+  console.log("checkbox value: " + checked);
+  if (checked == true){
+    console.log('MFA Enabled');
+    enableEmailMFA();
+  }
+  if(checked == false) {
+    console.log('MFA disabled');
+    disableMFA();
+  }
+}
 
-// function enableEmailMFA(){
-//   let user = Cookies.get("userAPIid");
-//   let url = apiUrl + "/environments/" + environmentID + "/users/" + user + "/devices/";
-//   console.log("url is: " + url);
-//   let at = "Bearer " + Cookies.get("accessToken");
-//   let method = "POST";
+function enableEmailMFA(){
+  let user = Cookies.get("userAPIid");
+  let url = apiUrl + "/environments/" + environmentID + "/users/" + user + "/devices/";
+  console.log("url is: " + url);
+  let at = "Bearer " + Cookies.get("accessToken");
+  let method = "POST";
 
-//   let payload = JSON.stringify({
-//     type: 'EMAIL',
-//     email: $('#email').val()
-//   }); 
-//   console.log('Payload: ' + payload);
+  let payload = JSON.stringify({
+    type: 'EMAIL',
+    email: $('#email').val()
+  }); 
+  console.log('Payload: ' + payload);
 
-//   $.ajax({
-//     async: "true",
-//     url: url,
-//     method: method,
-//     contentType: 'application/json',
-//     data: payload,
-//     beforeSend: function(xhr) {
-//       xhr.setRequestHeader('Authorization', at);
-//     }
-//   }).done(function(data) {
-//     nextStep(data);
-//     console.log(data);
-//   })
-//   .fail(function(data) {
-//     console.log('ajax call failed');
-//     console.log(data);
-//     $('#warningMessage').text(data.responseJSON.details[0].message);
-//     $('#warningDiv').show();
-//   });
+  $.ajax({
+    async: "true",
+    url: url,
+    method: method,
+    contentType: 'application/json',
+    data: payload,
+    beforeSend: function(xhr) {
+      xhr.setRequestHeader('Authorization', at);
+    }
+  }).done(function(data) {
+    nextStep(data);
+    console.log(data);
+  })
+  .fail(function(data) {
+    console.log('ajax call failed');
+    console.log(data);
+    $('#warningMessage').text(data.responseJSON.details[0].message);
+    $('#warningDiv').show();
+  });
 
-// }
+}
  
 function OTPVerify(){
   console.log('OTPVerify called');
@@ -257,7 +258,7 @@ function OTPVerify(){
 }
 
 
-function updateMFA(){
+function disableMFA(){
   console.log("update MFA was called");
   let checked = document.getElementById("enableMFA").checked;
   console.log("checkbox value: " + checked);
@@ -266,19 +267,9 @@ function updateMFA(){
   console.log('User APIid: ' + user);
   let at = "Bearer " + Cookies.get("accessToken");
   let url = apiUrl + "/environments/" + environmentID + "/users/" + user +"/mfaEnabled";
-  let payload ="";
-  if(checked){
-    console.log("checked is true");
-    payload = JSON.stringify({
-      "mfaEnabled": true
-    });
-  };
-  if(checked ==false){
-    console.log("checked is false");
-    payload = JSON.stringify({
+  let payload = JSON.stringify({
       "mfaEnabled": false
     });
-  };
   console.log("payload is: " + payload);
   console.log('ajax (' + url + ')');
   console.log('at =' + at);
