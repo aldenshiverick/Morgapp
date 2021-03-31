@@ -116,15 +116,19 @@
 					<form method="post" action="#">
 						<div class="row uniform 50%">
 							<div class="6u 12u$(xsmall)">
-								<input type="text" name="current_password" id="current_password" value="" placeholder="Current Password" />
+								<input type="password" name="current_password" id="current_password" value="" placeholder="Current Password" />
 							</div>
 							<div class="6u$ 12u$(xsmall)">
 								<input type="password" name="change_new_password" id="change_new_password" value="" placeholder="New Password" />
 							</div>
 						</div>
 					</form>
-				</div>
 			<br/>
+				<p class="login-submit">
+					<a class="button button_theme" onclick="changePassword();">Change Password</a>
+						<input type="hidden" name="redirect_to" value="#" />
+					</p>
+				</div>
 		</section>
 
 		<section>
