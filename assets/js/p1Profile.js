@@ -267,13 +267,13 @@ function updateMFA(){
   let at = "Bearer " + Cookies.get("accessToken");
   let url = apiUrl + "/environments/" + environmentID + "/users/" + user +"/mfaEnabled";
   let payload ="";
-  if(checked =="true"){
+  if(checked){
     console.log("checked is true");
     payload = JSON.stringify({
       "mfaEnabled": true
     });
   };
-  if(checked =="false"){
+  if(checked ==false){
     console.log("checked is false");
     payload = JSON.stringify({
       "mfaEnabled": false
