@@ -270,13 +270,13 @@ function updateMFA(){
     payload = JSON.stringify({
       "mfaEnabled": true
     });
-  } 
+  };
   if(document.getElementById("enableMFA").value == false){
     payload = JSON.stringify({
       "mfaEnabled": false
     });
-  }
-  console.log(payload);
+  };
+  console.log("payload is: " + payload);
   console.log('ajax (' + url + ')');
   console.log('at =' + at);
   console.log("make ajax call");
