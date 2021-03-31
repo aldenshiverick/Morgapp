@@ -187,7 +187,7 @@ function updatePassword(){
 //     console.log('MFA disabled');
 //     disableMFA();
 //   }
-}
+//}
 
 function enableEmailMFA(){
   let user = Cookies.get("userAPIid");
