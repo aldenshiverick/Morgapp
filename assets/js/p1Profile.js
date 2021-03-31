@@ -234,12 +234,12 @@ function checkEmailExists(MFAData){
       else{
         enableMFA();
       }
+    }
+    else {
+      enableMFA();
+    }
   }
-  else {
-    enableMFA();
-  }
-
-}
+} 
 
 function enableEmailMFA(){
   let user = Cookies.get("userAPIid");
