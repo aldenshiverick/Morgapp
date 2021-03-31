@@ -184,7 +184,7 @@ function updateMFA(){
     console.log('MFA Enabled');
     enableEmailMFA();
   }
-  if(checked ==) {
+  if(checked == false) {
     console.log('MFA disabled');
     disableMFA();
   }
