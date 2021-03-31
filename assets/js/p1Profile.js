@@ -73,7 +73,7 @@ function getUserValues() {
       }
       if(userJson.mfaEnabled == true){
         console.log("MFA is true");
-        document.getElementById("enableMFA").value = "true";
+        document.getElementById("enableMFA").value = true;
       }
     } else {
       document.getElementById("Hello").value = 'Welcome Guest';
@@ -266,12 +266,12 @@ function updateMFA(){
   let at = "Bearer " + Cookies.get("accessToken");
   let url = apiUrl + "/environments/" + environmentID + "/users/" + user +"/mfaEnabled";
   let payload ="";
-  if(document.getElementById("enableMFA").value == true){
+  if(document.getElementById("enableMFA").value == "true"){
     payload = JSON.stringify({
       "mfaEnabled": true
     });
   };
-  if(document.getElementById("enableMFA").value == false){
+  if(document.getElementById("enableMFA").value == "false"){
     payload = JSON.stringify({
       "mfaEnabled": false
     });
