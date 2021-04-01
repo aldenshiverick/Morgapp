@@ -94,52 +94,27 @@ function adminSetUserValues(userJson) {
   function getWorkerAccessToken() {
     console.log("getWorkerAT called");
     console.log("envID: " + environmentID);
+    console.log("apiURL: " + apiUrl);
     let url = authUrl + "/" + environmentID + "/as/token";
     console.log("url is " + url);
-    let method = "POST";
-    let contenttype = "application/x-www-form-urlencoded";
-    let payload = JSON.stringify({
-      "grant_type": "client_credentials",
-      "client_id": workerClientID,
-      "client_secret": workerClientSecret
-    });
-  //   var settings = {
-  //     "url": url,
-  //     "method": "POST",
-  //     "timeout": 0,
-  //     "headers": {
-  //       "Content-Type": "application/x-www-form-urlencoded"
-  //     },
-  //     "data": {
-  //       "grant_type": "client_credentials",
-  //       "client_id": workerClientID,
-  //       "client_secret": workerClientSecret
-  //     }
+    var settings = {
+      "url": url,
+      "method": "POST",
+      "timeout": 0,
+      "headers": {
+        "Content-Type": "application/x-www-form-urlencoded"
+      },
+      "data": {
+        "grant_type": "client_credentials",
+        "client_id": workerClientID,
+        "client_secret": workerClientSecret
+      }
       
-  //   };
+    };
   
-  // $.ajax(settings).done(function (response) {
-  //   console.log(response);
-  //   setCookies(response);
-  // });
-
-  $.ajax({
-    url: url,
-    method: method,
-    dataType: 'json',
-    contentType: contenttype,
-    data: payload,
-  })
-  .done(function(response) {
+  $.ajax(settings).done(function (response) {
     console.log(response);
     setCookies(response);
-    callback(data);
-  })
-  .fail(function(response) {
-    console.log('ajax call failed');
-    console.log(response);
-    $('#warningMessage').text(response.responseJSON.details[0].message);
-    $('#warningDiv').show();
   });
 }
 
