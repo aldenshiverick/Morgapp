@@ -75,6 +75,10 @@ function getUserValues() {
         console.log("MFA is true");
         document.getElementById("enableMFA").checked = true;
       }
+      else {
+        console.log("MFA is not true");
+        document.getElementById("enableMFA").checked = false;
+      }
     } else {
       document.getElementById("Hello").value = 'Welcome Guest';
     }
@@ -182,7 +186,8 @@ function updateMFA(){
   console.log("checkbox value: " + checked);
   if (checked == true){
     console.log('MFA Enabled');
-    enableEmailMFA();
+    //enableEmailMFA();
+    getMFADevices();
   }
   if(checked == false) {
     console.log('MFA disabled');
@@ -190,7 +195,65 @@ function updateMFA(){
   }
 }
 
+function getMFADevices(){
+  console.log("getMFADevices called");
+  let user = Cookies.get("userAPIid");
+  let url = apiUrl + "/environments/" + environmentID + "/users/" + user + "/devices/";
+  console.log("url is: " + url);
+  let at = "Bearer " + Cookies.get("accessToken");
+  let method = "GET";
+  $.ajax({
+    async: "true",
+    url: url,
+    method: method,
+    contentType: 'application/json',
+    beforeSend: function(xhr) {
+      xhr.setRequestHeader('Authorization', at);
+    }
+  }).done(function(data) {
+    console.log(data)
+    checkEmailExists(data);
+    ;
+  })
+  .fail(function(data) {
+    console.log('ajax call failed');
+    console.log(data);
+    $('#warningMessage').text(data.responseJSON.details[0].message);
+    $('#warningDiv').show();
+  });
+}
+
+function checkEmailExists(MFAData){
+  console.log("check Email exists called.");
+  let count = MFAData.count;
+  let object="";
+  if(count<1){
+    enableEmailMFA();
+  }
+  else{
+    for(i=0; i<count; i++){
+      object= MFAData._embedded.devices[i];
+      if(MFAData._embedded.devices[i].type == "EMAIL"){
+        console.log("type is EMAIL");
+        if(MFAData._embedded.devices[i].email == document.getElementById("email").value){
+          console.log("email already exists");
+          enableMFA();
+        }
+        else{
+          console.log("this email doesn't exist");
+          enableEmailMFA();
+        }
+      }
+      else {
+        console.log("NO email doesn't exist, add email");
+        enableEmailMFA();
+      }
+    }
+  }
+} 
+
 function enableEmailMFA(){
+  console.log("enableEMailMFA was called")
   let user = Cookies.get("userAPIid");
   let url = apiUrl + "/environments/" + environmentID + "/users/" + user + "/devices/";
   console.log("url is: " + url);
@@ -382,14 +445,14 @@ function cashout(){
   
 function approveRewards(){
   console.log('approveRewards called');
-  let transactionclient = "8a5c089d-2277-4b9f-a3dc-a7a62e919a5b";
-  let transactionPassword = "zM1MJiZeK-4WXr0_bl9y~Bi9.vmKHOwxUPPCXArtSabwmZGALVHm.NuGSbw7QJwz";
+  let transactionclient = appClientID;
+  let transactionPassword = appClientSecret;
   let header ={
       "alg": "HS256",
       "typ": "JWT"
     };
   let body ={
-    "aud": "https://auth.pingone.com/" + environmentID + "/as",
+    "aud": authUrl + environmentID + "/as",
     "iss": transactionclient,
     "sub": $('#email').val(),
     "pi.template": {
