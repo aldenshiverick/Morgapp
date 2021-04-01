@@ -445,14 +445,14 @@ function cashout(){
   
 function approveRewards(){
   console.log('approveRewards called');
-  let transactionclient = "8a5c089d-2277-4b9f-a3dc-a7a62e919a5b";
-  let transactionPassword = "zM1MJiZeK-4WXr0_bl9y~Bi9.vmKHOwxUPPCXArtSabwmZGALVHm.NuGSbw7QJwz";
+  let transactionclient = appClientID;
+  let transactionPassword = appClientSecret;
   let header ={
       "alg": "HS256",
       "typ": "JWT"
     };
   let body ={
-    "aud": "https://auth.pingone.com/" + environmentID + "/as",
+    "aud": authUrl + environmentID + "/as",
     "iss": transactionclient,
     "sub": $('#email').val(),
     "pi.template": {

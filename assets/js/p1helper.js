@@ -6,6 +6,7 @@ const workerClientID = '7e80217e-4283-4bf1-830f-ea6bc2fdf4ec'; //used to create/
 const workerClientSecret = 'UYPFyy6jOIL8HPKTqDgtmz.uqTNyrhP7MY63kMUgqq_G3~VzIuV.qU2sREl86TiO';
 
 const appClientID = '153f06e7-b750-447c-8626-cd90d992bcc2'; //used for enduser logon experience
+const appClientSecret ='O6KAnh~0cYTbP5QPeib~XmK8979QlDHl4amUEiWsB~5k1oRrzCUGJf4G79pzyCUi' //used for out of band transaction approvals
 
 const agentClientID ='fec0bfde-63b0-4256-bff7-46105dbd2497'; //user for agent/admin logon experience
 
