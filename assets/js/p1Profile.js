@@ -230,16 +230,19 @@ function checkEmailExists(MFAData){
   for(i=0; i<count; i++){
     object= MFAData._embedded.devices[i];
     if(MFAData._embedded.devices[i].type == "EMAIL"){
-      console.log("email is " + object[key]);
+      console.log("type is EMAIL");
       if(MFAData._embedded.devices[i].email == document.getElementById("email").value){
-        enableEmailMFA();
+        console.log("email already exists");
+        enableMFA();
       }
       else{
-        enableMFA();
+        console.log("this email doesn't exist");
+        enableEmailMFA();
       }
     }
     else {
-      enableMFA();
+      console.log("NO email doesn't exist, add email");
+      enableEmailMFA();
     }
   }
 } 
