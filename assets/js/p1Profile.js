@@ -223,7 +223,7 @@ function getMFADevices(){
 
 function checkEmailExists(MFAData){
   //let count = MFAData.count;
-  let object=MFADatal
+  let object=MFAData;
   for (let key in object){
     console.log("key is " + key + ", object is " + object); 
     if(key == "email"){
