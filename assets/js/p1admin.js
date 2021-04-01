@@ -93,8 +93,10 @@ function adminSetUserValues(userJson) {
 
   function getWorkerAccessToken() {
     console.log("getWorkerAT called")
+    let url = apiUrl+environmentID +"/as/token";
+    console.log("url is " + url);
     var settings = {
-      "url": apiUrl + environmentID +"/as/token",
+      "url": url,
       "method": "POST",
       "timeout": 0,
       "headers": {
