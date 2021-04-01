@@ -92,8 +92,9 @@ function adminSetUserValues(userJson) {
 }
 
   function getWorkerAccessToken() {
-    console.log("getWorkerAT called")
-    let url = apiUrl+environmentID +"/as/token";
+    console.log("getWorkerAT called");
+    console.log("envID: " + environmentID);
+    let url = apiUrl + environmentID + "/as/token";
     console.log("url is " + url);
     var settings = {
       "url": url,
