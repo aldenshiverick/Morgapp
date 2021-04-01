@@ -95,9 +95,9 @@ function adminSetUserValues(userJson) {
     console.log("getWorkerAT called");
     console.log("envID: " + environmentID);
     let env = environmentID;
-    console.log("env = "+env);
+    console.log("env = "+ env);
     console.log("apiURL: " + apiUrl);
-    let url = apiUrl + env + "/as/token";
+    let url = "https://api.pingone.com/" + env + "/as/token";
     console.log("url is " + url);
     var settings = {
       "url": url,
