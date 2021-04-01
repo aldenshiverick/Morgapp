@@ -227,22 +227,27 @@ function checkEmailExists(MFAData){
   console.log("check Email exists called.");
   let count = MFAData.count;
   let object="";
-  for(i=0; i<count; i++){
-    object= MFAData._embedded.devices[i];
-    if(MFAData._embedded.devices[i].type == "EMAIL"){
-      console.log("type is EMAIL");
-      if(MFAData._embedded.devices[i].email == document.getElementById("email").value){
-        console.log("email already exists");
-        enableMFA();
+  if(count<1){
+    enableEmailMFA();
+  }
+  else{
+    for(i=0; i<count; i++){
+      object= MFAData._embedded.devices[i];
+      if(MFAData._embedded.devices[i].type == "EMAIL"){
+        console.log("type is EMAIL");
+        if(MFAData._embedded.devices[i].email == document.getElementById("email").value){
+          console.log("email already exists");
+          enableMFA();
+        }
+        else{
+          console.log("this email doesn't exist");
+          enableEmailMFA();
+        }
       }
-      else{
-        console.log("this email doesn't exist");
+      else {
+        console.log("NO email doesn't exist, add email");
         enableEmailMFA();
       }
-    }
-    else {
-      console.log("NO email doesn't exist, add email");
-      enableEmailMFA();
     }
   }
 } 
