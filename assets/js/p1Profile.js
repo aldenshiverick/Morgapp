@@ -227,7 +227,7 @@ function checkEmailExists(MFAData){
   console.log("check Email exists called.");
   let count = MFAData.count;
   let object="";
-  for(i=0; i<count; i++)
+  for(i=0; i<count; i++){
     object= MFAData._embedded.devices[i];
     for (let key in object){
       console.log("key is " + key + ", object is " + object); 
