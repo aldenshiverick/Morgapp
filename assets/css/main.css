@@ -12,7 +12,7 @@
 body {
 	--accentcolor: #76AAFA;
 	--mainColor: #7e57e0; 
-	--buttonHover: #B9a3f1; /* this changes the accent color buttons */
+	--buttonHover: #B9a3f1; /* this changes the button color when you hover over it */
 	--buttonText: #ffffff;
 	--alternateButtonText: #000; 
 }
