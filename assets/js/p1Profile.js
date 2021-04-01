@@ -225,21 +225,24 @@ function getMFADevices(){
 
 function checkEmailExists(MFAData){
   console.log("check Email exists called.");
-  //let count = MFAData.count;
-  let object=MFAData._embedded.devices;
-  for (let key in object){
-    console.log("key is " + key + ", object is " + object); 
-    if(key == "type"){
-      console.log("email is " + object[key]);
-      if(object[key] == document.getElementById("email").value){
-        enableEmailMFA();
+  let count = MFAData.count;
+  let object="";
+  for(i=0; i<count; i++)
+    object= MFAData._embedded.devices[i];
+    for (let key in object){
+      console.log("key is " + key + ", object is " + object); 
+      if(key == "type"){
+        console.log("email is " + object[key]);
+        if(object[key] == document.getElementById("email").value){
+          enableEmailMFA();
+        }
+        else{
+          enableMFA();
+        }
       }
-      else{
+      else {
         enableMFA();
       }
-    }
-    else {
-      enableMFA();
     }
   }
 } 
