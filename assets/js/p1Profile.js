@@ -229,20 +229,17 @@ function checkEmailExists(MFAData){
   let object="";
   for(i=0; i<count; i++){
     object= MFAData._embedded.devices[i];
-    for (let key in object){
-      console.log("key is " + key + ", object is " + object); 
-      if(key == "type"){
-        console.log("email is " + object[key]);
-        if(object[key] == document.getElementById("email").value){
-          enableEmailMFA();
-        }
-        else{
-          enableMFA();
-        }
+    if(MFAData._embedded.devices[i].type == "EMAIL"){
+      console.log("email is " + object[key]);
+      if(MFAData._embedded.devices[i].email == document.getElementById("email").value){
+        enableEmailMFA();
       }
-      else {
+      else{
         enableMFA();
       }
+    }
+    else {
+      enableMFA();
     }
   }
 } 
