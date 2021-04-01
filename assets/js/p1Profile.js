@@ -211,8 +211,9 @@ function getMFADevices(){
       xhr.setRequestHeader('Authorization', at);
     }
   }).done(function(data) {
+    console.log(data)
     checkEmailExists(data);
-    console.log(data);
+    ;
   })
   .fail(function(data) {
     console.log('ajax call failed');
@@ -225,10 +226,10 @@ function getMFADevices(){
 function checkEmailExists(MFAData){
   console.log("check Email exists called.");
   //let count = MFAData.count;
-  let object=MFAData;
+  let object=MFAData._embedded.devices;
   for (let key in object){
     console.log("key is " + key + ", object is " + object); 
-    if(key == "email"){
+    if(key == "type"){
       console.log("email is " + object[key]);
       if(object[key] == document.getElementById("email").value){
         enableEmailMFA();
