@@ -196,6 +196,7 @@ function updateMFA(){
 }
 
 function getMFADevices(){
+  console.log("getMFADevices called");
   let user = Cookies.get("userAPIid");
   let url = apiUrl + "/environments/" + environmentID + "/users/" + user + "/devices/";
   console.log("url is: " + url);
@@ -222,6 +223,7 @@ function getMFADevices(){
 }
 
 function checkEmailExists(MFAData){
+  console.log("check Email exists called.");
   //let count = MFAData.count;
   let object=MFAData;
   for (let key in object){
@@ -229,7 +231,7 @@ function checkEmailExists(MFAData){
     if(key == "email"){
       console.log("email is " + object[key]);
       if(object[key] == document.getElementById("email").value){
-        enableEmailMFA()
+        enableEmailMFA();
       }
       else{
         enableMFA();
@@ -242,6 +244,7 @@ function checkEmailExists(MFAData){
 } 
 
 function enableEmailMFA(){
+  console.log("enableEMailMFA was called")
   let user = Cookies.get("userAPIid");
   let url = apiUrl + "/environments/" + environmentID + "/users/" + user + "/devices/";
   console.log("url is: " + url);
