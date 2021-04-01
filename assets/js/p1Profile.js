@@ -222,7 +222,8 @@ function getMFADevices(){
 }
 
 function checkEmailExists(MFAData){
-  let count = MFAData.count;
+  //let count = MFAData.count;
+  let object=MFADatal
   for (let key in object){
     console.log("key is " + key + ", object is " + object); 
     if(key == "email"){
