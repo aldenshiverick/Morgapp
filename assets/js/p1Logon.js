@@ -185,7 +185,7 @@ function getNextStep(flowID){
             if(i=0){
               $('#socialLoginUrl0').val(data._embedded.socialProviders[i]._links.authenticate.href);
             }
-            if(i=2){
+            if(i=1){
               $('#socialLoginUrl1').val(data._embedded.socialProviders[i]._links.authenticate.href);
             }
             //$('#socialLoginUrl' + i).val(data._embedded.socialProviders[i]._links.authenticate.href);
