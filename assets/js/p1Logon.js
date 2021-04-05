@@ -289,8 +289,8 @@ function getNextStep(flowID){
         $('#warningDiv').hide();
         $('#ppDiv').show();
         $('#ppURL').val(data._links["user.update"].href);
-        $('labelID1').val(data._embedded.attributes[0].name);
-        $('labelID2').val(data._embedded.attributes[1].name);
+        $('#labelID1').val(data._embedded.attributes[0].name);
+        $('#labelID2').val(data._embedded.attributes[1].name);
         getPPValues(data);
       break;
       default:
