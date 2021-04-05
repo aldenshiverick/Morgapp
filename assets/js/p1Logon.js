@@ -183,17 +183,19 @@ function getNextStep(flowID){
             console.log("Add " + data._embedded.socialProviders[i].name);
             console.log("logon url: " + data._embedded.socialProviders[i]._links.authenticate.href);
             if(i=0){
+              console.log("i = 0");
               $('#socialLoginUrl0').val(data._embedded.socialProviders[i]._links.authenticate.href);
-            };
+            }
             if(i=1){
+              console.log("i = 1");
               $('#socialLoginUrl1').val(data._embedded.socialProviders[i]._links.authenticate.href);
-            };
+            }
             //$('#socialLoginUrl' + i).val(data._embedded.socialProviders[i]._links.authenticate.href);
             $('urlid').val(data._embedded.socialProviders[i]._links.authenticate.href);
             document.getElementById("socialButton"+i).style.visibility ="visible";
             document.getElementById("socialButton" +i).innerHTML = 'Signon With ' + data._embedded.socialProviders[i].name;
           }
-        };
+        }
         //$('#partnerLoginUrl').val(data._embedded.socialProviders[1]._links.authenticate.href);
         $('#ppDiv').hide('');
         break;
