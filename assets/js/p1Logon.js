@@ -175,10 +175,11 @@ function getNextStep(flowID){
         $('#validatePasswordContentType').val('application/vnd.pingidentity.usernamePassword.check+json');
         $('#forgotPasswordURL').val(data._links["password.forgot"].href);
         $('#socialLoginUrl').val(data._embedded.socialProviders[0]._links.authenticate.href);
-        // if ("socialProviders" in data){
-        //   $('#socialLoginUrl').val(data._embedded.socialProviders[0]._links.authenticate.href);
-        //   $('#googleButton').show();
-        // };
+        if ("socialProviders" in data._embedded){
+          console.log("social exists");
+          $('#socialLoginUrl').val(data._embedded.socialProviders[0]._links.authenticate.href);
+          $('#googleButton').show();
+        };
         //$('#partnerLoginUrl').val(data._embedded.socialProviders[1]._links.authenticate.href);
         $('#ppDiv').hide('');
         break;
