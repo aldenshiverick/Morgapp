@@ -178,7 +178,8 @@ function getNextStep(flowID){
         if ("socialProviders" in data._embedded){
           console.log("social exists");
           $('#socialLoginUrl').val(data._embedded.socialProviders[0]._links.authenticate.href);
-          $('#googleButton').show();
+          //$('#googleButton').show();
+          $('#googleButton').style.display = visible;
         };
         //$('#partnerLoginUrl').val(data._embedded.socialProviders[1]._links.authenticate.href);
         $('#ppDiv').hide('');
