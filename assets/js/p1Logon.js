@@ -180,13 +180,14 @@ function getNextStep(flowID){
           let count = Object.keys(data._embedded.socialProviders).length;
           console.log("There are " + count +" social providers");
           for(i=0; i<count; i++){
+            console.log("i is: " + i);
             console.log("Add " + data._embedded.socialProviders[i].name);
             console.log("logon url: " + data._embedded.socialProviders[i]._links.authenticate.href);
-            if(i=0){
+            if(i==0){
               console.log("i = 0");
               $('#socialLoginUrl0').val(data._embedded.socialProviders[i]._links.authenticate.href);
             }
-            if(i=1){
+            if(i==1){
               console.log("i = 1");
               $('#socialLoginUrl1').val(data._embedded.socialProviders[i]._links.authenticate.href);
             }
