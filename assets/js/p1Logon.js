@@ -181,7 +181,11 @@ function getNextStep(flowID){
           console.log("There are " + count +" social providers");
           for(i=0; i<count; i++){
             console.log("Add " + data._embedded.socialProviders[i].name);
-            $('#socialLoginUrl'+i).val(data._embedded.socialProviders[i]._links.authenticate.href);
+            console.log("logon url: " + data._embedded.socialProviders[i]._links.authenticate.href);
+            let urlid = "socialLoginUrl" + i;
+            //$('#socialLoginUrl' + i).val(data._embedded.socialProviders[i]._links.authenticate.href);
+            $(urlid).val(data._embedded.socialProviders[i]._links.authenticate.href);
+
             document.getElementById("socialButton"+i).style.visibility ="visible";
             document.getElementById("socialButton" +i).innerHTML = 'Signon With ' + data._embedded.socialProviders[i].name;
           }
