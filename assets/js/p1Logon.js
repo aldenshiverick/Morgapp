@@ -87,7 +87,7 @@ function initiateLogon(){
 function getUrlParameter () {
   console.log('getUrlParameter was called');
   let pageUrl = window.location.href;
-  const pound = '#';
+  const pound = 'access_toke'
   const q = '?';
   console.log('pageUrl: ' + pageUrl);
   if (pageUrl.includes(pound)) {
