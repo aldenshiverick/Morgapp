@@ -179,10 +179,11 @@ function getNextStep(flowID){
           console.log("social exists");
           let count = Object.keys(data._embedded.socialProviders).length;
           console.log("There are " + count +" social providers");
-          $('#socialLoginUrl').val(data._embedded.socialProviders[0]._links.authenticate.href);
-          //$('#googleButton').show();
-          document.getElementById("googleButton").style.visibility ="visible";
-          //$('#googleButton').style.visibility = "visible";
+          for(i=0; i<count; i++){
+            $('#socialLoginUrl').val(data._embedded.socialProviders[0]._links.authenticate.href);
+            document.getElementById("googleButton").style.visibility ="visible";
+            document.getElementById("googleButton").innerHTML = 'Signon With ' + data._embedded.socialProviders[i].name;
+          }
         };
         //$('#partnerLoginUrl').val(data._embedded.socialProviders[1]._links.authenticate.href);
         $('#ppDiv').hide('');
