@@ -58,7 +58,8 @@
 				<input type="text" class="form-control" name="forgotPasswordURL" id="forgotPasswordURL" readonly />
 		  	</div>
 		  	<div class="mfn-login" style="display: none;">
-			  	<input type="text" class="form-control" name="socialLoginUrl" id="socialLoginUrl" readonly />
+			  	<input type="text" class="form-control" name="socialLoginUrl0" id="socialLoginUrl0" readonly />
+				<input type="text" class="form-control" name="socialLoginUrl1" id="socialLoginUrl1" readonly />
 		  	</div>
 			<!-- end hidden divs -->
 			<section id = "loginDiv" class = "wrapper">
@@ -84,7 +85,9 @@
 					<input type="hidden" name="redirect_to" value="#" />
 						<a class="button button_theme" onclick="redirect_toReg();">Register</a>
 					<input type="hidden" name="redirect_to" value="#" />
-						<a class="button button_theme" style="visibility: hidden;" id =googleButton onclick="redirect_toSocial();"></a>
+						<a class="button button_theme" style="visibility: hidden;" id =socialButton0 onclick="redirect_toSocial();"></a>
+						<input type="hidden" name="redirect_to" value="#" />
+						<a class="button button_theme" style="visibility: hidden;" id =socialButton1 onclick="redirect_toSocial();"></a>
 				</div>
 			</p>
 			</div>
