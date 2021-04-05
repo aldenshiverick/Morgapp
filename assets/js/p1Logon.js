@@ -177,6 +177,8 @@ function getNextStep(flowID){
         //$('#socialLoginUrl').val(data._embedded.socialProviders[0]._links.authenticate.href);
         if ("socialProviders" in data._embedded){
           console.log("social exists");
+          let count = Object.keys(data._embedded.socialProviders).length;
+          console.log("There are " + count +" social providers");
           $('#socialLoginUrl').val(data._embedded.socialProviders[0]._links.authenticate.href);
           //$('#googleButton').show();
           document.getElementById("googleButton").style.visibility ="visible";
