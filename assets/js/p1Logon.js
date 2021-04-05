@@ -174,7 +174,7 @@ function getNextStep(flowID){
         //$('#registerUserUrl').val(data._links['registration.external'].href);
         $('#validatePasswordContentType').val('application/vnd.pingidentity.usernamePassword.check+json');
         $('#forgotPasswordURL').val(data._links["password.forgot"].href);
-        $('#socialLoginUrl').val(data._embedded.socialProviders[0]._links.authenticate.href);
+        //$('#socialLoginUrl').val(data._embedded.socialProviders[0]._links.authenticate.href);
         if ("socialProviders" in data._embedded){
           console.log("social exists");
           $('#socialLoginUrl').val(data._embedded.socialProviders[0]._links.authenticate.href);
