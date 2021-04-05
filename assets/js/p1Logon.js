@@ -86,8 +86,8 @@ function initiateLogon(){
   // getUrlParameter function parses out the querystring to fetch specific value (e.g., flowId)
 function getUrlParameter () {
   console.log('getUrlParameter was called');
-  //let pageUrl = window.location.href;
-  const pound = 'access_token';
+  let pageUrl = window.location.href;
+  const pound = '#';
   const q = '?';
   console.log('pageUrl: ' + pageUrl);
   if (pageUrl.includes(pound)) {
@@ -117,7 +117,7 @@ function getUrlParameter () {
   } else if (pageUrl.includes(q)) {
     console.log("pageUrl is not null");
     pageUrl = pageUrl.substring(pageUrl.indexOf(q) + 1);
-    //console.log("removed base at ?:" + pageUrl);
+    console.log("removed base at ?:" + pageUrl);
     let urlVariables = pageUrl.split('&');
 
     console.log("urlVariables: " + urlVariables);
