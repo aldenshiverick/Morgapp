@@ -289,6 +289,8 @@ function getNextStep(flowID){
         $('#warningDiv').hide();
         $('#ppDiv').show();
         $('#ppURL').val(data._links["user.update"].href);
+        $('labelID1').val(data._embedded.attributes[0].name);
+        $('labelID2').val(data._embedded.attributes[1].name);
         getPPValues(data);
       break;
       default:
@@ -436,8 +438,8 @@ function getNextStep(flowID){
   document.getElementById("prompt").innerHTML = data._embedded.promptText;
   document.getElementById("label1").innerHTML = data._embedded.attributes[0].displayName;
   document.getElementById("label2").innerHTML = data._embedded.attributes[1].displayName;
-  document.getElementById("labelID1").innerHTML = data._embedded.attributes[0].displayName;
-  document.getElementById("labelID2").innerHTML = data._embedded.attributes[1].displayName;
+  document.getElementById("label1").innerHTML = data._embedded.attributes[0].name;
+  document.getElementById("label2").innerHTML = data._embedded.attributes[1].name;
   console.log('label1: ' + data._embedded.attributes[0].displayName);
   console.log('label2: ' + data._embedded.attributes[1].displayName);
 }
