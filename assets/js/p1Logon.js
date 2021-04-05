@@ -180,7 +180,8 @@ function getNextStep(flowID){
           let count = Object.keys(data._embedded.socialProviders).length;
           console.log("There are " + count +" social providers");
           for(i=0; i<count; i++){
-            $('#socialLoginUrl').val(data._embedded.socialProviders[0]._links.authenticate.href);
+            console.log("Add " + data._embedded.socialProviders[i].name);
+            $('#socialLoginUrl').val(data._embedded.socialProviders[i]._links.authenticate.href);
             document.getElementById("googleButton").style.visibility ="visible";
             document.getElementById("googleButton").innerHTML = 'Signon With ' + data._embedded.socialProviders[i].name;
           }
