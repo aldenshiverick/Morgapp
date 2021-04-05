@@ -389,11 +389,13 @@ function getNextStep(flowID){
     console.log('flowID cookeis set? ' + flowId);
     console.log("Redirect to social number:" + num);
     
-    console.log('social URL: ' + $('#socialLoginUrl').val());
+    
     if(num = 0){
+      console.log('social URL: ' + $('#socialLoginUrl0').val());
       location.href = $('#socialLoginUrl0').val();
     }
     if(num = 1){
+      console.log('social URL: ' + $('#socialLoginUrl1').val());
       location.href = $('#socialLoginUrl1').val();
     }
     //location.href = $('#socialLoginUrl').val();
