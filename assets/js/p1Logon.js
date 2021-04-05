@@ -183,7 +183,7 @@ function getNextStep(flowID){
             console.log("Add " + data._embedded.socialProviders[i].name);
             $('#socialLoginUrl'+i).val(data._embedded.socialProviders[i]._links.authenticate.href);
             document.getElementById("socialButton"+i).style.visibility ="visible";
-            document.getElementById("googleButton" +i).innerHTML = 'Signon With ' + data._embedded.socialProviders[i].name;
+            document.getElementById("socialButton" +i).innerHTML = 'Signon With ' + data._embedded.socialProviders[i].name;
           }
         };
         //$('#partnerLoginUrl').val(data._embedded.socialProviders[1]._links.authenticate.href);
