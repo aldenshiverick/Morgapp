@@ -438,20 +438,20 @@ function getNextStep(flowID){
   document.getElementById("prompt").innerHTML = data._embedded.promptText;
   document.getElementById("label1").innerHTML = data._embedded.attributes[0].displayName;
   document.getElementById("label2").innerHTML = data._embedded.attributes[1].displayName;
-  document.getElementById("label1").innerHTML = data._embedded.attributes[0].name;
-  document.getElementById("label2").innerHTML = data._embedded.attributes[1].name;
-  console.log('label1: ' + data._embedded.attributes[0].displayName);
-  console.log('label2: ' + data._embedded.attributes[1].displayName);
+  document.getElementById("labelID1").innerHTML = data._embedded.attributes[0].name;
+  document.getElementById("labelID2").innerHTML = data._embedded.attributes[1].name;
+  console.log('labelID1: ' + data._embedded.attributes[0].name);
+  console.log('labelID2: ' + data._embedded.attributes[1].name);
 }
 function setPPValues(){
   let url = $('#ppURL').val();
   let method = "POST";
   console.log('URL: ' + url);
   let contentType = "application/vnd.pingidentity.user.update+json";
-  let label1 = $('#labelID1').val();
-  let label2 = $('#labelID2').val();
+  // let labelID1 = $('#labelID1').val();
+  // let labelID2 = $('#labelID2').val();
   console.log("label1: " + label1);
-  let values = label1 + ":" + $('#value1').val() +"," + label2 +":" + $('#value2').val();
+  let values = $('#labelID1').val() + ":" + $('#value1').val() +"," + $('#labelID2').val() +":" + $('#value2').val();
   console.log("Values: "+ values);
   let payload = JSON.stringify({
       values
