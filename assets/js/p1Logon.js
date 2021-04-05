@@ -384,13 +384,19 @@ function getNextStep(flowID){
   }
 
 
-  function redirect_toSocial(){
+  function redirect_toSocial(num){
     Cookies.set('flowID', flowId, {sameSite: 'strict'});
     console.log('flowID cookeis set? ' + flowId);
+    console.log("Redirect to social number:" + num);
     
     console.log('social URL: ' + $('#socialLoginUrl').val());
-
-    location.href = $('#socialLoginUrl').val();
+    if(num = 0){
+      location.href = $('#socialLoginUrl0').val();
+    }
+    if(num = 1){
+      location.href = $('#socialLoginUrl1').val();
+    }
+    //location.href = $('#socialLoginUrl').val();
   }
   
   //-------MFA Calls -------//
