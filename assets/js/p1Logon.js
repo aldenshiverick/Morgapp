@@ -436,6 +436,8 @@ function getNextStep(flowID){
   document.getElementById("prompt").innerHTML = data._embedded.promptText;
   document.getElementById("label1").innerHTML = data._embedded.attributes[0].displayName;
   document.getElementById("label2").innerHTML = data._embedded.attributes[1].displayName;
+  document.getElementById("labelID1").innerHTML = data._embedded.attributes[0].displayName;
+  document.getElementById("labelID2").innerHTML = data._embedded.attributes[1].displayName;
   console.log('label1: ' + data._embedded.attributes[0].displayName);
   console.log('label2: ' + data._embedded.attributes[1].displayName);
 }
@@ -444,8 +446,8 @@ function setPPValues(){
   let method = "POST";
   console.log('URL: ' + url);
   let contentType = "application/vnd.pingidentity.user.update+json";
-  let label1 = $('#label1').val();
-  let label2 = $('#label2').val();
+  let label1 = $('#labelID1').val();
+  let label2 = $('#labelID2').val();
   console.log("label1: " + label1);
   let values = label1 + ":" + $('#value1').val() +"," + label2 +":" + $('#value2').val();
   console.log("Values: "+ values);
