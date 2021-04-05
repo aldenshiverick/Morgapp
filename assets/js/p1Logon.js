@@ -181,9 +181,9 @@ function getNextStep(flowID){
           console.log("There are " + count +" social providers");
           for(i=0; i<count; i++){
             console.log("Add " + data._embedded.socialProviders[i].name);
-            $('#socialLoginUrl').val(data._embedded.socialProviders[i]._links.authenticate.href);
-            document.getElementById("googleButton").style.visibility ="visible";
-            document.getElementById("googleButton").innerHTML = 'Signon With ' + data._embedded.socialProviders[i].name;
+            $('#socialLoginUrl'+i).val(data._embedded.socialProviders[i]._links.authenticate.href);
+            document.getElementById("socialButton"+i).style.visibility ="visible";
+            document.getElementById("googleButton" +i).innerHTML = 'Signon With ' + data._embedded.socialProviders[i].name;
           }
         };
         //$('#partnerLoginUrl').val(data._embedded.socialProviders[1]._links.authenticate.href);
