@@ -86,16 +86,14 @@ function initiateLogon(){
   // getUrlParameter function parses out the querystring to fetch specific value (e.g., flowId)
 function getUrlParameter () {
   console.log('getUrlParameter was called');
-  let pageUrl = window.location.href;
-  const pound = '#';
+  //let pageUrl = window.location.href;
+  const pound = 'access_token';
   const q = '?';
   console.log('pageUrl: ' + pageUrl);
   if (pageUrl.includes(pound)) {
     console.log('pageUrl is not null and has #');
-    pageUrl = pageUrl.substring(pageUrl.indexOf(pound) + 1);
-    console.log('removed base at #:' + pageUrl);
+    //pageUrl = pageUrl.substring(pageUrl.indexOf(pound) + 1);
     const urlVariables = pageUrl.split('&');
-
     console.log('urlVariables: ' + urlVariables);
     for (let i = 0; i < urlVariables.length; i++) {
       const thisParameterName = urlVariables[i].split('=');
@@ -119,7 +117,7 @@ function getUrlParameter () {
   } else if (pageUrl.includes(q)) {
     console.log("pageUrl is not null");
     pageUrl = pageUrl.substring(pageUrl.indexOf(q) + 1);
-    console.log("removed base at ?:" + pageUrl);
+    //console.log("removed base at ?:" + pageUrl);
     let urlVariables = pageUrl.split('&');
 
     console.log("urlVariables: " + urlVariables);
@@ -137,11 +135,10 @@ function getUrlParameter () {
 }
 
 function getNextStep(flowID){
+  console.log('getNextStep called');
   let flowUrl = authUrl + '/' + environmentID + '/flows/' + flowId;
   exJax('GET', flowUrl, nextStep, 'application/json');
 }
-
-
 
 
   function setCookies(data){
