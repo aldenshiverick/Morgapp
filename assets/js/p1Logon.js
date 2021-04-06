@@ -453,7 +453,7 @@ function setPPValues(){
   let values = "";
 
   console.log("labelID1: " + $('#labelID1').val());
-  if(labelID1.toString().contains('.') && labelID2.contains('.')){
+  if(labelID1.contains(".") && labelID2.contains(".")){
     console.log("is a JSON");
     console.log("label1 substring: " + labelID1.substring(0,'.') + "label2 substring" + labelID2.substring(0,'.'));
     if(labelID1.substring(0,'.')==labelID2.substring(0,'.')){
