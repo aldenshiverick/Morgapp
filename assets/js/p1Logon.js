@@ -455,8 +455,8 @@ function setPPValues(){
   console.log("labelID1: " + $('#labelID1').val());
   if(labelID1.includes(".") && labelID2.includes(".")){
     console.log("is a JSON");
-    console.log("label1 substring: " + labelID1.substring(0,'.') + "label2 substring" + labelID2.substring(0,'.'));
-    if(labelID1.substring(0,'.')==labelID2.substring(0,'.')){
+    console.log("label1 substring: " + labelID1.substring(0, indexOf('.')) + "label2 substring" + labelID2.substring(0,indexOf('.')));
+    if(labelID1.substring(0,indexOf('.'))==labelID2.substring(0,indexOf('.'))){
       console.log("Object matches!");
       values = labelID1.substring(0,'.') + "{" + labelID1.substring('.') + ":" + $('#value1').val() + "," + labelID2.substring(0,'.') + labelID2.substring('.') + ":" + $('#value2').val() + "}";
     }
