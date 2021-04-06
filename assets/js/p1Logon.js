@@ -461,8 +461,8 @@ function setPPValues(){
     console.log("Objec1: " + object1 + "object2: " + object2);
     if(object1 == object2){
       console.log("Object matches!");
-      let objval1 = labelID1.substring(labelID1.indexOf("."));
-      let objval2 = labelID2.substring(labelID2.indexOf("."));
+      let objval1 = labelID1.substring(labelID1.indexOf(".")+1);
+      let objval2 = labelID2.substring(labelID2.indexOf(".")+1);
 
 
       values = object1 + ":{" + objval1 + ":" + $('#value1').val() +"," + objval2 + ":" + $('#value2').val() + "}";
