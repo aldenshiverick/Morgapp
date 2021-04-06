@@ -455,10 +455,18 @@ function setPPValues(){
   console.log("labelID1: " + $('#labelID1').val());
   if(labelID1.includes(".") && labelID2.includes(".")){
     console.log("is a JSON");
-    console.log("label1 substring: " + labelID1.substring(0, indexOf('.')) + "label2 substring" + labelID2.substring(0,indexOf('.')));
-    if(labelID1.substring(0,indexOf('.'))==labelID2.substring(0,indexOf('.'))){
+    //console.log("label1 substring: " + labelID1.substring(0, labelID1.indexOf('.')) + "label2 substring" + labelID2.substring(0,labelID2.indexOf('.')));
+    let object1 = labelID1.substring(0, labelID1.indexOf('.'));
+    let object2 = labelID2.substring(0, labelID2.indexOf('.'));
+    console.log("Objec1: " + object1 + "object2: " + object2);
+    if(object1 == object2){
       console.log("Object matches!");
-      values = labelID1.substring(0,'.') + "{" + labelID1.substring('.') + ":" + $('#value1').val() + "," + labelID2.substring(0,'.') + labelID2.substring('.') + ":" + $('#value2').val() + "}";
+      let objval1 = labelID1.substring(labelID1.indexOf("."));
+      let objval1 = labelID2.substring(labelID2.indexOf("."));
+
+
+      value = object1 + ":{" + objval1 + ":" + $('#value1').val() +"," + objval2 + ":" + $('#value2').val() + "}";
+      //values = labelID1.substring(0,'.') + "{" + labelID1.substring('.') + ":" + $('#value1').val() + "," + labelID2.substring(0,'.') + labelID2.substring('.') + ":" + $('#value2').val() + "}";
     }
   }
   else{
