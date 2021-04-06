@@ -448,10 +448,19 @@ function setPPValues(){
   let method = "POST";
   console.log('URL: ' + url);
   let contentType = "application/vnd.pingidentity.user.update+json";
-  // let labelID1 = $('#labelID1').val();
-  // let labelID2 = $('#labelID2').val();
+  let labelID1 = $('#labelID1').val();
+  let labelID2 = $('#labelID2').val();
+  let values = "";
+
   console.log("labelID1: " + $('#labelID1').val());
-  let values = $('#labelID1').val() + ":" + $('#value1').val() +"," + $('#labelID2').val() +":" + $('#value2').val();
+  if(labelID1.contains('.') && labelID2.contains('.')){
+    if(labelID1.substring(0,'.')==labelID2.substring(0,'.')){
+      values = labelID1.substring(0,'.') + "{" + labelID1.substring('.') + ":" + $('#value1').val() + "," + labelID2.substring(0,'.') + labelID2.substring('.') + ":" + $('#value2').val() + "}"
+    }
+  }
+  else{
+    values = $('#labelID1').val() + ":" + $('#value1').val() +"," + $('#labelID2').val() +":" + $('#value2').val();
+  }
   console.log("Values: "+ values);
   let payload = JSON.stringify({
       values
