@@ -465,7 +465,7 @@ function setPPValues(){
       let objval2 = labelID2.substring(labelID2.indexOf("."));
 
 
-      value = object1 + ":{" + objval1 + ":" + $('#value1').val() +"," + objval2 + ":" + $('#value2').val() + "}";
+      values = object1 + ":{" + objval1 + ":" + $('#value1').val() +"," + objval2 + ":" + $('#value2').val() + "}";
       //values = labelID1.substring(0,'.') + "{" + labelID1.substring('.') + ":" + $('#value1').val() + "," + labelID2.substring(0,'.') + labelID2.substring('.') + ":" + $('#value2').val() + "}";
     }
   }
