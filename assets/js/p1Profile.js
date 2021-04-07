@@ -123,6 +123,7 @@ function updateUserValues(){
     let obji = obj[i];
     console.log("payload.i" + obj);
     console.log("payload.i" + obji);
+    obji = JSON.parse(obji);
     if(Object.keys(obj[i]).length > 0){
       for(let j=0; j<Object.keys(obji).length; j++){
         let objval = Object.keys(obji[j]);
