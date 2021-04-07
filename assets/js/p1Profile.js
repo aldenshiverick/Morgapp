@@ -114,20 +114,30 @@ function updateUserValues(){
   });
 
 
-  for(let i=0; i<Object.keys(payload).length; i++){
-    let obj = Object.keys(payload);
-    console.log("payload.i" + obj);
-    console.log("payload.i" + obj[i]);
-    if(obj[0].length > 0){
-      for(let j=0; j<obj.length(); j++){
-        let objval = payload.obj.j.val();
-        if(objval == undefined){
-          console.log("objval =" + payload.obj.objval.val());
-          delete payload.obj.objval;
-        }
-      }
+  // for(let i=0; i<Object.keys(payload).length; i++){
+  //   let obj = Object.keys(payload);
+  //   console.log("payload.i" + obj);
+  //   console.log("payload.i" + obj[i]);
+  //   if(obj[0].length > 0){
+  //     for(let j=0; j<obj.length(); j++){
+  //       let objval = payload.obj.j.val();
+  //       if(objval == undefined){
+  //         console.log("objval =" + payload.obj.objval.val());
+  //         delete payload.obj.objval;
+  //       }
+  //     }
+  //   }
+  // }
+
+  for(var prop in payload){
+    if(typeof payload[prop]=='object'){
+        // object
+        traverse_it(payload[prop[i]]);
+    }else{
+        // something else
+        alert('The value of '+prop+' is '+payload[prop]+'.');
     }
-  }
+}
 
   console.log(payload);
   console.log('ajax (' + url + ')');
