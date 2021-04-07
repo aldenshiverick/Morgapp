@@ -463,13 +463,7 @@ function setPPValues(){
       console.log("Object matches!");
       let objval1 = labelID1.substring(labelID1.indexOf(".")+1);
       let objval2 = labelID2.substring(labelID2.indexOf(".")+1);
-      values = {
-        "object1":
-        {
-          "objval1":  $('#value1').val(), 
-          "objval2":  $('#value2').val()
-        }
-      };
+      values = " {\" " + object1 + "\" : { \" " + objval1 + " \" : \" " + $('#value1').val() + " \" , \" " + objval2 + " \" : \" " + $('#value2').val() + " \" } }";
       console.log("Values: " + values);
       // values = JSON.stringify({
       //   object1: {
