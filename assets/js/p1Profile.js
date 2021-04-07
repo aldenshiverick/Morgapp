@@ -113,32 +113,31 @@ function updateUserValues(){
     },
   });
 
-
-  // for(let i=0; i<Object.keys(payload).length; i++){
-  //   let obj = Object.keys(payload);
-  //   console.log("payload.i" + obj);
-  //   console.log("payload.i" + obj[i]);
-  //   if(obj[0].length > 0){
-  //     for(let j=0; j<obj.length(); j++){
-  //       let objval = payload.obj.j.val();
-  //       if(objval == undefined){
-  //         console.log("objval =" + payload.obj.objval.val());
-  //         delete payload.obj.objval;
-  //       }
-  //     }
-  //   }
-  // }
-
   payload = JSON.parse(payload);
   Object.keys(payload).forEach(function(key) {
     console.log('Key : ' + key + ', Value : ' + payload[key])
   })
 
-  for (var key in payload) {
-    if (payload.hasOwnProperty(key)) {
-        console.log(key + " -> " + payload[key]);
+  for(let i=0; i<Object.keys(payload).length; i++){
+    let obj = Object.keys(payload);
+    console.log("payload.i" + obj);
+    console.log("payload.i" + obj[i]);
+    if(obj[0].length > 0){
+      for(let j=0; j<obj.length(); j++){
+        let objval = payload.obj.j.val();
+        if(objval == undefined){
+          console.log("objval =" + payload.obj.objval.val());
+          delete payload.obj.objval;
+        }
+      }
     }
-}
+  }
+
+//   for (var key in payload) {
+//     if (payload.hasOwnProperty(key)) {
+//         console.log(key + " -> " + payload[key]);
+//     }
+// }
 
   console.log(payload);
   console.log('ajax (' + url + ')');
