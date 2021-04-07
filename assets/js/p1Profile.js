@@ -129,7 +129,7 @@ function updateUserValues(){
   //   }
   // }
 
-  for(var prop in payload){
+  for(let prop in payload){
     if(typeof payload[prop]=='object'){
         // object
         traverse_it(payload[prop[i]]);
