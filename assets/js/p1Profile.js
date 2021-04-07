@@ -102,7 +102,7 @@ function updateUserValues(){
       given: $('#fname').val(),
       family: $('#lname').val()
     },
-    birthday: $('#birthday').val(),
+    // birthday: $('#birthday').val(),
     //gender: $('#gender').val(),
     //relationship: 
     address: {
