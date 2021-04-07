@@ -480,11 +480,11 @@ function setPPValues(){
     console.log("not a JSON");
     values = $('#labelID1').val() + ":" + $('#value1').val() +"," + $('#labelID2').val() +":" + $('#value2').val();
   }
-  console.log("Values: "+ values);
-  let payload = JSON.stringify({
-      values
-  });
-  console.log('payload: ' + payload);
+  // console.log("Values: "+ values);
+  // // let payload = JSON.stringify({
+  // //     values
+  // // });
+  // console.log('payload: ' + values);
 
-  exJax(method, url, nextStep, contentType, payload);
+  exJax(method, url, nextStep, contentType, values);
 }
