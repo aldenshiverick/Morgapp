@@ -105,7 +105,7 @@ function updateUserValues(){
     //gender: $('#gender').val(),
     //relationship: 
     address: {
-      streetAddress: ($('#address').length() > 0 ? $('#address').val() : "null"),
+      streetAddress: ($('#address').toString().length() > 0 ? $('#address').val() : "null"),
       locality: $('#city').val(),
       region: $('#state').val(),
       postalCode: $('#zip').val()
