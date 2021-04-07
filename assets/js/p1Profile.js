@@ -105,12 +105,13 @@ function updateUserValues(){
     //gender: $('#gender').val(),
     //relationship: 
     address: {
-      streetAddress: ($('#address').val() != undefined ? $('#address').val() : "null"),
+      streetAddress: $('#address').val(),
       locality: $('#city').val(),
       region: $('#state').val(),
       postalCode: $('#zip').val()
     },
   });
+
   console.log(payload);
   console.log('ajax (' + url + ')');
   console.log('at =' + at);
