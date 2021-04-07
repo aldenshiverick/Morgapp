@@ -129,15 +129,9 @@ function updateUserValues(){
   //   }
   // }
 
-  for(let prop in payload){
-    if(typeof payload[prop]=='object'){
-        // object
-        traverse_it(payload[prop[i]]);
-    }else{
-        // something else
-        alert('The value of '+prop+' is '+payload[prop]+'.');
-    }
-}
+  Object.keys(payload).forEach(function(key) {
+    console.log('Key : ' + key + ', Value : ' + payload[key])
+  })
 
   console.log(payload);
   console.log('ajax (' + url + ')');
