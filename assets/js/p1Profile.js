@@ -113,10 +113,11 @@ function updateUserValues(){
     },
   });
 
+
   for(let i=0; i<Object.keys(payload).length; i++){
     let obj = Object.keys(payload);
     console.log("payload.i" + obj);
-    console.log("payload.i" + obj[0]);
+    console.log("payload.i" + obj[i]);
     if(obj[0].length > 0){
       for(let j=0; j<obj.length(); j++){
         let objval = payload.obj.j.val();
