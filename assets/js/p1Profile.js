@@ -114,9 +114,10 @@ function updateUserValues(){
   });
 
   for(let i=0; i<Object.keys(payload).length; i++){
-    let obj = payload[i];
+    let obj = Object.keys(payload);
     console.log("payload.i" + obj);
-    if(obj.length > 0){
+    console.log("payload.i" + obj[0]);
+    if(obj[0].length > 0){
       for(let j=0; j<obj.length(); j++){
         let objval = payload.obj.j.val();
         if(objval == undefined){
