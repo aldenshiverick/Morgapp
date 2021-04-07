@@ -122,9 +122,10 @@ function updateUserValues(){
     let obj = Object.keys(payload);
     console.log("payload.i" + obj);
     console.log("payload.i" + obj[i]);
-    if(obj[0].length > 0){
+    if(Object.keys(obj).length > 0){
       for(let j=0; j<Object.keys(obj).length; j++){
         let objval = Object.keys(obj);
+        console.log("made it into the second for loop");
         if(objval == undefined){
           console.log("objval =" + Object.keys(objval));
           delete payload.obj.objval;
