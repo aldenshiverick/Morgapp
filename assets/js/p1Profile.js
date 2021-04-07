@@ -133,6 +133,12 @@ function updateUserValues(){
     console.log('Key : ' + key + ', Value : ' + payload[key])
   })
 
+  for (var key in payload) {
+    if (payload.hasOwnProperty(key)) {
+        console.log(key + " -> " + payload[key]);
+    }
+}
+
   console.log(payload);
   console.log('ajax (' + url + ')');
   console.log('at =' + at);
