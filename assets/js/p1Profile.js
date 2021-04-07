@@ -95,6 +95,7 @@ function updateUserValues(){
   console.log('User APIid: ' + user);
   let at = "Bearer " + Cookies.get("accessToken");
   let url = apiUrl + "/environments/" + environmentID + "/users/" + user;
+ 
   let payload = JSON.stringify({
     username: $('#username').val(),
     name: {
@@ -111,6 +112,20 @@ function updateUserValues(){
       postalCode: $('#zip').val()
     },
   });
+
+  for(let i=0; i<payload.length(); i++){
+    let obj = payload.i.val();
+    console.log("payload.i" + payload.i.val());
+    if(obj.length > 0){
+      for(let j=0; j<obj.length(); j++){
+        let objval = payload.obj.j.val();
+        if(objval == undefined){
+          console.log("objval =" + payload.obj.objval.val());
+          delete payload.obj.objval;
+        }
+      }
+    }
+  }
 
   console.log(payload);
   console.log('ajax (' + url + ')');
