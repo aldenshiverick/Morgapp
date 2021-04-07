@@ -123,10 +123,10 @@ function updateUserValues(){
     let obji = obj[i];
     console.log("payload.i all " + obj);
     console.log("payload.i " + obji);
-    let obji = JSON.parse(payload[obji]);
+    obji = JSON.parse(payload[obji]);
     Object.keys(obji).forEach(function(key) {
       console.log('Key : ' + key + ', Value : ' + obji[key])
-    })
+    });
     console.log("subset: " + payload.obji);
     if(Object.keys(obj[i]).length > 0){
       for(let j=0; j<Object.keys(obji).length; j++){
