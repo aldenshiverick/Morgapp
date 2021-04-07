@@ -113,7 +113,7 @@ function updateUserValues(){
     },
   });
 
-  for(let i=0; i<payload.length(); i++){
+  for(let i=0; i<Object.keys(payload.length); i++){
     let obj = payload.i.val();
     console.log("payload.i" + payload.i.val());
     if(obj.length > 0){
