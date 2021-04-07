@@ -120,17 +120,18 @@ function updateUserValues(){
 
   for(let i=0; i<Object.keys(payload).length; i++){
     let obj = Object.keys(payload);
+    let obji = obj[i];
     console.log("payload.i" + obj);
-    console.log("payload.i" + obj[i]);
-    if(Object.keys(obj).length > 0){
-      for(let j=0; j<Object.keys(obj).length; j++){
-        let objval = Object.keys(obj);
+    console.log("payload.i" + obji);
+    if(Object.keys(obj[i]).length > 0){
+      for(let j=0; j<Object.keys(obji).length; j++){
+        let objval = Object.keys(obji[j]);
         console.log("made it into the second for loop");
         console.log("objval: " + objval);
-        console.log("objval length: " + Object.keys(obj).length);
+        console.log("objval length: " + Object.keys(obji).length);
         if(objval == undefined){
           console.log("objval =" + Object.keys(objval));
-          delete payload.obj.objval;
+          delete payload.obji.objval;
         }
       }
     }
