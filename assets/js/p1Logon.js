@@ -478,7 +478,8 @@ function setPPValues(){
   }
   else{
     console.log("not a JSON");
-    values = $('#labelID1').val() + ":" + $('#value1').val() +"," + $('#labelID2').val() +":" + $('#value2').val();
+    //values = $('#labelID1').val() + ":" + $('#value1').val() +"," + $('#labelID2').val() +":" + $('#value2').val();
+    values="{ \"" + object1 + "\" : \"" + $('#value1').val() + "\" , \"" + object2 + "\" : \"" + $('#value2').val() + "\" }";
   }
   // console.log("Values: "+ values);
   // // let payload = JSON.stringify({
