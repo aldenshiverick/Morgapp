@@ -114,7 +114,7 @@ function updateUserValues(){
   });
 
   for(let i=0; i<Object.keys(payload).length; i++){
-    let obj = payload.i.val();
+    let obj = payload[i];
     console.log("payload.i" + payload.i.val());
     if(obj.length > 0){
       for(let j=0; j<obj.length(); j++){
