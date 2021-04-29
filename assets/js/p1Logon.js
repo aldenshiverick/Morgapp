@@ -160,7 +160,9 @@ function getNextStep(flowID){
     console.log('FlowId is: ' + flowId);
     var message = document.getElementById('errorcode');
     let code = data.details[0].code;
+    console.log("code from error" + code);
     if(code != null){
+      console.log("code is not null");
       message.innerHTML=code; 
     }
   
