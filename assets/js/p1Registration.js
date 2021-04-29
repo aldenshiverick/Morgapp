@@ -47,14 +47,14 @@ function checkPass()
         //the user that they have entered the correct password 
         confirm.style.backgroundColor = good_color;
         message.style.color           = good_color;
-        message.innerHTML             = '<img src="/images/tick.png" alt="Passwords Match!">';
+        message.innerHTML             = '<img src="/sharep1ui/images/tick.png" alt="Passwords Match!">';
     }else{
         //The passwords do not match.
         //Set the color to the bad color and
         //notify the user.
         confirm.style.backgroundColor = bad_color;
         message.style.color           = bad_color;
-        message.innerHTML             = '<img src="/images/xmark.png" alt="Passwords Do Not Match!">';
+        message.innerHTML             = '<img src="/sharep1ui/images/xmark.png" alt="Passwords Do Not Match!">';
     }
 }  
 
