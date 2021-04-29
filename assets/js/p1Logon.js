@@ -158,6 +158,11 @@ function getNextStep(flowID){
     console.log('Parsing json to determine next step: ' + status);
     flowId= data.id;
     console.log('FlowId is: ' + flowId);
+    var message = document.getElementById('errorcode');
+    let code = data.details[0].code;
+    if(code != null){
+      message.innerHTML=code; 
+    }
   
     switch (status) {
       case 'USERNAME_PASSWORD_REQUIRED':
