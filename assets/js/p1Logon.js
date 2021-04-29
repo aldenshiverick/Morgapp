@@ -158,7 +158,8 @@ function getNextStep(flowID){
     console.log('Parsing json to determine next step: ' + status);
     flowId= data.id;
     console.log('FlowId is: ' + flowId);
-    if( data.details[0].code != null){
+    //if( data.details[0].code != null){
+    if(data.hasOwnProperty('code')){
       var message = document.getElementById('errorcode');
       let code = data.details[0].code;
       console.log("code from error" + code);
