@@ -154,6 +154,7 @@ function getNextStep(flowID){
   
 
   function errorCode(data){
+    console.log("Error code reponse");
       var message = document.getElementById('errorcode');
       let code = data.details[0].code;
       console.log("code from error" + code);
