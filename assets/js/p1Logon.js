@@ -152,20 +152,20 @@ function getNextStep(flowID){
     window.location.replace(baseUrl);
   }
   
+
+  function errorCode(data){
+      var message = document.getElementById('errorcode');
+      let code = data.details[0].code;
+      console.log("code from error" + code);
+      console.log("code is not null");
+      message.innerHTML=code;
+  }
    //----What should we do? ----//
    function nextStep(data) {
     status = data.status;
     console.log('Parsing json to determine next step: ' + status);
     flowId= data.id;
     console.log('FlowId is: ' + flowId);
-    //if( data.details[0].code != null){
-    if(data.hasOwnProperty('code')){
-      var message = document.getElementById('errorcode');
-      let code = data.details[0].code;
-      console.log("code from error" + code);
-      console.log("code is not null");
-      message.innerHTML=code; 
-    }
   
     switch (status) {
       case 'USERNAME_PASSWORD_REQUIRED':
