@@ -76,6 +76,9 @@
 					<ul class="actions">
 						<li><a href="#" class="button" onclick="validateOTP();">Validate</a></li> 
 					</ul>
+					<div class="row uniform 50%">
+						<span style="color:red" id="warningMessage" class="confirm-message"></span>
+					</div>
 					
 				</div>
 			</section>
@@ -95,7 +98,11 @@
 									<input type="password" name="change_new_password" id="change_new_password" value="" placeholder="New Password" />
 								</div>
 							</div>
+							<div class="row uniform 50%">
+								<span style="color:red" id="warningMessage" class="confirm-message"></span>
+							</div>
 						</form>
+
 				<br/>
 					<p class="login-submit">
 						<a class="button button_theme" onclick="changePassword();">Change Password</a>
