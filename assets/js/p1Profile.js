@@ -95,7 +95,11 @@ function updateUserValues(){
   console.log('User APIid: ' + user);
   let at = "Bearer " + Cookies.get("accessToken");
   let url = apiUrl + "/environments/" + environmentID + "/users/" + user;
-  
+  // let address = "";
+  // if ($('#address').val() != null)
+  //   { }
+
+
   let payload = JSON.stringify({
     username: $('#username').val(),
     name: {
