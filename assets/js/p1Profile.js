@@ -282,7 +282,7 @@ function checkEmailExists(MFAData){
         if(MFAData._embedded.devices[i].email == document.getElementById("email").value){
           console.log("email already exists");
           if(MFAData._embedded.devices[i].status == "ACTIVATION_REQUIRED"){
-            enableEmailMFA
+            enableEmailMFA();
           }
           else{
             enableMFA();
