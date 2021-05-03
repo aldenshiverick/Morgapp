@@ -29,8 +29,7 @@ function registerUser() {
 }
 
 
-function checkPass()
-{
+function checkPass(){
     //Store the password field objects into variables ...
     var password = document.getElementById('user_pass');
     var confirm  = document.getElementById('user_pass_conf');
