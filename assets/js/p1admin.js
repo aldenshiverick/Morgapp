@@ -18,7 +18,8 @@ function adminGetUser(type){
     console.log(value);
   }
   console.log(value);
-  let at = "Bearer " + Cookies.get("workerAT");
+  // let at = "Bearer " + Cookies.get("workerAT");
+  let at = "Bearer " + Cookies.get("accessToken");
   let url = apiUrl + "/environments/" + environmentID + "/users/?filter=" + type + "%20eq%20%22" + value + "%22";
   console.log('ajax (' + url + ')');
   console.log('at =' + at);
@@ -131,7 +132,8 @@ function updateUserValues(){
   console.log("updateUserValues was called");
   let method = "PATCH";
   let user = Cookies.get("currentUser");
-  let at = "Bearer " + Cookies.get("workerAT");
+  //let at = "Bearer " + Cookies.get("workerAT");
+  let at = "Bearer " + Cookies.get("accessToken");
   let url = apiUrl + "/environments/" + environmentID + "/users/" + user;
   let payload = JSON.stringify({
     username: $('#username').val(),
