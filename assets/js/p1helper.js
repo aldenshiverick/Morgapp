@@ -3,7 +3,7 @@ const environmentID = '5d354632-b644-4d3e-a32e-af055f215ef8'; // env ID from p1 
 const baseUrl = 'https://morgdemo.ping-eng.com/sharep1ui'; //Where this app is hosted --> No trailing slash needed
 
 const workerClientID = '7e80217e-4283-4bf1-830f-ea6bc2fdf4ec'; //used to create/manage users
-const workerClientSecret = 'UYPFyy6jOIL8HPKTqDgtmz.uqTNyrhP7MY63kMUgqq_G3~VzIuV.qU2sREl86TiO';
+//const workerClientSecret = 'UYPFyy6jOIL8HPKTqDgtmz.uqTNyrhP7MY63kMUgqq_G3~VzIuV.qU2sREl86TiO';
 
 const appClientID = '153f06e7-b750-447c-8626-cd90d992bcc2'; //used for enduser logon experience
 const appClientSecret ='O6KAnh~0cYTbP5QPeib~XmK8979QlDHl4amUEiWsB~5k1oRrzCUGJf4G79pzyCUi'; //used for out of band transaction approvals
