@@ -146,7 +146,7 @@ function updateUserValues(){
   //     }
   //   }
   // }
-  for (i = 0; i < payload.length; i++){
+  for (let i = 0; i < payload.length; i++){
     console.log("is this working?");
     console.log((i+1) + ": " + payload[i]);
   }
