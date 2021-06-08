@@ -113,7 +113,7 @@ function updateUserValues(){
         console.log('current array: ' +JSON.stringify(listname) );
       } 
       list.add(listname);
-      console.log("list array: " + JSON.stringify(list);
+      console.log("list array: " + JSON.stringify(list));
   }
 let payload = JSON.stringify(list);
   console.log(payload);
