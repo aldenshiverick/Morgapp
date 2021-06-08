@@ -110,7 +110,7 @@ function updateUserValues(){
     console.log('current array: ' +list );
   }
   else if ($('#lname').val() !=""){
-    list.name.push(family: + $('#lname').val());
+    list.name.push('family:' + $('#lname').val());
     console.log('current array: ' +list );
   } 
 let payload = JSON.stringify(list);
