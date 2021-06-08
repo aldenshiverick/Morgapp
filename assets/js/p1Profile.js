@@ -101,16 +101,16 @@ function updateUserValues(){
   //list[0].push('username:' + $('#username').val());
   console.log('current array: ' +JSON.stringify(list) );
   if ($('#fname').val() !="" && $('#lname').val() !=""){
-    list.add('name');
+    let listname=['name'];
       //namelist.push({name:{given: + $('#fname').val(), family: + $('#lname').val()}});
       console.log('current array: ' +list );
   }
   else if ($('#fname').val() !=""){
-    list.name.push('given:' + $('#fname').val());
+    list.name.add('given:' + $('#fname').val());
     console.log('current array: ' +list );
   }
   else if ($('#lname').val() !=""){
-    list.name.push('family:' + $('#lname').val());
+    list.name.add('family:' + $('#lname').val());
     console.log('current array: ' +list );
   } 
 let payload = JSON.stringify(list);
