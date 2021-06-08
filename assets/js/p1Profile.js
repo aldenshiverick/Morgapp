@@ -96,12 +96,12 @@ function updateUserValues(){
   console.log('User APIid: ' + user);
   let at = "Bearer " + Cookies.get("accessToken");
   let url = apiUrl + "/environments/" + environmentID + "/users/" + user;
-  let list = ['username', $('#email').val()];
+  let list = ['username:' + $('#email').val()];
   let i = 1;
   //list[0].push('username:' + $('#username').val());
   console.log('current array: ' +JSON.stringify(list) );
   if ($('#fname').val() !="" && $('#lname').val() !=""){
-    list[i].push('name');
+    list.add({'name'});
       //namelist.push({name:{given: + $('#fname').val(), family: + $('#lname').val()}});
       console.log('current array: ' +list );
   }
