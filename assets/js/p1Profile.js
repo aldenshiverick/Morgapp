@@ -120,7 +120,8 @@ function updateUserValues(){
 
   for(let i=0; i<Object.keys(payload).length; i++){
     let obj = Object.keys(payload);
-    let obji = payload.obj;
+    console.log('current key' + obj[1]);
+    let obji = payload.obj[1];
     console.log("payload.i all " + obj);
     console.log("payload.i " + obji);
     //obji = JSON.parse(payload[obji]);
