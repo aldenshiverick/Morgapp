@@ -23,141 +23,97 @@ function getUserValues() {
 
     console.log("getUserValues completed");
   
-  }
+}
   
-  function setUserValues(userJson) {
-    console.log("setuserValues was called");
-    console.log(userJson);
-    let uuid = Cookies.get("userAPIid");
-    //let streetAddress = userJson.address.streetAddress + " " + userJson.address.locality + ", " + userJson.address.region + " " + userJson.address.postalCode;
-    if (Cookies.get("accessToken")) {
-      if(userJson.name){
-        if(userJson.name.given){
-          console.log("givenname if was passes")
-          document.getElementById("fname").value = userJson.name.given;
-        }
-        if(userJson.name.family){
-        document.getElementById("lname").value = userJson.name.family;
-        }
+function setUserValues(userJson) {
+  console.log("setuserValues was called");
+  console.log(userJson);
+  let uuid = Cookies.get("userAPIid");
+  //let streetAddress = userJson.address.streetAddress + " " + userJson.address.locality + ", " + userJson.address.region + " " + userJson.address.postalCode;
+  if (Cookies.get("accessToken")) {
+    if(userJson.name){
+      if(userJson.name.given){
+        console.log("givenname if was passes")
+        document.getElementById("fname").value = userJson.name.given;
       }
-      document.getElementById("email").value = userJson.email;
-      //document.getElementById("username").value = userJson.username;
-      document.getElementById("Hello").innerHTML = 'Welcome ' + userJson.username;
-      if(userJson.rewards != null){
-        //document.getElementById("daysSkied").value = userJson.daysSkied;
-        document.getElementById("rewards").innerHTML = '$' + userJson.rewards;
+      if(userJson.name.family){
+      document.getElementById("lname").value = userJson.name.family;
       }
-      if(userJson.birthday != null){
-        document.getElementById("birthday").value =  userJson.birthday;
-      }
-      if(userJson.gender != null){
-        document.getElementById("gender").value = userJson.gender;
-      }
-      // if(userJson.relationship != null){
-      //   document.getElementById("relationship").value = userJson.relationship;
-      // }
-      if(userJson.address !=null){
-        console.log("userJson.address not null is true")
-        if(userJson.address.streetAddress != null){
-          document.getElementById("address").value = userJson.address.streetAddress;
-        }
-        if(userJson.address.locality != null){
-          document.getElementById("city").value = userJson.address.locality;
-        }
-        if(userJson.address.region != null){
-          document.getElementById("state").value = userJson.address.region;
-        }
-        if(userJson.address.postalCode != null){
-          document.getElementById("zip").value = userJson.address.postalCode;
-        }
-      }
-      if(userJson.mfaEnabled == true){
-        console.log("MFA is true");
-        document.getElementById("enableMFA").checked = true;
-      }
-      else {
-        console.log("MFA is not true");
-        document.getElementById("enableMFA").checked = false;
-      }
-    } else {
-      document.getElementById("Hello").value = 'Welcome Guest';
     }
-    console.log(userJson.username);
-  
-    //let idPayload = parseJwt(idToken);
+    document.getElementById("email").value = userJson.email;
+    //document.getElementById("username").value = userJson.username;
+    document.getElementById("Hello").innerHTML = 'Welcome ' + userJson.username;
+    if(userJson.rewards != null){
+      //document.getElementById("daysSkied").value = userJson.daysSkied;
+      document.getElementById("rewards").innerHTML = '$' + userJson.rewards;
+    }
+    if(userJson.birthday != null){
+      document.getElementById("birthday").value =  userJson.birthday;
+    }
+    if(userJson.gender != null){
+      document.getElementById("gender").value = userJson.gender;
+    }
+    // if(userJson.relationship != null){
+    //   document.getElementById("relationship").value = userJson.relationship;
+    // }
+    if(userJson.address !=null){
+      console.log("userJson.address not null is true")
+      if(userJson.address.streetAddress != null){
+        document.getElementById("address").value = userJson.address.streetAddress;
+      }
+      if(userJson.address.locality != null){
+        document.getElementById("city").value = userJson.address.locality;
+      }
+      if(userJson.address.region != null){
+        document.getElementById("state").value = userJson.address.region;
+      }
+      if(userJson.address.postalCode != null){
+        document.getElementById("zip").value = userJson.address.postalCode;
+      }
+    }
+    if(userJson.mfaEnabled == true){
+      console.log("MFA is true");
+      document.getElementById("enableMFA").checked = true;
+    }
+    else {
+      console.log("MFA is not true");
+      document.getElementById("enableMFA").checked = false;
+    }
+  } else {
+    document.getElementById("Hello").value = 'Welcome Guest';
   }
+  console.log(userJson.username);
+
+  //let idPayload = parseJwt(idToken);
+}
+
 
 
 function updateUserValues(){
-  console.log("updateUserValues was called");
+    console.log("updateUserValues was called");
   let method = "PATCH";
   let user = Cookies.get("userAPIid");
   console.log('User APIid: ' + user);
   let at = "Bearer " + Cookies.get("accessToken");
   let url = apiUrl + "/environments/" + environmentID + "/users/" + user;
- 
-  let payload = JSON.stringify({
-    username: $('#username').val(),
-    name: {
-      given: $('#fname').val(),
-      family: $('#lname').val()
-    },
-    // birthday: $('#birthday').val(),
-    //gender: $('#gender').val(),
-    //relationship: 
-    address: {
-      streetAddress: $('#address').val(),
-      locality: $('#city').val(),
-      region: $('#state').val(),
-      postalCode: $('#zip').val()
-    },
-  });
+  let list = {};
 
-  payload = JSON.parse(payload);
-  // Object.keys(payload).forEach(function(key) {
-  //   console.log('Key : ' + key + ', Value : ' + payload[key])
-  // })
-
-  // for(let i=0; i<Object.keys(payload).length; i++){
-  //   console.log('payload' + payload);
-  //   let obj = Object.keys(payload);
-  //   console.log('current key ' + obj[1]);
-  //   let obji = payload.obj[1];
-  //   console.log("payload.i all " + obj);
-  //   console.log("payload.i " + obji);
-  //   //obji = JSON.parse(payload[obji]);
-  //   obji = obji.toString();
-  //   console.log("Substring " + payload.obji);
-  //   let jsoni = payload.obji;
-  //   Object.keys(obji).forEach(function(key) {
-  //     console.log('Key : ' + key + ', Value : ' + obji[key])
-  //   });
-  //   console.log("subset: " + payload.obji);
-  //   if(Object.keys(obj[i]).length > 0){
-  //     for(let j=0; j<Object.keys(obji).length; j++){
-  //       let objval = Object.keys(obji[j]);
-  //       console.log("made it into the second for loop");
-  //       console.log("objval: " + objval);
-  //       console.log("objval length: " + Object.keys(obji).length);
-  //       if(objval == undefined){
-  //         console.log("objval =" + Object.keys(objval));
-  //         delete payload.obji.objval;
-  //       }
-  //     }
-  //   }
-  // }
-  for (let i = 0; i < payload.length; i++){
-    console.log("is this working?");
-    console.log((i+1) + ": " + payload[i]);
+  list.push('username:' + $('#username').val());
+  console.log('current array: ' +list );
+  if ($('#fname').val() !="" && $('#lname').val() !=""){
+    list.push('name');
+      //namelist.push({name:{given: + $('#fname').val(), family: + $('#lname').val()}});
+      console.log('current array: ' +list );
   }
-  
-
-//   for (var key in payload) {
-//     if (payload.hasOwnProperty(key)) {
-//         console.log(key + " -> " + payload[key]);
-//     }
-// }
-
+  else if ($('#fname').val() !=""){
+    list.name.push('given:' + $('#fname').val());
+    console.log('current array: ' +list );
+  }
+  else if ($('#lname').val() !=""){
+    list.name.push(family: + $('#lname').val());
+    console.log('current array: ' +list );
+  } 
+let payload = JSON.stringify(list);
   console.log(payload);
   console.log('ajax (' + url + ')');
   console.log('at =' + at);
@@ -186,6 +142,104 @@ function updateUserValues(){
     getUserValues();
   }, 1000);
 }
+    
+
+
+
+
+// function updateUserValues(){
+//   console.log("updateUserValues was called");
+//   let method = "PATCH";
+//   let user = Cookies.get("userAPIid");
+//   console.log('User APIid: ' + user);
+//   let at = "Bearer " + Cookies.get("accessToken");
+//   let url = apiUrl + "/environments/" + environmentID + "/users/" + user;
+ 
+//   let payload = JSON.stringify({
+//     username: $('#username').val(),
+//     name: {
+//       given: $('#fname').val(),
+//       family: $('#lname').val()
+//     },
+//     // birthday: $('#birthday').val(),
+//     //gender: $('#gender').val(),
+//     //relationship: 
+//     address: {
+//       streetAddress: $('#address').val(),
+//       locality: $('#city').val(),
+//       region: $('#state').val(),
+//       postalCode: $('#zip').val()
+//     },
+//   });
+
+//   payload = JSON.parse(payload);
+//   // Object.keys(payload).forEach(function(key) {
+//   //   console.log('Key : ' + key + ', Value : ' + payload[key])
+//   // })
+
+//   for(let i=0; i<Object.keys(payload).length; i++){
+//     console.log('payload' + payload);
+//     let obj = Object.keys(payload);
+//     console.log('current key ' + obj[1]);
+//     let obji = payload.obj[1];
+//     console.log("payload.i all " + obj);
+//     console.log("payload.i " + obji);
+//     //obji = JSON.parse(payload[obji]);
+//     obji = obji.toString();
+//     console.log("Substring " + payload.obji);
+//     let jsoni = payload.obji;
+//     Object.keys(obji).forEach(function(key) {
+//       console.log('Key : ' + key + ', Value : ' + obji[key])
+//     });
+//     console.log("subset: " + payload.obji);
+//     if(Object.keys(obj[i]).length > 0){
+//       for(let j=0; j<Object.keys(obji).length; j++){
+//         let objval = Object.keys(obji[j]);
+//         console.log("made it into the second for loop");
+//         console.log("objval: " + objval);
+//         console.log("objval length: " + Object.keys(obji).length);
+//         if(objval == undefined){
+//           console.log("objval =" + Object.keys(objval));
+//           delete payload.obji.objval;
+//         }
+//       }
+//     }
+//   }
+
+// //   for (var key in payload) {
+// //     if (payload.hasOwnProperty(key)) {
+// //         console.log(key + " -> " + payload[key]);
+// //     }
+// // }
+
+//   console.log(payload);
+//   console.log('ajax (' + url + ')');
+//   console.log('at =' + at);
+//   console.log("make ajax call");
+//   $.ajax({
+//       async: "true",
+//       url: url,
+//       method: method,
+//       dataType: 'json',
+//       contentType: 'application/json',
+//       data: payload,
+//       beforeSend: function(xhr) {
+//         xhr.setRequestHeader('Authorization', at);
+//       }
+//     }).done(function(data) {
+//       console.log(data);
+//     })
+//     .fail(function(data) {
+//       console.log('ajax call failed');
+//       console.log(data);
+//       $('#warningMessage').text(data.responseJSON.details[0].message);
+//       $('#warningDiv').show();
+//     });
+//   //add brief delay so info is populated
+//   setTimeout(function() {
+//     getUserValues();
+//   }, 1000);
+// }
 
 
 function updatePassword(){
