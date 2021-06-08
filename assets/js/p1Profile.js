@@ -103,16 +103,18 @@ function updateUserValues(){
   if ($('#fname').val() !="" && $('#lname').val() !=""){
     let listname=['name'];
       //namelist.push({name:{given: + $('#fname').val(), family: + $('#lname').val()}});
-      console.log('current array: ' +list );
+      console.log('current array: ' +JSON.stringify(listname) );
+      if ($('#fname').val() !=""){
+        listname.name.add('given:' + $('#fname').val());
+        console.log('current array: ' +JSON.stringify(listname) );
+      }
+      if ($('#lname').val() !=""){
+        listname.name.add('family:' + $('#lname').val());
+        console.log('current array: ' +JSON.stringify(listname) );
+      } 
+      list.add(listname);
+      console.log("list array: " + JSON.stringify(list);
   }
-  else if ($('#fname').val() !=""){
-    list.name.add('given:' + $('#fname').val());
-    console.log('current array: ' +list );
-  }
-  else if ($('#lname').val() !=""){
-    list.name.add('family:' + $('#lname').val());
-    console.log('current array: ' +list );
-  } 
 let payload = JSON.stringify(list);
   console.log(payload);
   console.log('ajax (' + url + ')');
