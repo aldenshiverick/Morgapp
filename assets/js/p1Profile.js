@@ -113,39 +113,42 @@ function updateUserValues(){
     },
   });
 
-  //payload = JSON.parse(payload);
+  payload = JSON.parse(payload);
   // Object.keys(payload).forEach(function(key) {
   //   console.log('Key : ' + key + ', Value : ' + payload[key])
   // })
 
-  for(let i=0; i<Object.keys(payload).length; i++){
-    console.log('payload' + payload);
-    let obj = Object.keys(payload);
-    console.log('current key ' + obj[1]);
-    let obji = payload.obj[1];
-    console.log("payload.i all " + obj);
-    console.log("payload.i " + obji);
-    //obji = JSON.parse(payload[obji]);
-    obji = obji.toString();
-    console.log("Substring " + payload.obji);
-    let jsoni = payload.obji;
-    Object.keys(obji).forEach(function(key) {
-      console.log('Key : ' + key + ', Value : ' + obji[key])
-    });
-    console.log("subset: " + payload.obji);
-    if(Object.keys(obj[i]).length > 0){
-      for(let j=0; j<Object.keys(obji).length; j++){
-        let objval = Object.keys(obji[j]);
-        console.log("made it into the second for loop");
-        console.log("objval: " + objval);
-        console.log("objval length: " + Object.keys(obji).length);
-        if(objval == undefined){
-          console.log("objval =" + Object.keys(objval));
-          delete payload.obji.objval;
-        }
-      }
-    }
-  }
+  // for(let i=0; i<Object.keys(payload).length; i++){
+  //   console.log('payload' + payload);
+  //   let obj = Object.keys(payload);
+  //   console.log('current key ' + obj[1]);
+  //   let obji = payload.obj[1];
+  //   console.log("payload.i all " + obj);
+  //   console.log("payload.i " + obji);
+  //   //obji = JSON.parse(payload[obji]);
+  //   obji = obji.toString();
+  //   console.log("Substring " + payload.obji);
+  //   let jsoni = payload.obji;
+  //   Object.keys(obji).forEach(function(key) {
+  //     console.log('Key : ' + key + ', Value : ' + obji[key])
+  //   });
+  //   console.log("subset: " + payload.obji);
+  //   if(Object.keys(obj[i]).length > 0){
+  //     for(let j=0; j<Object.keys(obji).length; j++){
+  //       let objval = Object.keys(obji[j]);
+  //       console.log("made it into the second for loop");
+  //       console.log("objval: " + objval);
+  //       console.log("objval length: " + Object.keys(obji).length);
+  //       if(objval == undefined){
+  //         console.log("objval =" + Object.keys(objval));
+  //         delete payload.obji.objval;
+  //       }
+  //     }
+  //   }
+  // }
+  for (i = 0; i < payload.length; i++)
+  console.log((i+1) + ": " + array[i]);
+  
 
 //   for (var key in payload) {
 //     if (payload.hasOwnProperty(key)) {
