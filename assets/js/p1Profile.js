@@ -114,13 +114,13 @@ function updateUserValues(){
   });
 
   payload = JSON.parse(payload);
-  Object.keys(payload).forEach(function(key) {
-    console.log('Key : ' + key + ', Value : ' + payload[key])
-  })
+  // Object.keys(payload).forEach(function(key) {
+  //   console.log('Key : ' + key + ', Value : ' + payload[key])
+  // })
 
   for(let i=0; i<Object.keys(payload).length; i++){
     let obj = Object.keys(payload);
-    let obji = Object.keys(payload).keys(obj,i);
+    let obji = payload.obj;
     console.log("payload.i all " + obj);
     console.log("payload.i " + obji);
     //obji = JSON.parse(payload[obji]);
