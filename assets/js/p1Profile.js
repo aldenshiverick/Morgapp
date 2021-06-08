@@ -97,8 +97,8 @@ function updateUserValues(){
   let at = "Bearer " + Cookies.get("accessToken");
   let url = apiUrl + "/environments/" + environmentID + "/users/" + user;
   let list = {};
-
-  list.push('username:' + $('#username').val());
+  let i = 0;
+  list[0].push('username:' + $('#username').val());
   console.log('current array: ' +list );
   if ($('#fname').val() !="" && $('#lname').val() !=""){
     list.push('name');
