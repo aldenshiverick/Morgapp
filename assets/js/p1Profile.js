@@ -99,7 +99,7 @@ function updateUserValues(){
   let list = {username: $('#username').val()};
   let i = 1;
   //list[0].push('username:' + $('#username').val());
-  console.log('current array: ' +toString(list) );
+  console.log('current array: ' +JSON.stringify(list) );
   if ($('#fname').val() !="" && $('#lname').val() !=""){
     list.push[1]('name');
       //namelist.push({name:{given: + $('#fname').val(), family: + $('#lname').val()}});
