@@ -213,7 +213,7 @@ function getNextStep(flowID){
         $('#pushDiv').hide();
         $('#pwResetCodeDiv').hide();
         $('#changePasswordDiv').hide();
-        $('#verifyUserUrl').val(data._links['user.verify'].href);
+        //$('#verifyUserUrl').val(data._links['user.verify'].href);
         $('#ppDiv').hide('');
         $('#idfirst').show();
         break;
