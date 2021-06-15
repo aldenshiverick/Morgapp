@@ -213,7 +213,7 @@ function getNextStep(flowID){
         $('#pushDiv').hide();
         $('#pwResetCodeDiv').hide();
         $('#changePasswordDiv').hide();
-        //$('#verifyUserUrl').val(data._links['user.verify'].href);
+        $('#userlookup').val(data._links['user.lookup'].href);
         $('#ppDiv').hide('');
         $('#idfirst').show();
         break;
@@ -366,6 +366,26 @@ function getNextStep(flowID){
 
   function resetPasswordDiv(){
     
+  }
+
+
+//used for MFA only flow
+  function passwordless(){
+    console.log("passwordless was called");
+    let method = "POST";
+    let user = $('#userid').val();
+    let url = $('#userlookup').val();
+    let contentType='application/vnd.pingidentity.password.forgot+json';
+    console.log('url (' + url + ')');
+    console.log('user =' + user);
+    console.log("make exJax call");
+    let payload = JSON.stringify({
+      username: user
+    });
+    exJax(method, url, nextStep, contentType, payload);
+    console.log("resetPassword finished");
+  }
+  
   }
 
   function resetPassword(){
