@@ -180,6 +180,7 @@ function getNextStep(flowID){
         //$('#registerUserUrl').val(data._links['registration.external'].href);
         $('#validatePasswordContentType').val('application/vnd.pingidentity.usernamePassword.check+json');
         $('#forgotPasswordURL').val(data._links["password.forgot"].href);
+        $('#idfirst').hide();
         //$('#socialLoginUrl').val(data._embedded.socialProviders[0]._links.authenticate.href);
         if ("socialProviders" in data._embedded){
           console.log("social exists");
@@ -206,6 +207,16 @@ function getNextStep(flowID){
         //$('#partnerLoginUrl').val(data._embedded.socialProviders[1]._links.authenticate.href);
         $('#ppDiv').hide('');
         break;
+      case 'SIGN_ON_REQUIRED':
+        $('#loginDiv').hide();
+        $('#otpDiv').hide();
+        $('#pushDiv').hide();
+        $('#pwResetCodeDiv').hide();
+        $('#changePasswordDiv').hide();
+        $('#verifyUserUrl').val(data._links['user.verify'].href);
+        $('#ppDiv').hide('');
+        $('#idfirst').show();
+        break;
       case 'VERIFICATION_CODE_REQUIRED':
         console.log('Rendering Verification code form');
         $('#loginDiv').hide();
@@ -215,6 +226,7 @@ function getNextStep(flowID){
         $('#changePasswordDiv').hide();
         $('#verifyUserUrl').val(data._links['user.verify'].href);
         $('#ppDiv').hide('');
+        $('#idfirst').hide();
         break;
       case 'PASSWORD_REQUIRED':
         console.log('Rendering login form');
@@ -226,6 +238,7 @@ function getNextStep(flowID){
         $('#validatePasswordUrl').val(data._links['usernamePassword.check'].href);
         $('#validatePasswordContentType').val('application/vnd.pingidentity.usernamePassword.check+json');
         $('#ppDiv').hide('');
+        $('#idfirst').hide();
         break;
       case 'OTP_REQUIRED':
         console.log('Rendering otp form');
@@ -237,6 +250,7 @@ function getNextStep(flowID){
         $('#validateOtpUrl').val(data._links['otp.check'].href);
         $('#validateOtpContentType').val('application/vnd.pingidentity.otp.check+json')
         $('#ppDiv').hide('');
+        $('#idfirst').hide();
         break;
       case 'PUSH_CONFIRMATION_REQUIRED':
         console.log('Rendering wait for push form');
@@ -247,6 +261,7 @@ function getNextStep(flowID){
         $('#changePasswordDiv').hide();
         $('#pushResumeUrl').val(data._links["device.select"].href);
         $('#ppDiv').hide('');
+        $('#idfirst').hide();
         break;
       case 'MUST_CHANGE_PASSWORD':
         console.log('Rendering password form');
@@ -258,6 +273,7 @@ function getNextStep(flowID){
         $('#changePasswordUrl').val(data._links['password.reset'].href);
         $('#changePasswordContentType').val('application/vnd.pingidentity.password.reset+json')
         $('#ppDiv').hide('');
+        $('#idfirst').hide();
         break;
       case 'RECOVERY_CODE_REQUIRED':
       console.log('Rendering password form');
@@ -270,6 +286,7 @@ function getNextStep(flowID){
         $('#pwcodeUrl').val(data._links['password.sendRecoveryCode'].href);
         $('#changePasswordContentType').val('application/vnd.pingidentity.password.reset+json')
         $('#ppDiv').hide('');
+        $('#idfirst').hide();
         break;
       case 'COMPLETED':
         console.log('completed authentication successfully');
@@ -281,6 +298,7 @@ function getNextStep(flowID){
         $('#warningMessage').text('');
         $('#warningDiv').hide();
         $('#ppDiv').hide('');
+        $('#idfirst').hide();
         //console.log('Finish logon called');
         console.log(data);
         console.log('resueme url is: '+ data.resumeUrl);
@@ -300,7 +318,9 @@ function getNextStep(flowID){
         $('#ppURL').val(data._links["user.update"].href);
         $('#labelID1').val(data._embedded.attributes[0].name);
         $('#labelID2').val(data._embedded.attributes[1].name);
+        $('#idfirst').hide();
         getPPValues(data);
+        
       break;
       default:
         console.log('Unexpected outcome');
