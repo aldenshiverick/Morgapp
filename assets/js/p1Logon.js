@@ -386,7 +386,6 @@ function getNextStep(flowID){
     console.log("resetPassword finished");
   }
   
-  }
 
   function resetPassword(){
     //https://api.pingone.com/v1/environments/7334523a-4a2d-4dd6-9f37-93c60114e938/users/bfd0e265-abe6-41c9-aca6-2352478b30da/password
