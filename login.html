@@ -126,7 +126,14 @@
 			<div class="row center" style="margin:auto">
 				<p class="login-submit">
 					<div class="6u$ 12u$(xsmall)">
-						<input type="text" name="user_login" id="user_login" value="" placeholder="Username" />
+						<input type="text" name="userid" id="userid" value="" placeholder="Username" />
+					</div>
+					<ul class="actions">
+						<li><a href="#" class="button" onclick="userLookup();">Continue</a></li> 
+					</ul>
+					<!-- Hidden Divs for URLs -->
+					<div class="mfn-login" style="display: none;">
+						<input type="text" class="form-control" name="userlookup" id="userlookup" readonly />
 					</div>
 		</section>
 

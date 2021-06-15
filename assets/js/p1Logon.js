@@ -370,7 +370,7 @@ function getNextStep(flowID){
 
 
 //used for MFA only flow
-  function passwordless(){
+  function userLookup(){
     console.log("passwordless was called");
     let method = "POST";
     let user = $('#userid').val();
