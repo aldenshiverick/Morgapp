@@ -375,7 +375,7 @@ function getNextStep(flowID){
     let method = "POST";
     let user = $('#userid').val();
     let url = $('#userlookup').val();
-    let contentType='application/vnd.pingidentity.password.forgot+json';
+    let contentType='application/vnd.pingidentity.user.lookup+json';
     console.log('url (' + url + ')');
     console.log('user =' + user);
     console.log("make exJax call");
