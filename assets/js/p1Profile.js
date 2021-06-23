@@ -105,7 +105,7 @@ function updateUserValues(){
       //namelist.push({name:{given: + $('#fname').val(), family: + $('#lname').val()}});
       console.log('current array: ' +JSON.stringify(listname) );
       if ($('#fname').val() !=""){
-        listname[0].add('given:' + $('#fname').val());
+        listname[0].push('given:' + $('#fname').val());
         console.log('current array: ' +JSON.stringify(listname) );
       }
       if ($('#lname').val() !=""){
