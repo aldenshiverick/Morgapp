@@ -105,11 +105,12 @@ function updateUserValues(){
       //namelist.push({name:{given: + $('#fname').val(), family: + $('#lname').val()}});
       console.log('current array: ' +JSON.stringify(listname) );
       if ($('#fname').val() !=""){
-        listname.push('given:' + $('#fname').val());
+        listname.name.push('given:' + $('#fname').val());
+        settingkey: $(this).attr('name'),
         console.log('current array: ' +JSON.stringify(listname) );
       }
       if ($('#lname').val() !=""){
-        listname.name.add('family:' + $('#lname').val());
+        listname.name.push('family:' + $('#lname').val());
         console.log('current array: ' +JSON.stringify(listname) );
       } 
       list.add(listname);
