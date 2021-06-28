@@ -89,91 +89,91 @@ function setUserValues(userJson) {
 
 
 
-function updateUserValues(){
-    console.log("updateUserValues was called");
-  let method = "PATCH";
-  let user = Cookies.get("userAPIid");
-  console.log('User APIid: ' + user);
-  let at = "Bearer " + Cookies.get("accessToken");
-  let url = apiUrl + "/environments/" + environmentID + "/users/" + user;
-  let list = ['username:' + $('#email').val()];
-  let i = 1;
-  //list[0].push('username:' + $('#username').val());
-  console.log('current array: ' +JSON.stringify(list) );
-  if ($('#fname').val() !="" && $('#lname').val() !=""){
-    let listname=['name'];
-      //namelist.push({name:{given: + $('#fname').val(), family: + $('#lname').val()}});
-      console.log('current array: ' +JSON.stringify(listname) );
-      if ($('#fname').val() !=""){
-        listname.name.push('given:' + $('#fname').val());
-        settingkey: $(this).attr('name'),
-        console.log('current array: ' +JSON.stringify(listname) );
-      }
-      if ($('#lname').val() !=""){
-        listname.name.push('family:' + $('#lname').val());
-        console.log('current array: ' +JSON.stringify(listname) );
-      } 
-      list.add(listname);
-      console.log("list array: " + JSON.stringify(list));
-  }
-let payload = JSON.stringify(list);
-  console.log(payload);
-  console.log('ajax (' + url + ')');
-  console.log('at =' + at);
-  console.log("make ajax call");
-  $.ajax({
-      async: "true",
-      url: url,
-      method: method,
-      dataType: 'json',
-      contentType: 'application/json',
-      data: payload,
-      beforeSend: function(xhr) {
-        xhr.setRequestHeader('Authorization', at);
-      }
-    }).done(function(data) {
-      console.log(data);
-    })
-    .fail(function(data) {
-      console.log('ajax call failed');
-      console.log(data);
-      $('#warningMessage').text(data.responseJSON.details[0].message);
-      $('#warningDiv').show();
-    });
-  //add brief delay so info is populated
-  setTimeout(function() {
-    getUserValues();
-  }, 1000);
-}
-    
-
-
-
-
 // function updateUserValues(){
-//   console.log("updateUserValues was called");
+//     console.log("updateUserValues was called");
 //   let method = "PATCH";
 //   let user = Cookies.get("userAPIid");
 //   console.log('User APIid: ' + user);
 //   let at = "Bearer " + Cookies.get("accessToken");
 //   let url = apiUrl + "/environments/" + environmentID + "/users/" + user;
+//   let list = ['username:' + $('#email').val()];
+//   let i = 1;
+//   //list[0].push('username:' + $('#username').val());
+//   console.log('current array: ' +JSON.stringify(list) );
+//   if ($('#fname').val() !="" && $('#lname').val() !=""){
+//     let listname=['name'];
+//       //namelist.push({name:{given: + $('#fname').val(), family: + $('#lname').val()}});
+//       console.log('current array: ' +JSON.stringify(listname) );
+//       if ($('#fname').val() !=""){
+//         listname.name.push('given:' + $('#fname').val());
+//         settingkey: $(this).attr('name'),
+//         console.log('current array: ' +JSON.stringify(listname) );
+//       }
+//       if ($('#lname').val() !=""){
+//         listname.name.push('family:' + $('#lname').val());
+//         console.log('current array: ' +JSON.stringify(listname) );
+//       } 
+//       list.add(listname);
+//       console.log("list array: " + JSON.stringify(list));
+//   }
+// let payload = JSON.stringify(list);
+//   console.log(payload);
+//   console.log('ajax (' + url + ')');
+//   console.log('at =' + at);
+//   console.log("make ajax call");
+//   $.ajax({
+//       async: "true",
+//       url: url,
+//       method: method,
+//       dataType: 'json',
+//       contentType: 'application/json',
+//       data: payload,
+//       beforeSend: function(xhr) {
+//         xhr.setRequestHeader('Authorization', at);
+//       }
+//     }).done(function(data) {
+//       console.log(data);
+//     })
+//     .fail(function(data) {
+//       console.log('ajax call failed');
+//       console.log(data);
+//       $('#warningMessage').text(data.responseJSON.details[0].message);
+//       $('#warningDiv').show();
+//     });
+//   //add brief delay so info is populated
+//   setTimeout(function() {
+//     getUserValues();
+//   }, 1000);
+// }
+    
+
+
+
+
+function updateUserValues(){
+  console.log("updateUserValues was called");
+  let method = "PATCH";
+  let user = Cookies.get("userAPIid");
+  console.log('User APIid: ' + user);
+  let at = "Bearer " + Cookies.get("accessToken");
+  let url = apiUrl + "/environments/" + environmentID + "/users/" + user;
  
-//   let payload = JSON.stringify({
-//     username: $('#username').val(),
-//     name: {
-//       given: $('#fname').val(),
-//       family: $('#lname').val()
-//     },
-//     // birthday: $('#birthday').val(),
-//     //gender: $('#gender').val(),
-//     //relationship: 
-//     address: {
-//       streetAddress: $('#address').val(),
-//       locality: $('#city').val(),
-//       region: $('#state').val(),
-//       postalCode: $('#zip').val()
-//     },
-//   });
+  let payload = JSON.stringify({
+    username: $('#username').val(),
+    name: {
+      given: $('#fname').val(),
+      family: $('#lname').val()
+    },
+    // birthday: $('#birthday').val(),
+    //gender: $('#gender').val(),
+    //relationship: 
+    address: {
+      streetAddress: $('#address').val(),
+      locality: $('#city').val(),
+      region: $('#state').val(),
+      postalCode: $('#zip').val()
+    },
+  });
 
 //   payload = JSON.parse(payload);
 //   // Object.keys(payload).forEach(function(key) {
@@ -215,34 +215,34 @@ let payload = JSON.stringify(list);
 // //     }
 // // }
 
-//   console.log(payload);
-//   console.log('ajax (' + url + ')');
-//   console.log('at =' + at);
-//   console.log("make ajax call");
-//   $.ajax({
-//       async: "true",
-//       url: url,
-//       method: method,
-//       dataType: 'json',
-//       contentType: 'application/json',
-//       data: payload,
-//       beforeSend: function(xhr) {
-//         xhr.setRequestHeader('Authorization', at);
-//       }
-//     }).done(function(data) {
-//       console.log(data);
-//     })
-//     .fail(function(data) {
-//       console.log('ajax call failed');
-//       console.log(data);
-//       $('#warningMessage').text(data.responseJSON.details[0].message);
-//       $('#warningDiv').show();
-//     });
-//   //add brief delay so info is populated
-//   setTimeout(function() {
-//     getUserValues();
-//   }, 1000);
-// }
+  console.log(payload);
+  console.log('ajax (' + url + ')');
+  console.log('at =' + at);
+  console.log("make ajax call");
+  $.ajax({
+      async: "true",
+      url: url,
+      method: method,
+      dataType: 'json',
+      contentType: 'application/json',
+      data: payload,
+      beforeSend: function(xhr) {
+        xhr.setRequestHeader('Authorization', at);
+      }
+    }).done(function(data) {
+      console.log(data);
+    })
+    .fail(function(data) {
+      console.log('ajax call failed');
+      console.log(data);
+      $('#warningMessage').text(data.responseJSON.details[0].message);
+      $('#warningDiv').show();
+    });
+  //add brief delay so info is populated
+  setTimeout(function() {
+    getUserValues();
+  }, 1000);
+}
 
 
 function updatePassword(){
