@@ -11,6 +11,9 @@ const appClientID = '153f06e7-b750-447c-8626-cd90d992bcc2'; //used for enduser l
 //const agentClientID ='fec0bfde-63b0-4256-bff7-46105dbd2497'; //user for agent/admin logon experience
 const agentClientID ='7e80217e-4283-4bf1-830f-ea6bc2fdf4ec'; //user for agent/admin logon experience
 
+
+//haveibeenpwned 
+const pwnedKey = "2993a27deafa41d0b8456caf96518aa1";
 //----------------------------------------------------------------------------------------------------//
 
 

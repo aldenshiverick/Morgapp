@@ -600,6 +600,26 @@ function getUserID(){
   console.log("GetUserID completed");
 }
 
+function checkpwned(){
+  let password = $('#user_pass').val();
+  console.log('password org: ' + password);
+  password = crypto.createHash('sha1').update(password).digest('base64');
+  console.log('password hashed: ' + password);
+  let method = 'GET';
+  let pwdString = password.substring(0,5);
+  console.log('first 5 is: ' + pwdString);
+  let url = "https://api.pwnedpasswords.com/range/" + pwdString;
+  $.ajax({
+    async: "true",
+    url: url,
+    method: method,
+    headers: { 'hibp-api-key:': pwnedKey }
+  }).done(function(response) {
+    console.log('response '+response);
+  });
+
+}
+
 function checkPassword() {
   console.log('checkPassword called');
 
@@ -618,7 +638,8 @@ function checkPassword() {
       xhr.setRequestHeader('Authorization', at);
     }
   }).done(function(response) {
-    console.log('response '+response);
-    console.log('response '+response.id);
+    if(response = "200"){
+      checkpwned();
+    }
   });
 }
