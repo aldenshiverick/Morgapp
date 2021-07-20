@@ -616,8 +616,15 @@ function checkpwned(){
     url: url,
     method: method,
     headers: { 'hibp-api-key:': pwnedKey }
-  }).done(function(response) {
-    console.log('response '+response);
+  })
+  .done(function(data) {
+    console.log(data);
+  })
+  .fail(function(data) {
+    console.log('ajax call failed');
+    console.log(data);   
+    $('#warningMessage').text(data.responseJSON.details[0].message);
+    $('#warningDiv').show();
   });
 
 }
