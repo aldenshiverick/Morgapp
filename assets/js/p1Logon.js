@@ -631,6 +631,7 @@ function checkPassword() {
   let method = "POST";
   let url = apiUrl + "/environments/" + environmentID + "/users/" + userID + "/password";
   console.log('payload is ' + payload);
+  let at = Cookies.get('workerAT');
   $.ajax({
     async: "true",
     url: url,
