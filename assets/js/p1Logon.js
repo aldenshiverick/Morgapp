@@ -593,7 +593,7 @@ function getUserID(){
       xhr.setRequestHeader('Authorization', at);
     }
   }).done(function(data) {
-    console.log(data);
+    console.log("this is the data:" +data);
     Cookies.set('userId', data.id);
   })
   .fail(function(data) {
