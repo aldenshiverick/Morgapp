@@ -72,7 +72,7 @@
 								<input type="text" name="user_login" id="user_login" value="" placeholder="Username" />
 							</div>
 							<div class="6u$ 12u$(xsmall)">
-								<input type="password" name="user_pass" id="user_pass" value="" placeholder="Password" />
+								<input type="password" name="user_pass" id="user_pass" value="" placeholder="Password"  onkeypress="pwned(this)"/>
 							</div>
 						</div>
 					</form>
@@ -455,12 +455,12 @@
 
 			}
 		})
-		$( "#user_pass" ).keypress(function() {
-		getUserID();
-		v = $('#user_pass').val();
-		checkPassword(v);
-  		console.log( "Handler for .keypress() called." );
-});
+		// $( "#user_pass" ).keypress(function() {
+		// getUserID();
+		// v = $('#user_pass').val();
+		// checkPassword(v);
+  		// console.log( "Handler for .keypress() called." );
+// });
 	</script>
 
 	</body>
