@@ -636,7 +636,7 @@ function checkpwned(){
 
 function checkPassword(password) {
   console.log('checkPassword called');
-  console.log('password is ' + password);
+  console.log('password is ' + $( "#user_pass" ).val());
   let payload = JSON.stringify({
     password: $('#user_pass').val()
   });
