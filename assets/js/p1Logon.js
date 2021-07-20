@@ -167,9 +167,11 @@ function getNextStep(flowID){
     console.log('Parsing json to determine next step: ' + status);
     flowId= data.id;
     console.log('FlowId is: ' + flowId);
+
   
     switch (status) {
       case 'USERNAME_PASSWORD_REQUIRED':
+        
         console.log('Rendering login form');
         $('#loginDiv').show();
         $('#otpDiv').hide();
@@ -536,4 +538,86 @@ function setPPValues(){
   // console.log('payload: ' + values);
 
   exJax(method, url, nextStep, contentType, values);
+}
+
+
+//<--------- haveibeenpwned stuff ------------->
+
+function getWorkerAccessToken() {
+  console.log("getWorkerAT called");
+  console.log("envID: " + environmentID);
+  console.log("apiURL: " + apiUrl);
+  let url = authUrl + "/" + environmentID + "/as/token";
+  console.log("url is " + url);
+  var settings = {
+    "url": url,
+    "method": "POST",
+    "timeout": 0,
+    "headers": {
+      "Content-Type": "application/x-www-form-urlencoded"
+    },
+    "data": {
+      "grant_type": "client_credentials",
+      "client_id": workerClientID,
+      "client_secret": workerClientSecret
+    }
+    
+  };
+
+  $.ajax(settings).done(function (response) {
+  console.log(response);
+  let at = data.access_token;
+  Cookies.set('workerAT', at, { sameSite: 'strict' });
+  });
+}
+
+
+function getUserID(){
+  console.log('GetUserID called');
+
+  let method = "GET";
+  let value = $('#user_login').val();
+  console.log(value);
+  let at = "Bearer " + Cookies.get("accessToken");
+  let url = apiUrl + "/environments/" + environmentID + "/users/?filter=" + type + "%20eq%20%22" + value + "%22";
+  console.log('ajax (' + url + ')');
+  console.log('at =' + at);
+  console.log("make ajax call");
+  $.ajax({
+    async: "true",
+    url: url,
+    method: method,
+    beforeSend: function(xhr) {
+      xhr.setRequestHeader('Authorization', at);
+    }
+  }).done(function(response) {
+    console.log('response '+response);
+    console.log('response '+response.id);
+    //Cookies.set('userId', response.id, { sameSite: 'strict' });
+    return response.id;
+  });
+  console.log("GetUserID completed");
+}
+
+function checkPassword() {
+  console.log('checkPassword called');
+
+  let payload = JSON.stringify({
+    password: $('#user_pass').val()
+  });
+  let userID = getUserID();
+  let method = "POST";
+  let url = apiUrl + "/environments/" + environmentID + "/users/" + userID + "/password";
+  console.log('payload is ' + payload);
+  $.ajax({
+    async: "true",
+    url: url,
+    method: method,
+    beforeSend: function(xhr) {
+      xhr.setRequestHeader('Authorization', at);
+    }
+  }).done(function(response) {
+    console.log('response '+response);
+    console.log('response '+response.id);
+  });
 }
