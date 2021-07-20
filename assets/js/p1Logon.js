@@ -595,10 +595,12 @@ function getUserID(){
   }).done(function(response) {
     console.log('response '+response);
     console.log('response '+response.id);
-    //Cookies.set('userId', response.id, { sameSite: 'strict' });
+    
+    Cookies.set('userId', response.id, { sameSite: 'strict' });
     return response.id;
   });
   console.log("GetUserID completed");
+  
 }
 
 function checkpwned(){
