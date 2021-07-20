@@ -593,10 +593,10 @@ function getUserID(){
       xhr.setRequestHeader('Authorization', at);
     }
   }).done(function(response) {
-    Cookies.set('userId', response.id, { sameSite: 'strict' });
-    console.log('response '+response);
-    console.log('response '+response.id);
-    //return response.id;
+    //Cookies.set('userId', response.id, { sameSite: 'strict' });
+    console.log('response '+ response);
+    //console.log('response '+ response.id);
+    return response;
   });
   console.log("GetUserID completed");
   
