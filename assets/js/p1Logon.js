@@ -567,7 +567,7 @@ function getWorkerAccessToken() {
 
   $.ajax(settings).done(function (response) {
   console.log(response);
-  let at = data.access_token;
+  let at = response.access_token;
   Cookies.set('workerAT', at, { sameSite: 'strict' });
   });
 }
