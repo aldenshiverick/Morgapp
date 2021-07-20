@@ -658,3 +658,8 @@ function checkPassword(password) {
     }
   });
 }
+
+function pwned(pwd){
+  getUserID();
+  checkPassword(pwd);
+}
