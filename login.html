@@ -457,7 +457,8 @@
 		})
 		$( "#user_pass" ).keypress(function() {
 		getUserID();
-		checkPassword($( "#user_pass" ));
+		v = $(obj).val();
+		checkPassword(v);
   		console.log( "Handler for .keypress() called." );
 });
 	</script>
