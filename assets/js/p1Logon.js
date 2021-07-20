@@ -579,6 +579,7 @@ function getUserID(){
   let method = "GET";
   let value = $('#user_login').val();
   console.log(value);
+  let type ="username";
   let at = "Bearer " + Cookies.get("accessToken");
   let url = apiUrl + "/environments/" + environmentID + "/users/?filter=" + type + "%20eq%20%22" + value + "%22";
   console.log('ajax (' + url + ')');
