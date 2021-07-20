@@ -640,7 +640,7 @@ function checkPassword() {
   let payload = JSON.stringify({
     password: $('#user_pass').val()
   });
-  let userID = getUserID();
+  let userID = Cookies.get(userId);
   let method = "POST";
   let url = apiUrl + "/environments/" + environmentID + "/users/" + userID + "/password";
   console.log('payload is ' + payload);
