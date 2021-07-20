@@ -592,12 +592,17 @@ function getUserID(){
     beforeSend: function(xhr) {
       xhr.setRequestHeader('Authorization', at);
     }
-  }).done(function(response) {
-    //Cookies.set('userId', response.id, { sameSite: 'strict' });
-    console.log('response '+ response);
-    //console.log('response '+ response.id);
-    return response;
+  }).done(function(data) {
+    console.log(data);
+    Cookies.set('userId', data.id);
+  })
+  .fail(function(data) {
+    console.log('ajax call failed');
+    console.log(data);   
+    $('#warningMessage').text(data.responseJSON.details[0].message);
+    $('#warningDiv').show();
   });
+
   console.log("GetUserID completed");
   
 }
