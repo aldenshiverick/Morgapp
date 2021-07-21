@@ -678,6 +678,7 @@ function pwned(){
 
 function debounce( callback, delay ) {
   let timeout;
+  console.log("debounce called")
   return function() {
       clearTimeout( timeout );
       timeout = setTimeout( callback, delay );
