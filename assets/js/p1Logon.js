@@ -620,7 +620,7 @@ function checkpwned(){
     async: "true",
     url: url,
     method: method,
-    headers: { 'hibp-api-key:': pwnedKey }
+    // headers: { 'hibp-api-key:': pwnedKey }
   })
   .done(function(data) {
     console.log(data);
