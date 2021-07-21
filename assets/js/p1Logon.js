@@ -637,6 +637,7 @@ function checkpwned(){
 
 function parsepwned(data,password){
   let pwdstring= password.substring(5,password.length+1);
+  console.log("password short string: " + pwdstring);
   if (data.includes(pwdstring))
     console.log("BREACHED")
   else 
