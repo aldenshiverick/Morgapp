@@ -634,11 +634,13 @@ function checkpwned(){
 
 }
 
-function checkPassword(password) {
+function checkPassword(pwd) {
   console.log('checkPassword called');
-  console.log('password is ' + $( "#user_pass" ).val());
+  //console.log('password is ' + $( "#user_pass" ).val());
+  console.log('password is ' + pwd);
+
   let payload = JSON.stringify({
-    password: $('#user_pass').val()
+    password: + pwd
   });
   let userID = Cookies.get('userId');
   let method = "POST";
