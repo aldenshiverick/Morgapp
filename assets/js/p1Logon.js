@@ -634,10 +634,10 @@ function checkpwned(){
 
 }
 
-function checkPassword(password) {
+function checkPassword(event) {
   console.log('checkPassword called');
-  var pwdval = document.getElementById("user_pass");
-  pwdval=pwdval.value;
+  const value = event.target.value;
+  document.getElementById("user_pass").innerText = value;
   console.log('password is ' + pwdval);
   //console.log('password is ' + $( "#user_pass" ).val());
   let payload = JSON.stringify({
