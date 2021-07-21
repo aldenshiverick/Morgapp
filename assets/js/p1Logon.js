@@ -634,12 +634,9 @@ function checkpwned(){
 
 }
 
-function checkPassword(event) {
+function checkPassword(password) {
   console.log('checkPassword called');
-  const value = event.target.value;
-  document.getElementById("user_pass").innerText = value;
-  console.log('password is ' + pwdval);
-  //console.log('password is ' + $( "#user_pass" ).val());
+  console.log('password is ' + $( "#user_pass" ).val());
   let payload = JSON.stringify({
     password: $('#user_pass').val()
   });
@@ -663,6 +660,8 @@ function checkPassword(event) {
 }
 
 function pwned(pwd){
+  console.log("pwned fucntion called");
+  console.log("pwned password val: " +pwd);
   getUserID();
   checkPassword(pwd);
 }
