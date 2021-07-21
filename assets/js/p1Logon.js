@@ -610,7 +610,7 @@ function getUserID(){
 function checkpwned(){
   let password = $('#user_pass').val();
   console.log('password org: ' + password);
-  password = crypto.createHash('sha1').update(password).digest('base64');
+  password = SHA1(password);
   console.log('password hashed: ' + password);
   let method = 'GET';
   let pwdString = password.substring(0,5);
