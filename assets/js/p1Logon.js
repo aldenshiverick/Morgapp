@@ -624,14 +624,23 @@ function checkpwned(){
   })
   .done(function(data) {
     console.log(data);
+    parsepwned(data,);
   })
   .fail(function(data) {
     console.log('ajax call failed');
-    console.log(data);   
+    console.log(data,password);   
     $('#warningMessage').text(data.responseJSON.details[0].message);
     $('#warningDiv').show();
   });
 
+}
+
+function parsepwned(data,password){
+  let pwdstring= password.substring(5,password.length+1);
+  if (data.contains(pwdstring))
+    console.log("BREACHED")
+  else 
+    console.log("safe")
 }
 
 function checkPassword() {
