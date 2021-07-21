@@ -455,12 +455,13 @@
 
 			}
 		})
-		// $( "#user_pass" ).keypress(function() {
-		// getUserID();
-		// v = $('#user_pass').val();
-		// checkPassword(v);
-  		// console.log( "Handler for .keypress() called." );
-// });
+		const pdwField = document.getElementById("user_pass");
+
+		pdwField.addEventListener(
+    		"keyup",
+    		debounce( pwned(), 2000 )
+		);
+
 	</script>
 
 	</body>
