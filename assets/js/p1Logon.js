@@ -646,7 +646,7 @@ function checkPassword() {
   let method = "POST";
   let url = apiUrl + "/environments/" + environmentID + "/users/" + userID + "/password";
   console.log('payload is ' + payload);
-  let at = Cookies.get('workerAT');
+  let at = "Bearer " + Cookies.get('workerAT');
   $.ajax({
     async: "true",
     url: url,
@@ -667,8 +667,6 @@ function checkPassword() {
   .fail(function(data) {
     console.log('ajax call failed');
     console.log(data);   
-    $('#warningMessage').text(data.responseJSON.details[0].message);
-    $('#warningDiv').show();
   });
 }
 
