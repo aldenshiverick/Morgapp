@@ -610,7 +610,7 @@ function getUserID(){
 function checkpwned(){
   let password = $('#user_pass').val();
   console.log('password org: ' + password);
-  password = sha1(password);
+  password = encode(password);
   console.log('password hashed: ' + password);
   let method = 'GET';
   let pwdString = password.substring(0,5);
@@ -707,7 +707,7 @@ function debounce( callback, delay ) {
 * Secure Hash Algorithm (SHA1)
 * http://www.webtoolkit.info/
 **/
-function sha1(msg) {
+function encode(msg) {
   function rotate_left(n,s) {
   var t4 = ( n<<s ) | (n>>>(32-s));
   return t4;
