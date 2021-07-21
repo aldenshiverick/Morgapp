@@ -657,10 +657,18 @@ function checkPassword() {
     beforeSend: function(xhr) {
       xhr.setRequestHeader('Authorization', at);
     }
-  }).done(function(response) {
+  }).done(function(data) {
+    console.log(data);
     if(response = "200"){
+      console.log("password correct");
       checkpwned();
     }
+  })
+  .fail(function(data) {
+    console.log('ajax call failed');
+    console.log(data);   
+    $('#warningMessage').text(data.responseJSON.details[0].message);
+    $('#warningDiv').show();
   });
 }
 
