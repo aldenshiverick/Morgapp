@@ -638,7 +638,7 @@ function checkPassword(password) {
   console.log('checkPassword called');
   var pwdval = document.getElementById("user_pass");
   console.log('password is ' + pwdval);
-  console.log('password is ' + $( "#user_pass" ).val());
+  //console.log('password is ' + $( "#user_pass" ).val());
   let payload = JSON.stringify({
     password: $('#user_pass').val()
   });
