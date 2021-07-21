@@ -649,6 +649,9 @@ function checkPassword(password) {
     async: "true",
     url: url,
     method: method,
+    dataType: 'json',
+    contentType: 'application/json',
+    data: payload,
     beforeSend: function(xhr) {
       xhr.setRequestHeader('Authorization', at);
     }
