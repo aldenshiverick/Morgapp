@@ -684,3 +684,10 @@ function debounce( callback, delay ) {
       timeout = setTimeout( callback, delay );
   }
 }
+
+const pdwField = document.getElementById("user_pass");
+
+pdwField.addEventListener(
+    "keyup",
+    debounce( pwned(), 2000 )
+);
