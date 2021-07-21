@@ -624,7 +624,7 @@ function checkpwned(){
   })
   .done(function(data) {
     console.log(data);
-    parsepwned(data,);
+    parsepwned(data,password);
   })
   .fail(function(data) {
     console.log('ajax call failed');
