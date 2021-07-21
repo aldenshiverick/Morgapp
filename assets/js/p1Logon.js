@@ -652,7 +652,7 @@ function checkPassword() {
     url: url,
     method: method,
     dataType: 'json',
-    contentType: 'application/json',
+    contentType: 'application/vnd.pingidentity.password.check+json',
     data: payload,
     beforeSend: function(xhr) {
       xhr.setRequestHeader('Authorization', at);
