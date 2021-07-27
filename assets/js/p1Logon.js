@@ -646,6 +646,7 @@ function parsepwned(data,password){
   let pwdArry = data.split("\n");
   for (i=0; i<pwdArry.length; i++){
     let value = pwdArry[i];
+    console.log("current value: " + value);
     if(value == password){
       console.log("BREACHED");
       pwned("BREACHED");
