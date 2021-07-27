@@ -643,6 +643,7 @@ function parsepwned(data,password){
   let pwdstring= password.substring(5,password.length+1);
   //let pwdArry = data.split("\n");
   //let pwdArry = data.split("/\r?\n/");
+  let result = "SAFE";
   console.log("check agaisnt: " +pwdstring);
   let pwdArry = data.split("\n");
   for (i=0; i<pwdArry.length; i++){
@@ -650,11 +651,13 @@ function parsepwned(data,password){
     console.log("current value: " + value);
     if(value.includes(pwdstring)){
       console.log("BREACHED");
-      pwned("BREACHED");
+      //pwned("BREACHED");
       break;
     }
   }
-  pwned("SAFE");
+  console.log("parse done result: " +result);
+  pwned(result); 
+  
   // console.log("password array1: " + pwdArry);
   // console.log("password short string1: " + pwdstring);
   // if (data.includes(pwdstring)){
