@@ -652,7 +652,7 @@ function parsepwned(data,password){
     console.log("current value: " + value);
     if(value.includes(pwdstring)){
       console.log("BREACHED");
-      //pwned("BREACHED");
+      result="BREACHED";
       break;
     }
   }
