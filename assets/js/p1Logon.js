@@ -595,6 +595,7 @@ function getUserID(){
   }).done(function(data) {
     console.log("this is the data:" + data);
     Cookies.set('userId', data._embedded.users[0].id);
+    return data._embedded.users[0].id;
   })
   //add catch for user not exisiting
   .fail(function(data) {
@@ -657,7 +658,8 @@ function checkPassword() {
   let payload = JSON.stringify({
     password: $("#user_pass" ).val()
   });
-  let userID = Cookies.get('userId');
+  //let userID = Cookies.get('userId');
+  let userID = getUserID();
   let method = "POST";
   let url = apiUrl + "/environments/" + environmentID + "/users/" + userID + "/password";
   console.log("this is the url: " +url);
