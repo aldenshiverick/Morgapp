@@ -91,7 +91,8 @@
 								<div class="row uniform 50%">
 									<h3> Set Password</h3>
 									<div class="6u 12u$(xsmall)">
-										<input type="password" name="user_pass" id="user_pass" value=""  onkeyup="debounce(pwned('REG'),2000);" />
+										<input type="password" name="user_pass" id="user_pass" value="" />
+										<!-- <input type="password" name="user_pass" id="user_pass" value=""  onkeyup="debounce(pwned('REG'),2000);" /> -->
 									</div>
 									<div class="6u$ 12u$(xsmall)">
 										<input type="password" name="user_pass_conf" id="user_pass_conf" value=""  onkeyup="checkPass();"/>
@@ -219,12 +220,12 @@
 				
 							})
 
-				// const myInput = document.getElementById("user_pass");
+				const myInput = document.getElementById("user_pass");
 
-				// myInput.addEventListener(	
-				// 	"keyup",
-				// 	debounce( pwned('REG'), 2000 )
-				// );
+				myInput.addEventListener(	
+					"keyup",
+					debounce( pwned('REG'), 2000 )
+				);
 			</script>
 
 	</body>
