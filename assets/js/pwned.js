@@ -128,7 +128,6 @@ function getWorkerAccessToken() {
   }
   
   function checkPassword() {
-    sleep(10000);
     console.log('checkPassword called');
     console.log('password is ' + $( "#user_pass" ).val());
     //console.log('password is ' + pwd);
@@ -168,49 +167,36 @@ function getWorkerAccessToken() {
     });
   }
   
-  function pwned(status){
-    console.log("pwned fucntion called");
-    console.log("pwned status: " + status);
+//   function pwned(status){
+//     console.log("pwned fucntion called");
+//     console.log("pwned status: " + status);
   
-    switch (status) {
-      case 'START':
-        console.log("pwned START");
-        getUserID();
-        break;
-      case 'USER':
-        console.log("pwned USER");
-        checkPassword();
-        break;
-      case 'VALIDPWD':
-        console.log("pwned VALIDPWD");
-        checkpwned();
-        break;
-      case 'SAFE':
-        console.log("pwned SAFE");
-        validatePassword();
-        break;
-      case 'BREACHED':
-        console.log("pwned BREACHED");
-        resetPassword();
-        break;
-      default:
-        console.log('Unexpected outcome');
-        break;
-    }
-  
-    // let validPass = checkPassword();
-    // console.log("pwned password is vaild : " +validPass);
-    // if (checkPassword() == "correct"){
-    //     console.log ("pwned if correct statment")
-    //   if (checkpwned() == "safe"){
-    //     validatePassword();
-    //   }
-    //   else 
-    //     resetPassword();
-    // }
-    // else 
-    // console.log("Password incorrect");
-  }
+//     switch (status) {
+//       case 'START':
+//         console.log("pwned START");
+//         getUserID();
+//         break;
+//       case 'USER':
+//         console.log("pwned USER");
+//         checkPassword();
+//         break;
+//       case 'VALIDPWD':
+//         console.log("pwned VALIDPWD");
+//         checkpwned();
+//         break;
+//       case 'SAFE':
+//         console.log("pwned SAFE");
+//         validatePassword();
+//         break;
+//       case 'BREACHED':
+//         console.log("pwned BREACHED");
+//         resetPassword("breached");
+//         break;
+//       default:
+//         console.log('Unexpected outcome');
+//         break;
+//     }
+//   }
   
   function debounce( callback, delay ) {
     let timeout;
@@ -221,24 +207,14 @@ function getWorkerAccessToken() {
     }
   }
   
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  function sleep(ms) {
-    return new Promise(resolve => setTimeout(resolve, ms));
-  }
-  
-  
+
+
+
+///--- pwned reg --- ///
+document.getElementById('submitbutton').disabled = !cansubmit;
+
+
+
   
   // Sha 1 code 
     /**

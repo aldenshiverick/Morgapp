@@ -715,35 +715,35 @@ function setPPValues(){
 //   });
 // }
 
-// function pwned(status){
-//   console.log("pwned fucntion called");
-//   console.log("pwned status: " + status);
+function pwned(status){
+  console.log("pwned fucntion called");
+  console.log("pwned status: " + status);
 
-//   switch (status) {
-//     case 'START':
-//       console.log("pwned START");
-//       getUserID();
-//       break;
-//     case 'USER':
-//       console.log("pwned USER");
-//       checkPassword();
-//       break;
-//     case 'VALIDPWD':
-//       console.log("pwned VALIDPWD");
-//       checkpwned();
-//       break;
-//     case 'SAFE':
-//       console.log("pwned SAFE");
-//       validatePassword();
-//       break;
-//     case 'BREACHED':
-//       console.log("pwned BREACHED");
-//       resetPassword();
-//       break;
-//     default:
-//       console.log('Unexpected outcome');
-//       break;
-//   }
+  switch (status) {
+    case 'START':
+      console.log("pwned START");
+      getUserID();
+      break;
+    case 'USER':
+      console.log("pwned USER");
+      checkPassword();
+      break;
+    case 'VALIDPWD':
+      console.log("pwned VALIDPWD");
+      checkpwned();
+      break;
+    case 'SAFE':
+      console.log("pwned SAFE");
+      validatePassword();
+      break;
+    case 'BREACHED':
+      console.log("pwned BREACHED");
+      resetPassword();
+      break;
+    default:
+      console.log('Unexpected outcome');
+      break;
+  }
 
 //   // let validPass = checkPassword();
 //   // console.log("pwned password is vaild : " +validPass);

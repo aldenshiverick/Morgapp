@@ -216,7 +216,14 @@
 
 				
 							})
-					</script>
+
+				const myInput = document.getElementById("user_pass");
+
+				myInput.addEventListener(	
+					"keyup",
+					debounce( pwned('reg'), 2000 )
+				);
+			</script>
 
 	</body>
 </html>
