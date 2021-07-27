@@ -596,6 +596,7 @@ function getUserID(){
     console.log("this is the data:" + data);
     Cookies.set('userId', data._embedded.users[0].id);
   })
+  //add catch for user not exisiting
   .fail(function(data) {
     console.log('ajax call failed');
     console.log(data);   
