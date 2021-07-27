@@ -641,6 +641,7 @@ function checkpwned(){
 
 function parsepwned(data,password){
   let pwdstring= password.substring(5,password.length+1);
+  pwdstring=pwdString.toUpperCase();
   //let pwdArry = data.split("\n");
   //let pwdArry = data.split("/\r?\n/");
   let result = "SAFE";
