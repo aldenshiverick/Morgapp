@@ -596,7 +596,7 @@ function getUserID(){
   }).done(function(data) {
     console.log("this is the data:" + data);
     Cookies.set('userId', data._embedded.users[0].id);
-    return data._embedded.users[0].id;
+    pwned("USER");
     
   })
   //add catch for user not exisiting
@@ -647,10 +647,11 @@ function parsepwned(data,password){
   console.log("password short string1: " + pwdstring);
   if (data.includes(pwdstring)){
     console.log("BREACHED");
+    pwned("BREACHED");
   }
   else {
     console.log("safe!!!!");
-    return "safe";
+    pwned("SAFE");
     //validatePassword();
   }
 }
@@ -685,8 +686,9 @@ function checkPassword() {
     console.log(data);
     if(response = "200"){
       console.log("password correct");
-      return "correct";
+      //return "correct";
       //checkpwned();
+      pwned("VALIDPWD");
     }
   })
   .fail(function(data) {
@@ -695,22 +697,43 @@ function checkPassword() {
   });
 }
 
-function pwned(){
+function pwned(status){
   console.log("pwned fucntion called");
-  getUserID();
-  sleep(2000);
-  let validPass = checkPassword();
-  console.log("pwned password is vaild : " +validPass);
-  if (checkPassword() == "correct"){
-      console.log ("pwned if correct statment")
-    if (checkpwned() == "safe"){
+  
+
+  switch (status) {
+    case 'START':
+      getUserID();
+      break;
+    case 'USER':
+      checkPassword();
+      break;
+    case 'VALIDPWD':
+      checkpwned();
+      break;
+    case 'SAFE':
       validatePassword();
-    }
-    else 
+      break;
+    case 'BREACHED':
       resetPassword();
+      break;
+    default:
+      console.log('Unexpected outcome');
+      break;
   }
-  else 
-  console.log("Password incorrect");
+
+  // let validPass = checkPassword();
+  // console.log("pwned password is vaild : " +validPass);
+  // if (checkPassword() == "correct"){
+  //     console.log ("pwned if correct statment")
+  //   if (checkpwned() == "safe"){
+  //     validatePassword();
+  //   }
+  //   else 
+  //     resetPassword();
+  // }
+  // else 
+  // console.log("Password incorrect");
 }
 
 function debounce( callback, delay ) {
