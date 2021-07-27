@@ -108,7 +108,7 @@
 							<div id ="otpDiv" view="hide" class="row uniform 50%">
 								<h3> An Email was sent with a verification code. Please Verify your email</h3>
 								<div class="6u 12u$(xsmall)">
-									<input type="text" name="user_pass" id="user_otp" value="OTP" />
+									<input type="text" name="user_otp" id="user_otp" value="OTP" />
 								</div>
 								<span id="confirm-message2" class="confirm-message"></span>
 								<ul class="actions">
@@ -224,7 +224,7 @@
 
 				myInput.addEventListener(	
 					"keyup",
-					debounce( pwned('REG'), 2000 )
+					debounce( pwned, 2000 )
 				);
 			</script>
 
