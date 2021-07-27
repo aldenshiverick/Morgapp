@@ -641,9 +641,10 @@ function checkpwned(){
 
 function parsepwned(data,password){
   let pwdstring= password.substring(5,password.length+1);
-  const pwdArry = data.split("\n");
-  console.log("password array: " + pwdArry);
-  console.log("password short string: " + pwdstring);
+  //let pwdArry = data.split("\n");
+  let pwdArry = data.split("/\r?\n/");
+  console.log("password array1: " + pwdArry);
+  console.log("password short string1: " + pwdstring);
   if (data.includes(pwdstring)){
     console.log("BREACHED");
   }
