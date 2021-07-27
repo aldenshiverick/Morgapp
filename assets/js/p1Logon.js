@@ -173,6 +173,7 @@ function getNextStep(flowID){
       case 'USERNAME_PASSWORD_REQUIRED':
 
         console.log('Rendering login form');
+        getWorkerAccessToken();
         $('#loginDiv').show();
         $('#otpDiv').hide();
         $('#pushDiv').hide();
@@ -183,7 +184,7 @@ function getNextStep(flowID){
         $('#validatePasswordContentType').val('application/vnd.pingidentity.usernamePassword.check+json');
         $('#forgotPasswordURL').val(data._links["password.forgot"].href);
         $('#idfirst').hide();
-        getWorkerAccessToken();
+        
         //$('#socialLoginUrl').val(data._embedded.socialProviders[0]._links.authenticate.href);
         if ("socialProviders" in data._embedded){
           console.log("social exists");
