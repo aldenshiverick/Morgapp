@@ -185,12 +185,12 @@ function pwned(status){
         break;
       case 'SAFE':
         console.log("pwned SAFE");
-        document.getElementById("Button").disabled = false;
+        document.getElementById("register_button").disabled = false;
 
         break;
       case 'BREACHED':
         console.log("pwned BREACHED");
-        document.getElementById("Button").disabled = true;
+        document.getElementById("register_button").disabled = true;
         break;
       default:
         console.log('Unexpected outcome');
