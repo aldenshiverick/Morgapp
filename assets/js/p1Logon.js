@@ -184,7 +184,6 @@ function getNextStep(flowID){
         $('#forgotPasswordURL').val(data._links["password.forgot"].href);
         $('#idfirst').hide();
         getWorkerAccessToken();
-        console.log("passed getworker");
         //$('#socialLoginUrl').val(data._embedded.socialProviders[0]._links.authenticate.href);
         if ("socialProviders" in data._embedded){
           console.log("social exists");
@@ -596,7 +595,6 @@ function getUserID(){
   }).done(function(data) {
     console.log("this is the data:" + data);
     Cookies.set('userId', data._embedded.users[0].id);
-    
     return data._embedded.users[0].id;
     
   })
@@ -720,7 +718,9 @@ function debounce( callback, delay ) {
 
 
 
-
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
 
 
 
@@ -862,9 +862,3 @@ function encode(msg) {
  
   return temp.toLowerCase();
  }
-
-
-
- function sleep(ms) {
-  return new Promise(resolve => setTimeout(resolve, ms));
-}
