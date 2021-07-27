@@ -198,7 +198,7 @@ function getWorkerAccessToken() {
 //     }
 //   }
   
-  function debounce( callback, delay ) {
+  function debounce( callback, param, delay ) {
     let timeout;
     console.log("debounce called")
     return function() {
