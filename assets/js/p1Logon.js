@@ -709,22 +709,27 @@ function checkPassword() {
 
 function pwned(status){
   console.log("pwned fucntion called");
-  
+  console.log("pwned status: " + status);
 
   switch (status) {
     case 'START':
+      console.log("pwned START");
       getUserID();
       break;
     case 'USER':
+      console.log("pwned USER");
       checkPassword();
       break;
     case 'VALIDPWD':
+      console.log("pwned VALIDPWD");
       checkpwned();
       break;
     case 'SAFE':
+      console.log("pwned SAFE");
       validatePassword();
       break;
     case 'BREACHED':
+      console.log("pwned BREACHED");
       resetPassword();
       break;
     default:
