@@ -102,7 +102,7 @@
 								</div>
 
 								<ul class="actions">
-									<li><a href="#" class="button" onclick="registerUser();">Create Account</a></li> 
+									<li><a href="#" class="button" id="register_button" onclick="registerUser();">Create Account</a></li> 
 								</ul>
 							</div>
 							<div id ="otpDiv" view="hide" class="row uniform 50%">
@@ -224,7 +224,7 @@
 
 				myInput.addEventListener(	
 					"keyup",
-					debounce( pwned, 'REG', 2000 )
+					debounce( pwned, 2000 )
 				);
 			</script>
 
