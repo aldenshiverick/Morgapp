@@ -179,6 +179,10 @@ function pwned(status){
     console.log("pwned status: " + status);
   
     switch (status) {
+      case '':
+        console.log("pwned debouce called")
+        checkpwned();
+        break;
       case 'REG':
         console.log("pwned REG");
         checkpwned();
