@@ -642,18 +642,28 @@ function checkpwned(){
 function parsepwned(data,password){
   let pwdstring= password.substring(5,password.length+1);
   //let pwdArry = data.split("\n");
-  let pwdArry = data.split("/\r?\n/");
-  console.log("password array1: " + pwdArry);
-  console.log("password short string1: " + pwdstring);
-  if (data.includes(pwdstring)){
-    console.log("BREACHED");
-    pwned("BREACHED");
+  //let pwdArry = data.split("/\r?\n/");
+  let pwdArry = data.split("\n");
+  for (i=0; i<pwdArry.length; i++){
+    let value = pwdArry[i];
+    if(value == password){
+      console.log("BREACHED");
+      pwned("BREACHED");
+      break;
+    }
   }
-  else {
-    console.log("safe!!!!");
-    pwned("SAFE");
-    //validatePassword();
-  }
+  pwned("SAFE");
+  // console.log("password array1: " + pwdArry);
+  // console.log("password short string1: " + pwdstring);
+  // if (data.includes(pwdstring)){
+  //   console.log("BREACHED");
+  //   pwned("BREACHED");
+  // }
+  // else {
+  //   console.log("safe!!!!");
+  //   pwned("SAFE");
+  //   //validatePassword();
+  // }
 }
 
 function checkPassword() {
