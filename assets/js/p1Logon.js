@@ -647,7 +647,7 @@ function parsepwned(data,password){
     
   }
   else {
-    console.log("safe")
+    console.log("safe");
     validatePassword();
   }
 }
