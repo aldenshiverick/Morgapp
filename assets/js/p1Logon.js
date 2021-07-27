@@ -648,7 +648,8 @@ function parsepwned(data,password){
   }
   else {
     console.log("safe");
-    validatePassword();
+    return "safe";
+    //validatePassword();
   }
 }
 
@@ -682,7 +683,8 @@ function checkPassword() {
     console.log(data);
     if(response = "200"){
       console.log("password correct");
-      checkpwned();
+      return "correct";
+      //checkpwned();
     }
   })
   .fail(function(data) {
@@ -694,7 +696,15 @@ function checkPassword() {
 function pwned(){
   console.log("pwned fucntion called");
   getUserID();
-  checkPassword();
+  if (checkPassword() == "correct"){
+    if (checkpwned() == "safe"){
+      validatePassword();
+    }
+    else 
+      resetPassword();
+  }
+  else 
+  console.log("Password incorrect");
 }
 
 function debounce( callback, delay ) {
