@@ -641,10 +641,11 @@ function checkpwned(){
 
 function parsepwned(data,password){
   let pwdstring= password.substring(5,password.length+1);
+  const pwdArry = data.split("/n");
+  console.log("password array: " + pwdArry);
   console.log("password short string: " + pwdstring);
   if (data.includes(pwdstring)){
-    console.log("BREACHED")
-    
+    console.log("BREACHED");
   }
   else {
     console.log("safe");
@@ -696,6 +697,7 @@ function checkPassword() {
 function pwned(){
   console.log("pwned fucntion called");
   getUserID();
+  sleep(2000);
   if (checkPassword() == "correct"){
     if (checkpwned() == "safe"){
       validatePassword();
