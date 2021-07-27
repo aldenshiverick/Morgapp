@@ -191,7 +191,8 @@ function pwned(status){
       case 'BREACHED':
         console.log("pwned BREACHED");
         document.getElementById("register_button").disabled = true;
-        $('#pwnedWarning').show('This Password has been Pwned');
+        document.getElementById(pwnedWarning).innerHTML = "This password is detected on HaveIBeenPwned.com"
+        $('#pwnedWarning').show('');
         break;
       default:
         console.log('Unexpected outcome');
