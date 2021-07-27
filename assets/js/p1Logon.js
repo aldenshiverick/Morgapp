@@ -595,7 +595,7 @@ function getUserID(){
   }).done(function(data) {
     console.log("this is the data:" + data);
     Cookies.set('userId', data._embedded.users[0].id);
-    await delay();
+    
     return data._embedded.users[0].id;
     
   })
@@ -653,6 +653,7 @@ function parsepwned(data,password){
 }
 
 function checkPassword() {
+  sleep(2000);
   console.log('checkPassword called');
   console.log('password is ' + $( "#user_pass" ).val());
   //console.log('password is ' + pwd);
