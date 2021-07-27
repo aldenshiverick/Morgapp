@@ -48,61 +48,25 @@
 									<input type="text" name="name" id="lname" value="Last Name" />
 								</div> -->
 								<div class="4u">
-									<input type="email" name="email" id="email" value="email" />
+									<input type="email" name="email" id="email" placeholder="email" />
 									<div id="warningDiv" class="row uniform 50%">
 										<span style="color:red" id="warningMessage" class="confirm-message"></span>
 									</div>
-								<!-- </div> -->
-								<!-- <div class="4u 12u$(xsmall)"> 
-									<lable for="birthday">Birthday</lable>
-									<input type="date" name="birthday" id="birthday" value="birthday" />
-								</div> -->
-								<!-- <div class="12u$">
-									<div class="select-wrapper">
-										<select name="relationship" id="relationship">
-											<option value="">- Relation to Account Owner -</option>
-											<option value="1">Spouse</option>
-											<option value="1">Child</option>
-											<option value="1">Guest</option>
-											<option value="1">Other</option>
-										</select>
+									<div class="row uniform 50%">
+										<!-- <h3> Set Password</h3> -->
+										<div class="6u 12u$(xsmall)">
+											<input type="password" name="user_pass" id="user_pass" placeholder="Password" />
+											<!-- <input type="password" name="user_pass" id="user_pass" value=""  onkeyup="debounce(pwned('REG'),2000);" /> -->										
+										</div>
+										<div class="6u 12u$(xsmall)">
+											<span id="pwnedWarning" class="confirm-message"></span>
+										</div>
+										<div class="6u$ 12u$(xsmall)">
+											<input type="password" name="user_pass_conf" id="user_pass_conf" placeholder="Confrim Password"  onkeyup="checkPass();"/>
+										</div>
+										<span id="confirm-message2" class="confirm-message"></span>
+										
 									</div>
-								</div> -->
-								<!-- <div class="6u 12u$(xsmall)">
-									<input type="text"  
-										   id="address" 
-										   value="address">
-								</div>
-								<div class="6u 12u$(xsmall)">
-									<input type="text" 
-										   id="city" 
-										   value="city">
-								</div>	
-								<div class="6u 12u$(xsmall)">		   
-									<input type="text" 
-										   id="state" 
-										   value="state">
-								</div>
-								<div class="6u 12u$(xsmall)">
-									<input type="text" 
-										   id="zip" 
-										   value="zip">
-								</div> -->
-								<div class="row uniform 50%">
-									<h3> Set Password</h3>
-									<div class="6u 12u$(xsmall)">
-										<input type="password" name="user_pass" id="user_pass" value="" />
-										<!-- <input type="password" name="user_pass" id="user_pass" value=""  onkeyup="debounce(pwned('REG'),2000);" /> -->										
-									</div>
-									<div class="6u 12u$(xsmall)">
-										<span id="pwnedWarning" class="confirm-message"></span>
-									</div>
-									<div class="6u$ 12u$(xsmall)">
-										<input type="password" name="user_pass_conf" id="user_pass_conf" value=""  onkeyup="checkPass();"/>
-									</div>
-									<span id="confirm-message2" class="confirm-message"></span>
-									
-								</div>
 								</div>
 
 								<ul class="actions">
