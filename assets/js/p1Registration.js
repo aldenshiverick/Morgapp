@@ -186,11 +186,12 @@ function pwned(status){
       case 'SAFE':
         console.log("pwned SAFE");
         document.getElementById("register_button").disabled = false;
-
+        $('#warningMessage').hide('');
         break;
       case 'BREACHED':
         console.log("pwned BREACHED");
         document.getElementById("register_button").disabled = true;
+        $('#warningMessage').show('This Password has been Pwned');
         break;
       default:
         console.log('Unexpected outcome');
