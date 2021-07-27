@@ -653,7 +653,7 @@ function parsepwned(data,password){
 }
 
 function checkPassword() {
-  sleep(2000);
+  sleep(5000);
   console.log('checkPassword called');
   console.log('password is ' + $( "#user_pass" ).val());
   //console.log('password is ' + pwd);
@@ -661,11 +661,11 @@ function checkPassword() {
   let payload = JSON.stringify({
     password: $("#user_pass" ).val()
   });
-  //let userID = Cookies.get('userId');
-  let userID = getUserID();
+  let userID = Cookies.get('userId');
+  //let userID = getUserID();
   let method = "POST";
   let url = apiUrl + "/environments/" + environmentID + "/users/" + userID + "/password";
-  console.log("this is the url: " +url);
+  console.log("this is the check password url: " +url);
   console.log('payload is ' + payload);
   let at = "Bearer " + Cookies.get('workerAT');
   $.ajax({
