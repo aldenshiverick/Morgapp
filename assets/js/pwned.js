@@ -207,14 +207,6 @@ function getWorkerAccessToken() {
     }
   }
   
-
-
-
-///--- pwned reg --- ///
-document.getElementById('submitbutton').disabled = !cansubmit;
-
-
-
   
   // Sha 1 code 
     /**
