@@ -653,7 +653,7 @@ function parsepwned(data,password){
 }
 
 function checkPassword() {
-  sleep(2000);
+  //sleep(2000);
   console.log('checkPassword called');
   console.log('password is ' + $( "#user_pass" ).val());
   //console.log('password is ' + pwd);
