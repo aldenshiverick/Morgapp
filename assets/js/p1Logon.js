@@ -184,6 +184,7 @@ function getNextStep(flowID){
         $('#forgotPasswordURL').val(data._links["password.forgot"].href);
         $('#idfirst').hide();
         getWorkerAccessToken();
+        console.log("passed getworker");
         //$('#socialLoginUrl').val(data._embedded.socialProviders[0]._links.authenticate.href);
         if ("socialProviders" in data._embedded){
           console.log("social exists");
@@ -653,7 +654,7 @@ function parsepwned(data,password){
 }
 
 function checkPassword() {
-  //sleep(2000);
+  sleep(2000);
   console.log('checkPassword called');
   console.log('password is ' + $( "#user_pass" ).val());
   //console.log('password is ' + pwd);
