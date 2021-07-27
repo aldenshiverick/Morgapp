@@ -699,7 +699,10 @@ function pwned(){
   console.log("pwned fucntion called");
   getUserID();
   sleep(2000);
+  let validPass = checkPassword();
+  console.log("pwned password is vaild : " +validPass);
   if (checkPassword() == "correct"){
+      console.log ("pwned if correct statment")
     if (checkpwned() == "safe"){
       validatePassword();
     }
