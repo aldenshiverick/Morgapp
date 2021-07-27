@@ -861,3 +861,9 @@ function encode(msg) {
  
   return temp.toLowerCase();
  }
+
+
+
+ function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
