@@ -744,6 +744,7 @@ function pwned(status){
       console.log('Unexpected outcome');
       break;
   }
+}
 
 //   // let validPass = checkPassword();
 //   // console.log("pwned password is vaild : " +validPass);
