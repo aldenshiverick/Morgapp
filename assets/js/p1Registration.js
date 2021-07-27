@@ -185,11 +185,9 @@ function pwned(status){
         break;
       case 'SAFE':
         console.log("pwned SAFE");
-        validatePassword();
         break;
       case 'BREACHED':
         console.log("pwned BREACHED");
-        resetPassword();
         break;
       default:
         console.log('Unexpected outcome');
