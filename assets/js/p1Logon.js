@@ -206,7 +206,7 @@ function getNextStep(flowID){
             $('urlid').val(data._embedded.socialProviders[i]._links.authenticate.href);
             document.getElementById("socialButton"+i).style.visibility ="visible";
             // document.getElementById("socialButton" +i).innerHTML = 'Signon With ' + data._embedded.socialProviders[i].name;
-            document.getElementById("socialButton" +i).innerHTML = 'Signon With <i class="fab fa-' + toLower(data._embedded.socialProviders[i].name) + '"></i>';
+            document.getElementById("socialButton" +i).innerHTML = 'Signon With <i class="fab fa-' + toLowerCase(data._embedded.socialProviders[i].name) + '"></i>';
             // document.getElementById("socialButton" +i).innerHTML = 'Signon With <i class="fab fa-oogle"></i>';
 
           }
