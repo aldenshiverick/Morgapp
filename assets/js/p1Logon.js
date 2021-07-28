@@ -205,7 +205,7 @@ function getNextStep(flowID){
             //$('#socialLoginUrl' + i).val(data._embedded.socialProviders[i]._links.authenticate.href);
             $('urlid').val(data._embedded.socialProviders[i]._links.authenticate.href);
             document.getElementById("socialButton"+i).style.visibility ="visible";
-            document.getElementById("socialButton" +i).innerHTML = 'Signon With ' + data._embedded.socialProviders[i].name;
+            document.getElementById("socialButton" +i).innerHTML += 'Signon With ' + data._embedded.socialProviders[i].name;
           }
         }
         //$('#partnerLoginUrl').val(data._embedded.socialProviders[1]._links.authenticate.href);
