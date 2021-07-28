@@ -12,7 +12,7 @@ function registerUser() {
   });
   console.log('url:' + url);
   console.log('payload:' + payload);
-  exJax('POST', url, nextStep, contentType, payload);
+  exJax("POST", url, nextStep, contentType, payload);
 }
 
 
