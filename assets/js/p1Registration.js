@@ -8,19 +8,6 @@ function registerUser() {
   let payload = JSON.stringify({
     username: $('#email').val(),
     email: $('#email').val(),
-    // name: {
-    //   family: $('#lname').val(),
-    //   given: $('#fname').val()
-    // },
-    // birthday: $('#birthday').val(),
-    // gender: $('gender').val(),
-    // //relationship: 
-    // address: {
-    //   streetAddress: $('#address').val(),
-    //   locality: $('city').val(),
-    //   region: $('state').val(),
-    //   postalCode: $('zip').val()
-    // },
     password: $('#user_pass').val()
   });
   console.log('url:' + url);
