@@ -115,6 +115,13 @@
 							<div class="6u$ 12u$(xsmall)" style= "padding-bottom: 10px">
 								<input type="password" name="new_password" id="new_password" value="" placeholder="Password" />
 							</div>
+							<div id = "warningDiv" class="container">
+								<form method="post" action="#">
+									<div class="row uniform 50%">
+										<span style="color:red" id="warningMessage" class="confirm-message"></span>
+									</div>
+								</form>
+							</div>
 							<div id = "pwResetCodeDiv">
 								<p class="login-submit">
 									<a class="button button_theme" onclick="validatePWResetCode();">Set Password</a>
