@@ -60,7 +60,7 @@
 										</div>
 
 										<div class="6u 12u$(xsmall)">
-											<input type="password" name="user_pass_conf" id="user_pass_conf" placeholder="Confirm Password"  onkeyup="checkPass();"/>
+											<input type="password" name="user_pass_conf" id="user_pass_conf" placeholder="Confirm Password" />
 										</div>
 										<span id="confirm-message2" class="confirm-message"></span>
 										<div class="6u 12u$(xsmall)">
@@ -190,12 +190,20 @@
 				
 							})
 
-				const myInput = document.getElementById("user_pass");
+				const pwnedPasss = document.getElementById("user_pass");
 
-				myInput.addEventListener(	
+				pwnedPasss.addEventListener(	
 					"keyup",
 					debounce(pwned,1000)
 				);
+				const checkPassword = document.getElementById("user_pass_conf");
+
+				checkPassword.addEventListener(	
+					"keyup",
+					debounce(checkPass,1000)
+				);
+
+				
 			</script>
 
 	</body>
