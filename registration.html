@@ -58,14 +58,14 @@
 											<input type="password" name="user_pass" id="user_pass" placeholder="Password" />
 											<!-- <input type="password" name="user_pass" id="user_pass" value=""  onkeyup="debounce(pwned('REG'),2000);" /> -->										
 										</div>
-										<div class="6u 12u$(xsmall)">
-											<span id="pwnedWarning" class="confirm-message"></span>
-										</div>
+
 										<div style="padding: 0;" class="6u 12u$(xsmall)">
 											<input type="password" name="user_pass_conf" id="user_pass_conf" placeholder="Confirm Password"  onkeyup="checkPass();"/>
 										</div>
 										<span id="confirm-message2" class="confirm-message"></span>
-										
+										<div class="6u 12u$(xsmall)">
+											<span id="pwnedWarning" class="confirm-message"></span>
+										</div>
 									</div>
 								</div>
 								<div class="row uniform 50%">
@@ -194,7 +194,7 @@
 
 				myInput.addEventListener(	
 					"keyup",
-					debounce(pwned,2000)
+					debounce(pwned,1000)
 				);
 			</script>
 
