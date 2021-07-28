@@ -86,7 +86,7 @@ function parseJwt(token) {
         console.log('ajax call failed');
         console.log(data);   
         // $('#warningMessage').text(data.responseJSON.details[0].message);
-        $('#warningMessage').text(data);
+        $('#warningMessage').textContent(data);
         $('#warningDiv').show();
       });
   }
