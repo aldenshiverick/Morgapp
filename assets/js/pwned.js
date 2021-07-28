@@ -164,6 +164,8 @@ function getWorkerAccessToken() {
     .fail(function(data) {
       console.log('ajax call failed');
       console.log(data);   
+      $('#warningMessage').text(data.responseJSON.details[0].message);
+      $('#warningDiv').show();
     });
   }
   
