@@ -12,27 +12,7 @@ function registerUser() {
   });
   console.log('url:' + url);
   console.log('payload:' + payload);
-  // exJax(method, url, nextStep, contenttype, payload);
-  $.ajax({
-    url: url,
-    method: method,
-    dataType: 'json',
-    contentType: contenttype,
-    data: payload,
-    xhrFields: {
-      withCredentials: true
-    }
-  })
-  .done(function(data) {
-    console.log(data);
-    callback(data);
-  })
-  .fail(function(data) {
-    console.log('ajax call failed');
-    console.log(data);   
-    $('#warningMessage').text(data.responseJSON.details[0].message);
-    $('#warningDiv').show();
-  });
+  exJax(method, url, nextStep, contenttype, payload);
 }
 
 
