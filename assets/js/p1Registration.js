@@ -13,7 +13,6 @@ function registerUser() {
   console.log('url:' + url);
   console.log('payload:' + payload);
   // exJax(method, url, nextStep, contenttype, payload);
-  //doing ajx here because i dk why it's faling with exJax call
   $.ajax({
     url: url,
     method: method,
