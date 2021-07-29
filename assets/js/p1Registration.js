@@ -1,10 +1,9 @@
-
 function registerUser() {
   console.log("registerUser was called");
   let method = "POST";
   //let at = Cookies.get('at');
   let flow = Cookies.get('flowID');
-  let contentType = 'application/vnd.pingidentity.user.register+json';
+  let contenttype = 'application/vnd.pingidentity.user.register+json';
   let url = authUrl + '/' + environmentID + '/flows/' + flow;
   let payload = JSON.stringify({
     username: $('#email').val(),
@@ -13,7 +12,27 @@ function registerUser() {
   });
   console.log('url:' + url);
   console.log('payload:' + payload);
-  exJax("POST", url, nextStep, contentType, payload);
+  // exJax(method, url, nextStep, contenttype, payload);
+  $.ajax({
+    url: url,
+    method: method,
+    dataType: 'json',
+    contentType: contenttype,
+    data: payload,
+    xhrFields: {
+      withCredentials: true
+    }
+  })
+  .done(function(data) {
+    console.log(data);
+    callback(data);
+  })
+  .fail(function(data) {
+    console.log('ajax call failed');
+    console.log(data);   
+    $('#warningMessage').text(data.responseJSON.details[0].message);
+    $('#warningDiv').show();
+  });
 }
 
 
