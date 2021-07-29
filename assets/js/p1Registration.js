@@ -198,9 +198,10 @@ function pwned(status){
         break;
       case 'BREACHED':
         console.log("pwned BREACHED");
-        document.getElementById("register_button").onclick = null;
-        document.getElementById("register_button").style = "color:grey";
+        document.getElementById("register_button").disabled = true;
         document.getElementById("pwnedWarning").innerHTML = "This password is detected on HaveIBeenPwned.com"
+        // document.getElementById("register_button").onclick = null;
+        // document.getElementById("register_button").style = "color:grey";
         //document.getElementById("email").value = userJson.email;
         $('#pwnedWarning').show('');
         break;
