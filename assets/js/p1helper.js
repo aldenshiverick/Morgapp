@@ -66,6 +66,7 @@ function parseJwt(token) {
   
   // exJax function makes an AJAX call
   function exJax(method, url, callback, contenttype, payload) {
+    console.log('exJax called')
     console.log('ajax (' + url + ')');
     console.log("content type: " + contenttype);
     $.ajax({
