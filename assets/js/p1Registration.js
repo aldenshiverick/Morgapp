@@ -1,9 +1,10 @@
+
 function registerUser() {
   console.log("registerUser was called");
   let method = "POST";
   //let at = Cookies.get('at');
   let flow = Cookies.get('flowID');
-  let contenttype = 'application/vnd.pingidentity.user.register+json';
+  let contentType = 'application/vnd.pingidentity.user.register+json';
   let url = authUrl + '/' + environmentID + '/flows/' + flow;
   let payload = JSON.stringify({
     username: $('#email').val(),
@@ -12,7 +13,7 @@ function registerUser() {
   });
   console.log('url:' + url);
   console.log('payload:' + payload);
-  exJax(method, url, nextStep, contenttype, payload);
+  exJax("POST", url, nextStep, contentType, payload);
 }
 
 
