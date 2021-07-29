@@ -71,8 +71,8 @@
 								</div>
 								<div class="row uniform 50%">
 									<ul class="actions">
-										<li><a href="#" class="button" id="register_button" onclick="registerUser();">Create Account</a></li> 
-										<!-- <button a href="#" class="button" id="register_button" onclick="registerUser();">Create Account</button> -->
+										<!-- <li><a href="#" class="button" id="register_button" onclick="registerUser();">Create Account</a></li>  -->
+										<button a href="#" class="button" id="register_button" onclick="registerUser();">Create Account</button>
 									</ul>
 								</div>
 							</div>
@@ -202,6 +202,14 @@
 					"keyup",
 					debounce(checkPass,500)
 				);
+
+				const regUser = document.getElementById("register_button");
+
+				regUser.addEventListener(	
+					"onclick",
+					registerUser()
+				);
+
 
 				
 			</script>
