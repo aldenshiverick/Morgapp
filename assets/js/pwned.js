@@ -111,7 +111,7 @@ function getWorkerAccessToken() {
         break;
       }
     }
-    console.log("parse done result: " +result);
+    console.log("parse done result: " +result + "type is: " +type);
     if (type == 'reset'){
         resetPwned(result);
     }
