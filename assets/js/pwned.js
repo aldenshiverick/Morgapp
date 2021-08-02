@@ -66,7 +66,7 @@ function getWorkerAccessToken() {
     
   }
   
-  function checkpwned(){
+  function checkpwned(type){
     let password = $('#user_pass').val();
     console.log('password org: ' + password);
     password = encode(password);
@@ -83,7 +83,7 @@ function getWorkerAccessToken() {
     })
     .done(function(data) {
       console.log(data);
-      parsepwned(data,password);
+      parsepwned(data,password,type);
     })
     .fail(function(data) {
       console.log('ajax call failed');
@@ -94,7 +94,7 @@ function getWorkerAccessToken() {
   
   }
   
-  function parsepwned(data,password){
+  function parsepwned(data,password,type){
     let pwdstring= password.substring(5,password.length+1);
     pwdstring=pwdstring.toUpperCase();
     //let pwdArry = data.split("\n");
@@ -112,6 +112,9 @@ function getWorkerAccessToken() {
       }
     }
     console.log("parse done result: " +result);
+    if (type == 'reset'){
+        resetPwned(result);
+    }
     pwned(result); 
     
     // console.log("password array1: " + pwdArry);

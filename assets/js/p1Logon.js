@@ -757,7 +757,7 @@ function resetPwned(status){
   switch (status) {
     case 'REG':
       console.log("pwned REG");
-      checkpwned();
+      checkpwned('reset');
       break;
     case 'SAFE':
       console.log("pwned SAFE");
@@ -775,7 +775,7 @@ function resetPwned(status){
       break;
     default:
       console.log('Unexpected outcome');
-      checkpwned();
+      checkpwned('reset');
       break;
   }
 }
