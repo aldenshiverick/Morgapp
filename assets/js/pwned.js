@@ -113,11 +113,12 @@ function getWorkerAccessToken() {
     }
     console.log("parse done result: " +result + "type is: " +type);
     if (type === 'reset'){
-        resetPwned(result);
         console.log("senfing to resetPwned");
-        break;
+         resetPwned(result);
     }
-    pwned(result); 
+    else{
+        pwned(result); 
+    }
     
     // console.log("password array1: " + pwdArry);
     // console.log("password short string1: " + pwdstring);
