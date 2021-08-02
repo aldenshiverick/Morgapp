@@ -225,6 +225,7 @@ function getWorkerAccessToken() {
   * http://www.webtoolkit.info/
   **/
   function encode(msg) {
+      console.log("enconding: " + msg);
     function rotate_left(n,s) {
     var t4 = ( n<<s ) | (n>>>(32-s));
     return t4;
