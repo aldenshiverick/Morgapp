@@ -612,3 +612,5 @@ function resetPwned(status){
       break;
   }
 }
+
+function getWorkerAccessToken();
