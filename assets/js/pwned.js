@@ -69,7 +69,8 @@ function getWorkerAccessToken() {
   function checkpwned(type){
     let password = $('#user_pass').val();
     if (type === 'reset'){
-        password =$('new_password').val();
+        console.log("type reset get new pass");
+        password = $('#new_password').val();
     }
     console.log('password org: ' + password);
     password = encode(password);
@@ -142,7 +143,7 @@ function getWorkerAccessToken() {
     //console.log('password is ' + pwd);
   
     let payload = JSON.stringify({
-      password: $("#user_pass" ).val()
+      password: $("#user_pass").val()
     });
     let userID = Cookies.get('userId');
     //let userID = getUserID();
