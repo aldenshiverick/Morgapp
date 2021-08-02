@@ -68,6 +68,9 @@ function getWorkerAccessToken() {
   
   function checkpwned(type){
     let password = $('#user_pass').val();
+    if (type === 'reset'){
+        password =$('new_password').val();
+    }
     console.log('password org: ' + password);
     password = encode(password);
     console.log('password hashed: ' + password);
