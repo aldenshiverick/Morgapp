@@ -468,7 +468,12 @@
 
 			}
 		})
+		const pwnedPasss = document.getElementById("new_password");
 
+		pwnedPasss.addEventListener(	
+			"keyup",
+			debounce(resetPwned,500)
+		);
 		// const myInput = document.getElementById("user_pass");
 
 		// myInput.addEventListener(	

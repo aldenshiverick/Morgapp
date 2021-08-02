@@ -749,6 +749,36 @@ function pwned(status){
   }
 }
 
+
+function resetPwned(status){
+  console.log("pwned fucntion called");
+  console.log("pwned status: " + status);
+
+  switch (status) {
+    case 'REG':
+      console.log("pwned REG");
+      checkpwned();
+      break;
+    case 'SAFE':
+      console.log("pwned SAFE");
+      document.getElementById("register_button").disabled = false;
+      $('#pwnedWarning').hide('');
+      break;
+    case 'BREACHED':
+      console.log("pwned BREACHED");
+      document.getElementById("register_button").disabled = true;
+      document.getElementById("pwnedWarning").innerHTML = "This password is detected on HaveIBeenPwned.com"
+      // document.getElementById("register_button").onclick = null;
+      // document.getElementById("register_button").style = "color:grey";
+      //document.getElementById("email").value = userJson.email;
+      $('#pwnedWarning').show('');
+      break;
+    default:
+      console.log('Unexpected outcome');
+      checkpwned();
+      break;
+  }
+
 //   // let validPass = checkPassword();
 //   // console.log("pwned password is vaild : " +validPass);
 //   // if (checkPassword() == "correct"){
