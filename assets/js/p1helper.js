@@ -21,6 +21,7 @@ const landingUrl = baseUrl + '/index.html'; // url to send the person once authe
 //const logoutUrl = baseUrl + '/logout/'; // whitelisted url to send a person who wants to logout
 const redirectUri = baseUrl + '/login.html'; // whitelisted url P14C sends the token or code to
 const adminRedirect = baseUrl +'/adminlogon.html'; //redirect uri for admin
+const logoffRedirect = baseUrl + '/index.html'; //redirect after signoff
 
 const authUrl = 'https://auth.pingone.com';
 const apiUrl = 'https://api.pingone.com/v1';
@@ -32,7 +33,7 @@ const regexUpper = new RegExp('(?=.*[A-Z])');
 const regexNumeric = new RegExp('(?=.*[0-9])');
 const regexSpecial = new RegExp('(?=.*[~!@#\$%\^&\*\)\(\|\;\:\,\.\?\_\-])');
 const regexLength = new RegExp('(?=.{8,})');
-const logoutUrl = authUrl +"/" + environmentID + "/as/signoff?id_token_hint";
+const logoutUrl = authUrl +"/" + environmentID + "/as/signoff?post_logout_redirect_uri=" + logoffRedirect + "id_token_hint";
 
 
 // simple function to parse json web token
