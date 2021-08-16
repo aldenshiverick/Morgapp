@@ -109,5 +109,4 @@ function parseJwt(token) {
     Cookies.remove('accessToken');
     Cookies.remove('userAPIid');
     window.location.replace(logoutUrl);
--
   }
