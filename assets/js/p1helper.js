@@ -106,9 +106,11 @@ function parseJwt(token) {
   }
 
   function signoff(){
+    let redirect = logoutUrl + "=" + Cookies.get("idToken");
     Cookies.remove('idToken');
     Cookies.remove('accessToken');
     Cookies.remove('userAPIid');
-    let redirect = logoutUrl + Cookies.get("idToken");
+
+    console.log("Logout redirect is: "+redirect);
     window.location.replace(redirect);
   }
