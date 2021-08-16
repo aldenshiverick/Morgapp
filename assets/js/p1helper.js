@@ -33,7 +33,7 @@ const regexUpper = new RegExp('(?=.*[A-Z])');
 const regexNumeric = new RegExp('(?=.*[0-9])');
 const regexSpecial = new RegExp('(?=.*[~!@#\$%\^&\*\)\(\|\;\:\,\.\?\_\-])');
 const regexLength = new RegExp('(?=.{8,})');
-const logoutUrl = authUrl +"/" + environmentID + "/as/signoff?post_logout_redirect_uri=" + logoffRedirect + "id_token_hint";
+const logoutUrl = authUrl +"/" + environmentID + "/as/signoff?post_logout_redirect_uri=" + logoffRedirect + "&id_token_hint";
 
 
 // simple function to parse json web token
@@ -109,5 +109,6 @@ function parseJwt(token) {
     Cookies.remove('idToken');
     Cookies.remove('accessToken');
     Cookies.remove('userAPIid');
-    window.location.replace(logoutUrl);
+    let redirect = logoutUrl+=Cookies.get("idToken");
+    window.location.replace(redirect);
   }
