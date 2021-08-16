@@ -32,7 +32,7 @@ const regexUpper = new RegExp('(?=.*[A-Z])');
 const regexNumeric = new RegExp('(?=.*[0-9])');
 const regexSpecial = new RegExp('(?=.*[~!@#\$%\^&\*\)\(\|\;\:\,\.\?\_\-])');
 const regexLength = new RegExp('(?=.{8,})');
-const logoutUrl = baseUrl +"/" + environmentID + "/as/signoff?id_token_hint" + Cookies.get("idToken");
+const logoutUrl = baseUrl +"/" + environmentID + "/as/signoff?id_token_hint";
 
 
 // simple function to parse json web token
@@ -92,10 +92,10 @@ function parseJwt(token) {
   function session(){
     if (Cookies.get('accessToken') && Cookies.get('idToken')) {
       $('#authbutton').text("Logout");
-      document.getElementById('authbutton').innerHTML = '<a href="' + logoutUrl + '">Link</a>';
+      document.getElementById('authbutton').innerHTML = '<a href="' + logoutUrl + Cookies.get("idToken") + '">Link</a>';
 
     }
     else 
       $('#authbutton').text("Login");
-      document.getElementById('authbutton').innerHTML = '<a href="' + "https://morgdemo.ping-eng.com/sharep1ui/logon" + '">Link</a>';
+      document.getElementById('authbutton').innerHTML = '<a href="' + "https://morgdemo.ping-eng.com/sharep1ui/logon.html" + '">Link</a>';
   }
