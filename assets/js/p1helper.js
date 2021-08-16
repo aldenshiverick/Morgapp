@@ -96,6 +96,6 @@ function parseJwt(token) {
 
     }
     else 
-      $('#authbutton').text("Login");
-      document.getElementById('authbutton').innerHTML = '<a href="' + "https://morgdemo.ping-eng.com/sharep1ui/logon.html" + '">Link</a>';
+      $('#authbutton').text("login");
+      document.getElementById('authbutton').innerHTML = '<a href="' + "https://morgdemo.ping-eng.com/sharep1ui/login.html" + '">Link</a>';
   }
