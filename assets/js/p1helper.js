@@ -94,7 +94,7 @@ function parseJwt(token) {
       console.log("Cookies exisit show logoff button");
       $('#authbutton').text='Logout';
       // document.getElementById('authbutton').innerHTML = '<a href="' + logoutUrl + Cookies.get("idToken") + '">LogOff</a>';
-      document.getElementById('authbutton').innerHTML =  'onclick="signoff()"';
+      document.getElementById('authbutton').innerHTML =  '<a onclick="signoff()">SignOff</a>';
 
     }
     else {
@@ -109,6 +109,5 @@ function parseJwt(token) {
     Cookies.remove('accessToken');
     Cookies.remove('userAPIid');
     window.location.replace(logoutUrl);
-
-
+-
   }
