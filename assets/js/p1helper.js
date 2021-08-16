@@ -92,13 +92,17 @@ function parseJwt(token) {
   function session(){
     if (Cookies.get('accessToken') && Cookies.get('idToken')) {
       console.log("Cookies exisit show logoff button");
-      $('#authbutton').text("Logout");
+      $('#authbutton').text='Logout';
       document.getElementById('authbutton').innerHTML = '<a href="' + logoutUrl + Cookies.get("idToken") + '">Link</a>';
 
     }
     else {
       console.log("cookies don't exist show login");
-      $('#authbutton').text("login");
+      $('#authbutton').text='Login';
       document.getElementById('authbutton').innerHTML = '<a href="' + "https://morgdemo.ping-eng.com/sharep1ui/login.html" + '">Link</a>';
     }
+  }
+
+  function signoff(){
+
   }
