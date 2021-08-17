@@ -312,16 +312,13 @@ function pwned(status){
       break;
     case 'SAFE':
       console.log("pwned SAFE");
-      document.getElementById("register_button").disabled = false;
+      document.getElementById("changePwdButton").disabled = false;
       $('#pwnedWarning').hide('');
       break;
     case 'BREACHED':
       console.log("pwned BREACHED");
       document.getElementById("changePwdButton").disabled = true;
       document.getElementById("pwnedWarning").innerHTML = "This password is detected on HaveIBeenPwned.com"
-      // document.getElementById("register_button").onclick = null;
-      // document.getElementById("register_button").style = "color:grey";
-      //document.getElementById("email").value = userJson.email;
       $('#pwnedWarning').show('');
       break;
     default:
