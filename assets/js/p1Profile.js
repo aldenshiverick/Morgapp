@@ -317,7 +317,7 @@ function pwned(status){
       break;
     case 'BREACHED':
       console.log("pwned BREACHED");
-      document.getElementById("changePwdButton").disabled = true;
+      // document.getElementById("changePwdButton").disabled = true;
       document.getElementById("pwnedWarning").innerHTML = "This password is detected on HaveIBeenPwned.com"
       $('#pwnedWarning').show('');
       break;
