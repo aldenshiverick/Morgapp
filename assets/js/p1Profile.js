@@ -308,7 +308,7 @@ function pwned(status){
   switch (status) {
     case 'REG':
       console.log("pwned REG");
-      checkpwned();
+      checkpwned('change');
       break;
     case 'SAFE':
       console.log("pwned SAFE");
@@ -326,7 +326,7 @@ function pwned(status){
       break;
     default:
       console.log('Unexpected outcome');
-      checkpwned();
+      checkpwned('change');
       break;
   }
 }

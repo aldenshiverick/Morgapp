@@ -72,6 +72,10 @@ function getWorkerAccessToken() {
         console.log("type reset get new pass");
         password = $('#new_password').val();
     }
+    if(type == 'change'){
+      console.log("type reset get new pass");
+      password = $('#newPass').val();
+    }
     console.log('password org: ' + password);
     password = encode(password);
     console.log('password hashed: ' + password);
