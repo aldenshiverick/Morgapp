@@ -306,8 +306,8 @@ function pwned(status){
   console.log("pwned status: " + status);
 
   switch (status) {
-    case 'REG':
-      console.log("pwned REG");
+    case 'Change':
+      console.log("pwned Change");
       checkpwned('change');
       break;
     case 'SAFE':
