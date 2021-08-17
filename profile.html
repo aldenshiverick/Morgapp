@@ -154,8 +154,11 @@
 					<section>
 						<div id="changePassbutton">
 							<ul class="actions">
-								<li><a href="#" class="button special" onclick="validatePassword();">Save New Password</a></li> 
+								<li><a id="changePwdButton" href="#" class="button special" onclick="validatePassword();">Save New Password</a></li> 
 							</ul>
+						</div>
+						<div class="6u 12u$(xsmall)">
+							<span id="pwnedWarning" class="confirm-message"></span>
 						</div>
 					</section>
 
@@ -210,7 +213,7 @@
 					console.log("Page ready function");
 					console.log("hide otp div");
 					$('#otpDiv').hide();
-				})
+				});
 			</script>
 			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
 			<script src="https://cdnjs.cloudflare.com/ajax/libs/forge/0.8.2/forge.all.min.js"></script>
@@ -218,6 +221,14 @@
 			<script type="text/javascript" src="path-to/bower_components/crypto-js/crypto-js.js"></script>
 			<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js"></script>
 			<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+			<script>"assets/js/pwned.js"</script>
+			<script>
+			pwnedPasss.addEventListener(	
+				"keyup",
+				debounce(pwned,250)
+			);
+		</script>
 
 
 	</body>

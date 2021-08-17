@@ -245,44 +245,44 @@ function updateUserValues(){
 }
 
 
-function updatePassword(){
-  console.log("updatePassword was called");
-  let method = "PUT";
-  let user = Cookies.get("userAPIid");
-  let at = "Bearer " + Cookies.get("accessToken");
-  let url = apiUrl + "/environments/" + environmentID + "/users/" + user + "/password";
-  let payload = JSON.stringify({
-    currentPassword: $('#currentPass').val(),
-    newPassword: $('#newPass').val()
-  });
-  console.log(payload);
-  console.log('ajax (' + url + ')');
-  console.log('at =' + at);
-  console.log("make ajax call");
-  $.ajax({
-      async: "true",
-      url: url,
-      method: method,
-      dataType: 'json',
-      contentType: 'application/vnd.pingidentity.password.reset+json',
-      data: payload,
-      beforeSend: function(xhr) {
-        xhr.setRequestHeader('Authorization', at);
-      }
-    }).done(function(data) {
-      console.log(data);
-    })
-    .fail(function(data) {
-      console.log('ajax call failed');
-      console.log(data);
-      $('#warningMessage').text(data.responseJSON.details[0].message);
-      $('#warningDiv').show();
-    });
-  //add brief delay so info is populated
-  setTimeout(function() {
-    getUserValues();
-  }, 1000);
-}
+// function updatePassword(){
+//   console.log("updatePassword was called");
+//   let method = "PUT";
+//   let user = Cookies.get("userAPIid");
+//   let at = "Bearer " + Cookies.get("accessToken");
+//   let url = apiUrl + "/environments/" + environmentID + "/users/" + user + "/password";
+//   let payload = JSON.stringify({
+//     currentPassword: $('#currentPass').val(),
+//     newPassword: $('#newPass').val()
+//   });
+//   console.log(payload);
+//   console.log('ajax (' + url + ')');
+//   console.log('at =' + at);
+//   console.log("make ajax call");
+//   $.ajax({
+//       async: "true",
+//       url: url,
+//       method: method,
+//       dataType: 'json',
+//       contentType: 'application/vnd.pingidentity.password.reset+json',
+//       data: payload,
+//       beforeSend: function(xhr) {
+//         xhr.setRequestHeader('Authorization', at);
+//       }
+//     }).done(function(data) {
+//       console.log(data);
+//     })
+//     .fail(function(data) {
+//       console.log('ajax call failed');
+//       console.log(data);
+//       $('#warningMessage').text(data.responseJSON.details[0].message);
+//       $('#warningDiv').show();
+//     });
+//   //add brief delay so info is populated
+//   setTimeout(function() {
+//     getUserValues();
+//   }, 1000);
+// }
 
   // validate password function
   function validatePassword() {
@@ -299,6 +299,37 @@ function updatePassword(){
     console.log('contenttype is ' + contenttype);
     exJax('POST', url, nextStep, contenttype, payload);
   }
+
+// pawned function 
+function pwned(status){
+  console.log("pwned fucntion called");
+  console.log("pwned status: " + status);
+
+  switch (status) {
+    case 'REG':
+      console.log("pwned REG");
+      checkpwned();
+      break;
+    case 'SAFE':
+      console.log("pwned SAFE");
+      document.getElementById("register_button").disabled = false;
+      $('#pwnedWarning').hide('');
+      break;
+    case 'BREACHED':
+      console.log("pwned BREACHED");
+      document.getElementById("changePwdButton").disabled = true;
+      document.getElementById("pwnedWarning").innerHTML = "This password is detected on HaveIBeenPwned.com"
+      // document.getElementById("register_button").onclick = null;
+      // document.getElementById("register_button").style = "color:grey";
+      //document.getElementById("email").value = userJson.email;
+      $('#pwnedWarning').show('');
+      break;
+    default:
+      console.log('Unexpected outcome');
+      checkpwned();
+      break;
+  }
+}
 
 function updateMFA(){
   console.log("updateMFA called");
