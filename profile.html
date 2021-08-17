@@ -208,13 +208,13 @@
 			<script src="assets/js/p1Profile.js"></script>
 			<script src="assets/js/p1helper.js"></script>
 			<script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
-			<script>
+			<!-- <script>
 				$(document).ready(function () {
 					console.log("Page ready function");
 					console.log("hide otp div");
 					$('#otpDiv').hide();
 				});
-			</script>
+			</script> -->
 			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
 			<script src="https://cdnjs.cloudflare.com/ajax/libs/forge/0.8.2/forge.all.min.js"></script>
 			<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js"></script>
@@ -224,12 +224,13 @@
 
 			<script>"assets/js/pwned.js"</script>
 			<script>
-			const passwordCheck = document.getElementById("newPass");
-			pwnedPasss.addEventListener(	
-				"keyup",
-				debounce(pwned,250)
-			);
-		</script>
+				const passwordCheck = document.getElementById("newPass");
+				console.log("debounce called");
+				pwnedPasss.addEventListener(	
+					"keyup",
+					debounce(pwned,250)
+				);
+			</script>
 
 
 	</body>
