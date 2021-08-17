@@ -101,7 +101,7 @@ function parseJwt(token) {
     else {
       console.log("cookies don't exist show login");
       $('#authbutton').text='Login';
-      document.getElementById('authbutton').innerHTML = '<a href="' + "https://morgdemo.ping-eng.com/sharep1ui/login.html" + '">Login</a>';
+      document.getElementById('authbutton').innerHTML = '<a href="' + landingUrl + '">Login</a>';
     }
   }
 
