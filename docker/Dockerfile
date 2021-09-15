@@ -1,19 +1,23 @@
-FROM node:14
-
-# Create app directory
-WORKDIR /usr/src/app
-
-# Install app dependencies
-# A wildcard is used to ensure both package.json AND package-lock.json are copied
-# where available (npm@5+)
-COPY package*.json ./
-
-RUN npm install
-# If you are building your code for production
-# RUN npm ci --only=production
-
-# Bundle app source
-COPY . .
-
-EXPOSE 8080
-CMD [ "node", "server.js" ]
+FROM node
+ 
+ENV NODE_VERSION stable
+ENV NPM_SCRIPT start
+ENV GIT_URL https://github.com/Morganls23/sharep1ui.git
+ENV APP_PORT 3000
+ 
+ENV APP_HOME .
+ENV APP_STARTUP ""
+# JUST_RUN specifies whether node should be installed and git should be cloned
+ENV JUST_RUN N
+ 
+COPY ./docker-work /code
+ 
+WORKDIR /code
+ 
+#RUN chown -R app:app /code/*
+RUN chmod +x /code/bootstrap.sh
+ 
+RUN npm install -g n --silent
+RUN n stable
+ 
+ENTRYPOINT ["/code/bootstrap.sh"]
