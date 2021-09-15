@@ -1,0 +1,13 @@
+{
+  "name": "pingone_ui_app",
+  "version": "1.0.0",
+  "description": "a demo of Pingone's authentication API capabilities",
+  "author": "Morgan Smith msmith@pingidentity.com",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.16.1"
+  }
+}
