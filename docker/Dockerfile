@@ -10,9 +10,9 @@ ENV APP_STARTUP ""
 # JUST_RUN specifies whether node should be installed and git should be cloned
 ENV JUST_RUN N
  
-COPY ./docker-work /code
+COPY . .
  
-WORKDIR /code
+WORKDIR /
  
 #RUN chown -R app:app /code/*
 RUN chmod +x /code/bootstrap.sh
