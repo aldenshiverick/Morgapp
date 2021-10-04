@@ -1,6 +1,6 @@
 //p14C Variables
 const environmentID = '3654e138-9293-4991-8ecc-f3520e4155cc'; // env ID from p1 console
-const baseUrl = 'https://morgapp.ping-eng.com/morgapp'; //Where this app is hosted --> No trailing slash needed
+const baseUrl = 'https://34.219.192.185/Morgapp'; //Where this app is hosted --> No trailing slash needed
 
 const workerClientID = '5a39dc99-c9c6-4829-9afd-b71b3efe3ce2'; //used to create/manage users
 //const workerClientSecret = 'UYPFyy6jOIL8HPKTqDgtmz.uqTNyrhP7MY63kMUgqq_G3~VzIuV.qU2sREl86TiO';
